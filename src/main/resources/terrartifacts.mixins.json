@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.example.terrartifacts.mixin",
+  "package": "com.reasure.terrartifacts.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "terrartifacts.refmap.json",
   "mixins": [
