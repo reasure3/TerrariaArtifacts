@@ -32,9 +32,9 @@ interface IWatch {
             val minute = ((daytime % 1000) * 0.06).toInt()
 
             return when (type) {
-                WatchType.HOUR -> "$hour:00"
-                WatchType.HALF_HOUR -> String.format("%d:%02d", hour, (minute / 30) * 30)
-                WatchType.MINUTE -> String.format("%d:%02d", hour, minute)
+                WatchType.HOUR -> String.format("%2d:00", hour)
+                WatchType.HALF_HOUR -> String.format("%2d:%02d", hour, (minute / 30) * 30)
+                WatchType.MINUTE -> String.format("%2d:%02d", hour, minute)
             }
         }
 
