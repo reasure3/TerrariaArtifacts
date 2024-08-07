@@ -1,0 +1,148 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_GRAY",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "GRAY"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_WHITE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "WHITE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_BLUE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "BLUE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_GREEN",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "GREEN"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_ORANGE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "ORANGE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_LIGHT_RED",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "LIGHT_RED"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_PINK",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "PINK"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_LIGHT_PURPLE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "LIGHT_PURPLE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_LIME",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "LIME"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_YELLOW",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "YELLOW"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_CYAN",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "CYAN"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_RED",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "RED"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_PURPLE",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "PURPLE"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_QUEST",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "QUEST"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_EXPERT",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "EXPERT"
+      }
+    },
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TERRARTIFACTS_MASTER",
+      "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
+      "parameters": {
+        "class": "com/reasure/terrartifacts/item/ModRarity",
+        "field": "MASTER"
+      }
+    }
+  ]
+}

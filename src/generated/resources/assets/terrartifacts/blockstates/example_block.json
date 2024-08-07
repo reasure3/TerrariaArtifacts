@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "terrartifacts:block/example_block"
+    }
+  }
+}

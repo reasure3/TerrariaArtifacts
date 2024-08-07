@@ -1,0 +1,17 @@
+{
+  "providers": [
+    {
+      "type": "bitmap",
+      "file": "terrartifacts:font/info_icons.png",
+      "ascent": 7,
+      "chars": [
+        "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿"
+      ]
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:default",
+      "skip": "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿"
+    }
+  ]
+}

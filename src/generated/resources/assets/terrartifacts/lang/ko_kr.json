@@ -1,0 +1,17 @@
+{
+  "block.terrartifacts.example_block": "예제 블록",
+  "curios.identifier.accessory": "악세서리",
+  "item.terrartifacts.copper_watch": "구리 시계",
+  "item.terrartifacts.gold_watch": "금 시계",
+  "item.terrartifacts.platinum_watch": "백금 시계",
+  "item.terrartifacts.silver_watch": "은 시계",
+  "item.terrartifacts.tin_watch": "주석 시계",
+  "item.terrartifacts.tungsten_watch": "텅스텐 시계",
+  "itemGroup.terrartifacts": "테라리아 유물들",
+  "terrartifacts.info.time": "⑴ %1$s %2$s",
+  "terrartifacts.time_afternoon": "오후",
+  "terrartifacts.time_morning": "오전",
+  "terrartifacts.tooltip.minute": "1분 단위로 시간을 표시합니다.",
+  "terrartifacts.tooltip.watch_half_hour": "30분 단위로 시간을 표시합니다.",
+  "terrartifacts.tooltip.watch_hour": "1시간 단위로 시간을 표시합니다."
+}

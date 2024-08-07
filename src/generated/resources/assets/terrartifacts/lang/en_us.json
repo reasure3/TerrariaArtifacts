@@ -1,0 +1,17 @@
+{
+  "block.terrartifacts.example_block": "Example Block",
+  "curios.identifier.accessory": "Accessory",
+  "item.terrartifacts.copper_watch": "Copper Watch",
+  "item.terrartifacts.gold_watch": "Gold Watch",
+  "item.terrartifacts.platinum_watch": "Platinum Watch",
+  "item.terrartifacts.silver_watch": "Silver Watch",
+  "item.terrartifacts.tin_watch": "Tin Watch",
+  "item.terrartifacts.tungsten_watch": "Tungsten Watch",
+  "itemGroup.terrartifacts": "Terraria Artifacts",
+  "terrartifacts.info.time": "⑴ %2$s %1$s",
+  "terrartifacts.time_afternoon": "PM",
+  "terrartifacts.time_morning": "AM",
+  "terrartifacts.tooltip.minute": "Displays the time down to the minute",
+  "terrartifacts.tooltip.watch_half_hour": "Displays the time down to the half-hour",
+  "terrartifacts.tooltip.watch_hour": "Displays the time down to the hour"
+}
