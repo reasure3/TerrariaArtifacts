@@ -11,12 +11,6 @@ import net.neoforged.api.distmarker.OnlyIn
 @OnlyIn(Dist.CLIENT)
 class InformationHandler {
     companion object {
-        private var displayInfo: ClientOnlyDisplayInfoData = ClientOnlyDisplayInfoData(
-            hasMinInfo = false,
-            hasHalfHourInfo = false,
-            hasHourInfo = false
-        )
-
         private val infoComponent: MutableList<Component> = mutableListOf()
 
         fun updateInfo(player: LocalPlayer) {
@@ -24,21 +18,21 @@ class InformationHandler {
                 checkInventory(player)
             infoComponent.clear()
             val level = player.level()
-            if (displayInfo.hasTimeInfo()) {
-                infoComponent.add(IWatch.getInformation(level, displayInfo.displayTimeType()))
+            if (ClientHasInfoAccessoryData.hasTimeInfo()) {
+                infoComponent.add(IWatch.getInformation(level, ClientHasInfoAccessoryData.displayTimeType()))
             }
         }
 
         private fun checkInventory(player: LocalPlayer) {
-            displayInfo.reset()
+            ClientHasInfoAccessoryData.reset()
             val inventory = CuriosUtil.getAccessories(player)
             inventory.addAll(player.inventory.items)
             for (stack in inventory) {
                 when (val item = stack.item) {
                     is IWatch -> when (item.watchType()) {
-                        WatchType.MINUTE -> displayInfo.hasMinInfo = true
-                        WatchType.HALF_HOUR -> displayInfo.hasHalfHourInfo = true
-                        WatchType.HOUR -> displayInfo.hasHourInfo = true
+                        WatchType.MINUTE -> ClientHasInfoAccessoryData.hasMinInfo = true
+                        WatchType.HALF_HOUR -> ClientHasInfoAccessoryData.hasHalfHourInfo = true
+                        WatchType.HOUR -> ClientHasInfoAccessoryData.hasHourInfo = true
                     }
                 }
             }
@@ -47,12 +41,14 @@ class InformationHandler {
         fun infoComponent(): MutableList<Component> = this.infoComponent
     }
 
-
-    data class ClientOnlyDisplayInfoData(
-        var hasMinInfo: Boolean = false,
-        var hasHalfHourInfo: Boolean = false,
+    /**
+     * 정보 악세서리를 가지고 있는지 여부 저장
+     */
+    object ClientHasInfoAccessoryData {
+        var hasMinInfo: Boolean = false
+        var hasHalfHourInfo: Boolean = false
         var hasHourInfo: Boolean = false
-    ) {
+
         fun hasTimeInfo(): Boolean = this.hasMinInfo || this.hasHalfHourInfo || this.hasHourInfo
         fun displayTimeType(): WatchType =
             if (hasMinInfo) WatchType.MINUTE
