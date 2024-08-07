@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.TranslationKeys
+import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.network.chat.Component
 import net.minecraft.network.chat.Style
 import net.minecraft.world.level.Level

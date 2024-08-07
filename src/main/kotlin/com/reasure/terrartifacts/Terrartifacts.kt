@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts
 
 import com.reasure.terrartifacts.block.ModBlocks
+import com.reasure.terrartifacts.data.ModDataAttachments
 import com.reasure.terrartifacts.item.ModCreativeTabs
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.client.Minecraft
@@ -34,6 +35,7 @@ object Terrartifacts {
         ModItems.ITEMS.register(MOD_BUS)
         ModBlocks.BLOCKS.register(MOD_BUS)
         ModCreativeTabs.CREATIVE_TABS.register(MOD_BUS)
+        ModDataAttachments.ATTACHMENT_TYPES.register(MOD_BUS)
 
         runForDist(
             clientTarget = {

@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.datagen.client
 
 import com.reasure.terrartifacts.block.ModBlocks
-import com.reasure.terrartifacts.client.TranslationKeys
+import com.reasure.terrartifacts.util.TranslationKeys
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.data.PackOutput
 

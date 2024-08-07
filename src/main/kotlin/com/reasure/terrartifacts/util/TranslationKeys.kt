@@ -1,4 +1,4 @@
-package com.reasure.terrartifacts.client
+package com.reasure.terrartifacts.util
 
 import com.reasure.terrartifacts.Terrartifacts
 

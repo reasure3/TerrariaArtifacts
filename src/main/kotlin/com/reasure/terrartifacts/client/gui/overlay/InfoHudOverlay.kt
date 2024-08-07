@@ -1,12 +1,15 @@
-package com.reasure.terrartifacts.client.gui
+package com.reasure.terrartifacts.client.gui.overlay
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.InformationHandler
+import com.reasure.terrartifacts.client.data.InformationHandler
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.LayeredDraw
+import net.neoforged.api.distmarker.Dist
+import net.neoforged.api.distmarker.OnlyIn
 
+@OnlyIn(Dist.CLIENT)
 class InfoHudOverlay : LayeredDraw.Layer {
     override fun render(gui: GuiGraphics, tracker: DeltaTracker) {
         val minecraft = Minecraft.getInstance()

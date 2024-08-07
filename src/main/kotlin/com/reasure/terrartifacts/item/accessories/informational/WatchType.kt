@@ -1,8 +1,8 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
-import com.reasure.terrartifacts.client.TranslationKeys.HALF_HOUR_TOOLTIP_KEY
-import com.reasure.terrartifacts.client.TranslationKeys.HOUR_TOOLTIP_KEY
-import com.reasure.terrartifacts.client.TranslationKeys.MINUTE_TOOLTIP_KEY
+import com.reasure.terrartifacts.util.TranslationKeys.HALF_HOUR_TOOLTIP_KEY
+import com.reasure.terrartifacts.util.TranslationKeys.HOUR_TOOLTIP_KEY
+import com.reasure.terrartifacts.util.TranslationKeys.MINUTE_TOOLTIP_KEY
 import net.minecraft.network.chat.Component
 
 

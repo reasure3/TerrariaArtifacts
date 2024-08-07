@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.item
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.block.ModBlocks
-import com.reasure.terrartifacts.client.TranslationKeys
+import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab

@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.gui.InfoHudOverlay
+import com.reasure.terrartifacts.client.gui.overlay.InfoHudOverlay
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
