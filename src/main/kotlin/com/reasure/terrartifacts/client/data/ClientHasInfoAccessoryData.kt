@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.client.data
 
+import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
@@ -23,5 +24,9 @@ object ClientHasInfoAccessoryData {
         hasMinInfo = false
         hasHalfHourInfo = false
         hasHourInfo = false
+    }
+
+    operator fun get(type: InformationType) = when (type) {
+        InformationType.TIME -> hasTimeInfo()
     }
 }

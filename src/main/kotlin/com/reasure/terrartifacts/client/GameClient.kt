@@ -2,8 +2,8 @@ package com.reasure.terrartifacts.client
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
-import com.reasure.terrartifacts.client.handler.InformationHandler
 import com.reasure.terrartifacts.client.gui.button.InfoButton
+import com.reasure.terrartifacts.client.handler.InformationHandler
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
@@ -33,16 +33,18 @@ object GameClient {
         val gui = screen as AbstractContainerScreen<*>
         val offsetX = -11
         var offsetY = 1
-        if (ClientHasInfoAccessoryData.hasTimeInfo()) {
-            event.addListener(
-                InfoButton(
-                    gui.guiLeft + offsetX,
-                    gui.guiTop + offsetY,
-                    InfoButton.TIME_WIDGET,
-                    InformationType.TIME
+        InformationType.entries.forEach {
+            if (ClientHasInfoAccessoryData[it]) {
+                event.addListener(
+                    InfoButton(
+                        gui.guiLeft + offsetX,
+                        gui.guiTop + offsetY,
+                        InfoButton.TIME_WIDGET,
+                        InformationType.TIME
+                    )
                 )
-            )
-            offsetY += 10
+                offsetY += 10
+            }
         }
     }
 }
