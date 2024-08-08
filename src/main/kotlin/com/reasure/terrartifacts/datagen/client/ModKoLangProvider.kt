@@ -1,8 +1,8 @@
 package com.reasure.terrartifacts.datagen.client
 
 import com.reasure.terrartifacts.block.ModBlocks
-import com.reasure.terrartifacts.util.TranslationKeys
 import com.reasure.terrartifacts.item.ModItems
+import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.data.PackOutput
 
 class ModKoLangProvider(output: PackOutput) :
@@ -21,7 +21,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModBlocks.EXAMPLE_BLOCK, "예제 블록")
     }
 
-    override fun addTooltip() {
+    override fun addTooltips() {
         add(TranslationKeys.HOUR_TOOLTIP_KEY, "1시간 단위로 시간을 표시합니다.")
         add(TranslationKeys.HALF_HOUR_TOOLTIP_KEY, "30분 단위로 시간을 표시합니다.")
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "1분 단위로 시간을 표시합니다.")
@@ -33,5 +33,12 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_TIME_KEY, "⑴ %1\$s %2\$s")
         add(TranslationKeys.TIME_MORNING_KEY, "오전")
         add(TranslationKeys.TIME_AFTERNOON_KEY, "오후")
+        add(TranslationKeys.TIME_BUTTON_MESSAGE, "시간")
+    }
+
+    override fun addConfigs() {
+        addConfigDesc("infoButtonLayoutPos", "정보 악세서리 토글 버튼 배치")
+        addConfigDesc("infoButtonOffsetX", "정보 악세서리 토글 버튼 X 오프셋")
+        addConfigDesc("infoButtonOffsetY", "정보 악세서리 토글 버튼 Y 오프셋")
     }
 }

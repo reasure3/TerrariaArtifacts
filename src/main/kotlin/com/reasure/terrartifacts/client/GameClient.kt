@@ -31,8 +31,11 @@ object GameClient {
         if (screen !is InventoryScreen && screen !is CreativeModeInventoryScreen) return
 
         val gui = screen as AbstractContainerScreen<*>
-        val offsetX = -11
-        var offsetY = 1
+        val isCreative = screen is CreativeModeInventoryScreen
+        val layoutPos = ClientModConfig.CLIENT.infoButtonLayoutPos
+        var offsetX = layoutPos.offsetX(isCreative)
+        var offsetY = layoutPos.offsetY(isCreative)
+
         InformationType.entries.forEach {
             if (ClientHasInfoAccessoryData[it]) {
                 event.addListener(
@@ -43,7 +46,8 @@ object GameClient {
                         InformationType.TIME
                     )
                 )
-                offsetY += 10
+                offsetX += layoutPos.increaseX()
+                offsetY += layoutPos.increaseY()
             }
         }
     }

@@ -1,3 +1,6 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
-enum class InformationType(val index: Int) { TIME(0) }
+import com.reasure.terrartifacts.util.TranslationKeys.TIME_BUTTON_MESSAGE
+import net.minecraft.network.chat.Component
+
+enum class InformationType(val message: Component) { TIME(Component.translatable(TIME_BUTTON_MESSAGE)) }

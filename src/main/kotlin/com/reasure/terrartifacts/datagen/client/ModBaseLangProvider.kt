@@ -9,15 +9,19 @@ abstract class ModBaseLangProvider(output: PackOutput, locale: String) :
 
     abstract fun addItems()
     abstract fun addBlocks()
-    abstract fun addTooltip()
+    abstract fun addTooltips()
     abstract fun addGui()
+    abstract fun addConfigs()
 
     override fun addTranslations() {
         addItems()
         addBlocks()
-        addTooltip()
+        addTooltips()
         addGui()
+        addConfigs()
     }
 
     protected fun addCuriosSlot(slot: String, name: String) = add("curios.identifier.$slot", name)
+
+    protected fun addConfigDesc(config: String, name: String) = add("${Terrartifacts.ID}.configuration.$config", name)
 }
