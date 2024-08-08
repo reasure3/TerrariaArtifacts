@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.client
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
-import com.reasure.terrartifacts.client.data.InformationHandler
+import com.reasure.terrartifacts.client.handler.InformationHandler
 import com.reasure.terrartifacts.client.gui.button.InfoButton
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import net.minecraft.client.Minecraft

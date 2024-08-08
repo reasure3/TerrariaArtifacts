@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client.gui.overlay
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.data.InformationHandler
+import com.reasure.terrartifacts.client.handler.InformationHandler
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics

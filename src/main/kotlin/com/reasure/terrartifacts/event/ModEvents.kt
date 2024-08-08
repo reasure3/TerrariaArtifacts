@@ -1,8 +1,9 @@
 package com.reasure.terrartifacts.event
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.client.handler.ModClientPayloadHandler
 import com.reasure.terrartifacts.data.ShowInfoData
-import com.reasure.terrartifacts.network.ShowInfoDataHandler
+import com.reasure.terrartifacts.network.ModServerPayloadHandler
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent
@@ -17,7 +18,10 @@ object ModEvents {
         registrar.playBidirectional(
             ShowInfoData.TYPE,
             ShowInfoData.STREAM_CODEC,
-            DirectionalPayloadHandler(ShowInfoDataHandler.Client::handle, ShowInfoDataHandler.Server::handle)
+            DirectionalPayloadHandler(
+                ModClientPayloadHandler.ShowInfo::handle,
+                ModServerPayloadHandler.ShowInfo::handle
+            )
         )
     }
 }

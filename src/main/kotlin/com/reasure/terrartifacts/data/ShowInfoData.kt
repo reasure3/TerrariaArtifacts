@@ -21,6 +21,8 @@ data class ShowInfoData(
         showTime = data.showTime
     }
 
+    fun clone(): ShowInfoData = ShowInfoData(showTime)
+
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
     }

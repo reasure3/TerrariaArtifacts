@@ -1,5 +1,7 @@
-package com.reasure.terrartifacts.client.data
+package com.reasure.terrartifacts.client.handler
 
+import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
+import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.IWatch
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType

@@ -1,28 +1,17 @@
 package com.reasure.terrartifacts.network
 
-import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.data.ModDataAttachments
 import com.reasure.terrartifacts.data.ShowInfoData
 import net.minecraft.network.chat.Component
 import net.neoforged.neoforge.network.handling.IPayloadContext
 
-class ShowInfoDataHandler {
-    object Client {
-        fun handle(serverData: ShowInfoData, context: IPayloadContext) {
-            context.enqueueWork {
-                ClientShowInfoData.copyFrom(serverData)
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
-        }
-    }
-
-    object Server {
+class ModServerPayloadHandler {
+    object ShowInfo {
         fun handle(clientData: ShowInfoData, context: IPayloadContext) {
             context.enqueueWork {
                 val player = context.player()
-                player.getData(ModDataAttachments.SHOW_INFO).copyFrom(clientData)
+                player.setData(ModDataAttachments.SHOW_INFO, clientData.clone())
+                println("saved data show info: ${clientData.showTime}")
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null
