@@ -6,7 +6,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "GRAY"
+        "field": "GRAY_PROXY"
       }
     },
     {
@@ -15,7 +15,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "WHITE"
+        "field": "WHITE_PROXY"
       }
     },
     {
@@ -24,7 +24,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "BLUE"
+        "field": "BLUE_PROXY"
       }
     },
     {
@@ -33,7 +33,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "GREEN"
+        "field": "GREEN_PROXY"
       }
     },
     {
@@ -42,7 +42,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "ORANGE"
+        "field": "ORANGE_PROXY"
       }
     },
     {
@@ -51,7 +51,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "LIGHT_RED"
+        "field": "LIGHT_RED_PROXY"
       }
     },
     {
@@ -60,7 +60,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "PINK"
+        "field": "PINK_PROXY"
       }
     },
     {
@@ -69,7 +69,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "LIGHT_PURPLE"
+        "field": "LIGHT_PURPLE_PROXY"
       }
     },
     {
@@ -78,7 +78,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "LIME"
+        "field": "LIME_PROXY"
       }
     },
     {
@@ -87,7 +87,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "YELLOW"
+        "field": "YELLOW_PROXY"
       }
     },
     {
@@ -96,7 +96,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "CYAN"
+        "field": "CYAN_PROXY"
       }
     },
     {
@@ -105,7 +105,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "RED"
+        "field": "RED_PROXY"
       }
     },
     {
@@ -114,7 +114,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "PURPLE"
+        "field": "PURPLE_PROXY"
       }
     },
     {
@@ -123,7 +123,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "QUEST"
+        "field": "QUEST_PROXY"
       }
     },
     {
@@ -132,7 +132,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "EXPERT"
+        "field": "EXPERT_PROXY"
       }
     },
     {
@@ -141,7 +141,7 @@
       "constructor": "(ILjava/lang/String;Ljava/util/function/UnaryOperator;)V",
       "parameters": {
         "class": "com/reasure/terrartifacts/item/ModRarity",
-        "field": "MASTER"
+        "field": "MASTER_PROXY"
       }
     }
   ]

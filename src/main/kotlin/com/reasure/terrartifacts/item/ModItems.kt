@@ -17,26 +17,26 @@ object ModItems {
     }
 
     val COPPER_WATCH: Item by ITEMS.register("copper_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.WHITE.value), WatchType.HOUR)
+        WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HOUR)
     }
 
     val TIN_WATCH: Item by ITEMS.register("tin_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.WHITE.value), WatchType.HOUR)
+        WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HOUR)
     }
 
     val SILVER_WATCH: Item by ITEMS.register("silver_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.WHITE.value), WatchType.HALF_HOUR)
+        WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HALF_HOUR)
     }
 
     val TUNGSTEN_WATCH: Item by ITEMS.register("tungsten_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.WHITE.value), WatchType.HALF_HOUR)
+        WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HALF_HOUR)
     }
 
     val GOLD_WATCH: Item by ITEMS.register("gold_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.BLUE.value), WatchType.MINUTE)
+        WatchItem(Item.Properties().rarity(ModRarity.BLUE), WatchType.MINUTE)
     }
 
     val PLATINUM_WATCH: Item by ITEMS.register("platinum_watch") { ->
-        WatchItem(Item.Properties().rarity(ModRarity.BLUE.value), WatchType.MINUTE)
+        WatchItem(Item.Properties().rarity(ModRarity.BLUE), WatchType.MINUTE)
     }
 }
