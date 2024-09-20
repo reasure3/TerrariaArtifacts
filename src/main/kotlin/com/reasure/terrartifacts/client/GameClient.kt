@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.client
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.client.color.AnimatedColors
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
 import com.reasure.terrartifacts.client.gui.button.InfoButton
 import com.reasure.terrartifacts.client.handler.InformationHandler
@@ -13,6 +14,7 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.client.event.ClientTickEvent
+import net.neoforged.neoforge.client.event.RenderFrameEvent
 import net.neoforged.neoforge.client.event.ScreenEvent
 
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.GAME, value = [Dist.CLIENT])
@@ -50,5 +52,15 @@ object GameClient {
                 offsetY += layoutPos.increaseY()
             }
         }
+    }
+
+    @SubscribeEvent
+    fun clientTick(event: ClientTickEvent.Pre) {
+        AnimatedColors.updateTick()
+    }
+
+    @SubscribeEvent
+    fun onFrame(event: RenderFrameEvent.Pre) {
+        AnimatedColors.updateFrame(event.partialTick.realtimeDeltaTicks)
     }
 }

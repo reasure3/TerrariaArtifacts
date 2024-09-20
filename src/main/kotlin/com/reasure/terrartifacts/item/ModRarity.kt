@@ -1,9 +1,12 @@
 package com.reasure.terrartifacts.item
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.client.color.AnimatedColors.FieryRed
+import com.reasure.terrartifacts.client.color.AnimatedColors.Rainbow
 import net.minecraft.network.chat.Style
 import net.minecraft.world.item.Rarity
 import net.neoforged.fml.common.asm.enumextension.EnumProxy
+import net.neoforged.fml.loading.FMLEnvironment
 import java.util.function.UnaryOperator
 
 object ModRarity {
@@ -123,7 +126,8 @@ object ModRarity {
     val EXPERT_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, -12, "${Terrartifacts.ID}:expert",
         UnaryOperator { style: Style ->
-            style.withColor(0xb227fd).withItalic(true).withBold(true)
+            if (FMLEnvironment.dist.isClient) style.withColor(Rainbow.color)
+            else style.withColor(0x000000)
         }
     )
     val EXPERT: Rarity
@@ -133,7 +137,8 @@ object ModRarity {
     val MASTER_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, -13, "${Terrartifacts.ID}:master",
         UnaryOperator { style: Style ->
-            style.withColor(0xb227fd).withItalic(true).withBold(true).withUnderlined(true)
+            if (FMLEnvironment.dist.isClient) style.withColor(FieryRed.color)
+            else style.withColor(0xFF0000)
         }
     )
     val MASTER: Rarity

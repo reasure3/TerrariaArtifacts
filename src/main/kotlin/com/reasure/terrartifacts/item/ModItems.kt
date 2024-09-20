@@ -33,4 +33,14 @@ object ModItems {
     val PLATINUM_WATCH: Item by ITEMS.register("platinum_watch") { ->
         WatchItem(Item.Properties().rarity(ModRarity.BLUE), WatchType.MINUTE)
     }
+
+    // Below line is for test
+
+    val TEST_RAINBOW: Item by ITEMS.register("test_rainbow") { ->
+        Item(Item.Properties().rarity(ModRarity.EXPERT))
+    }
+
+    val TEST_MASTER: Item by ITEMS.register("test_master") { ->
+        Item(Item.Properties().rarity(ModRarity.MASTER))
+    }
 }
