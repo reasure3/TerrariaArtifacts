@@ -28,6 +28,7 @@ class ModEnLangProvider(output: PackOutput) :
 
     override fun addGui() {
         add(TranslationKeys.GROUP_TERRARTIFACTS_KEY, "Terraria Artifacts")
+        add(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY, "Terraria Artifacts Develop Tab")
         addCuriosSlot("accessory", "Accessory")
         add(TranslationKeys.INFO_TIME_KEY, "⑴ %2\$s %1\$s")
         add(TranslationKeys.TIME_MORNING_KEY, "AM")

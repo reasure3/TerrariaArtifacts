@@ -19,13 +19,28 @@ object ModCreativeTabs {
             .icon { ItemStack(ModItems.COPPER_WATCH) }
             .title(Component.translatable(TranslationKeys.GROUP_TERRARTIFACTS_KEY))
             .displayItems { _, entries ->
-                entries.accept(ItemStack(ModBlocks.EXAMPLE_BLOCK))
                 entries.accept(ItemStack(ModItems.COPPER_WATCH))
                 entries.accept(ItemStack(ModItems.TIN_WATCH))
                 entries.accept(ItemStack(ModItems.SILVER_WATCH))
                 entries.accept(ItemStack(ModItems.TUNGSTEN_WATCH))
                 entries.accept(ItemStack(ModItems.GOLD_WATCH))
                 entries.accept(ItemStack(ModItems.PLATINUM_WATCH))
+            }
+            .build()
+    }
+
+    val DEVELOP_TAB: CreativeModeTab by CREATIVE_TABS.register("terra_artifacts_develop") { ->
+        CreativeModeTab.builder()
+            .icon { ItemStack(ModBlocks.EXAMPLE_BLOCK) }
+            .title(Component.translatable(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY))
+            .alignedRight()
+            .withSearchBar()
+            .displayItems{ parameters, entries ->
+                if (parameters.hasPermissions) {
+                    ModItems.ITEMS.entries.forEach {
+                        entries.accept(ItemStack(it))
+                    }
+                }
             }
             .build()
     }

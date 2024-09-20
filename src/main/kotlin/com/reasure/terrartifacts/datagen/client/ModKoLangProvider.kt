@@ -29,6 +29,7 @@ class ModKoLangProvider(output: PackOutput) :
 
     override fun addGui() {
         add(TranslationKeys.GROUP_TERRARTIFACTS_KEY, "테라리아 유물들")
+        add(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY, "테라리아 유물들 개발자 탭")
         addCuriosSlot("accessory", "악세서리")
         add(TranslationKeys.INFO_TIME_KEY, "⑴ %1\$s %2\$s")
         add(TranslationKeys.TIME_MORNING_KEY, "오전")

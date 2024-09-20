@@ -4,6 +4,7 @@ import com.reasure.terrartifacts.Terrartifacts
 
 object TranslationKeys {
     const val GROUP_TERRARTIFACTS_KEY = "itemGroup.terrartifacts"
+    const val GROUP_TERRARTIFACTS_DEVELOP_KEY = "itemGroup.terrartifacts_develop"
     const val HOUR_TOOLTIP_KEY: String = "${Terrartifacts.ID}.tooltip.watch_hour"
     const val HALF_HOUR_TOOLTIP_KEY: String = "${Terrartifacts.ID}.tooltip.watch_half_hour"
     const val MINUTE_TOOLTIP_KEY: String = "${Terrartifacts.ID}.tooltip.minute"

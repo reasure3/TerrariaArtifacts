@@ -8,6 +8,7 @@
   "item.terrartifacts.tin_watch": "주석 시계",
   "item.terrartifacts.tungsten_watch": "텅스텐 시계",
   "itemGroup.terrartifacts": "테라리아 유물들",
+  "itemGroup.terrartifacts_develop": "테라리아 유물들 개발자 탭",
   "terrartifacts.configuration.infoButtonLayoutPos": "정보 악세서리 토글 버튼 배치",
   "terrartifacts.configuration.infoButtonOffsetX": "정보 악세서리 토글 버튼 X 오프셋",
   "terrartifacts.configuration.infoButtonOffsetY": "정보 악세서리 토글 버튼 Y 오프셋",
