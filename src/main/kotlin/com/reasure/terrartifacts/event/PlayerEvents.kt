@@ -11,7 +11,7 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEven
 import net.neoforged.neoforge.network.PacketDistributor
 
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.GAME)
-object GameEvents {
+object PlayerEvents {
     @SubscribeEvent
     fun onPlayerLogin(event: PlayerLoggedInEvent) {
         val player = event.entity

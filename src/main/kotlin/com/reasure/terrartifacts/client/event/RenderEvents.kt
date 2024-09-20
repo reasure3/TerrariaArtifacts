@@ -1,12 +1,11 @@
-package com.reasure.terrartifacts.client
+package com.reasure.terrartifacts.client.event
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.client.ClientModConfig
 import com.reasure.terrartifacts.client.color.AnimatedColors
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
 import com.reasure.terrartifacts.client.gui.button.InfoButton
-import com.reasure.terrartifacts.client.handler.InformationHandler
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
-import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.client.gui.screens.inventory.InventoryScreen
@@ -18,14 +17,7 @@ import net.neoforged.neoforge.client.event.RenderFrameEvent
 import net.neoforged.neoforge.client.event.ScreenEvent
 
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.GAME, value = [Dist.CLIENT])
-object GameClient {
-    @SubscribeEvent
-    fun clientTick(event: ClientTickEvent.Post) {
-        val mc = Minecraft.getInstance()
-        val player = mc.player ?: return
-        InformationHandler.updateInfo(player)
-    }
-
+object RenderEvents {
     @SubscribeEvent
     fun openInventory(event: ScreenEvent.Init.Post) {
         val screen = event.screen

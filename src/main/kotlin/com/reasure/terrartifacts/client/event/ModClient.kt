@@ -1,4 +1,4 @@
-package com.reasure.terrartifacts.client
+package com.reasure.terrartifacts.client.event
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.gui.overlay.InfoHudOverlay
