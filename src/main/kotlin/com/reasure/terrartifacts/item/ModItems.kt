@@ -1,20 +1,14 @@
 package com.reasure.terrartifacts.item
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.block.ModBlocks
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
-import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 
 object ModItems {
     val ITEMS: DeferredRegister.Items = DeferredRegister.createItems(Terrartifacts.ID)
-
-    val EXAMPLE_BLOCK: Item by ITEMS.register("example_block") { ->
-        BlockItem(ModBlocks.EXAMPLE_BLOCK, Item.Properties())
-    }
 
     val COPPER_WATCH: Item by ITEMS.register("copper_watch") { ->
         WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HOUR)
