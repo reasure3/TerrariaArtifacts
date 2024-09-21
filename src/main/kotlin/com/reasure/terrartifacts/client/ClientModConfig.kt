@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.client
 
-import com.reasure.terrartifacts.client.gui.button.InfoButton
+import com.reasure.terrartifacts.client.gui.widget.InfoButton
+import com.reasure.terrartifacts.client.gui.widget.InfoButtonListWidget
 import net.neoforged.neoforge.common.ModConfigSpec
 import kotlin.reflect.KProperty
 
@@ -29,8 +30,8 @@ object ClientModConfig {
 }
 
 class Client(builder: ModConfigSpec.Builder) {
-    val infoButtonLayoutPos: InfoButton.LayoutPos by builder
-        .defineEnum("infoButtonLayoutPos", InfoButton.LayoutPos.LEFT)
+    val infoButtonLayoutPos: InfoButtonListWidget.LayoutPos by builder
+        .defineEnum("infoButtonLayoutPos", InfoButtonListWidget.LayoutPos.LEFT)
 
     val infoButtonOffsetX: Int by builder
         .defineInRange("infoButtonOffsetX", 0, -1000, 1000)

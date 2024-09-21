@@ -3,9 +3,7 @@ package com.reasure.terrartifacts.client.event
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.ClientModConfig
 import com.reasure.terrartifacts.client.color.AnimatedColors
-import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
-import com.reasure.terrartifacts.client.gui.button.InfoButton
-import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.client.gui.widget.InfoButtonListWidget
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen
 import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen
 import net.minecraft.client.gui.screens.inventory.InventoryScreen
@@ -26,24 +24,15 @@ object RenderEvents {
 
         val gui = screen as AbstractContainerScreen<*>
         val isCreative = screen is CreativeModeInventoryScreen
-        val layoutPos = ClientModConfig.CLIENT.infoButtonLayoutPos
-        var offsetX = layoutPos.offsetX(isCreative)
-        var offsetY = layoutPos.offsetY(isCreative)
 
-        InformationType.entries.forEach {
-            if (ClientHasInfoAccessoryData[it]) {
-                event.addListener(
-                    InfoButton(
-                        gui.guiLeft + offsetX,
-                        gui.guiTop + offsetY,
-                        InfoButton.TIME_WIDGET,
-                        InformationType.TIME
-                    )
-                )
-                offsetX += layoutPos.increaseX()
-                offsetY += layoutPos.increaseY()
-            }
-        }
+        event.addListener(
+            InfoButtonListWidget(
+                gui.guiLeft,
+                gui.guiTop,
+                ClientModConfig.CLIENT.infoButtonLayoutPos,
+                isCreative
+            )
+        )
     }
 
     @SubscribeEvent
