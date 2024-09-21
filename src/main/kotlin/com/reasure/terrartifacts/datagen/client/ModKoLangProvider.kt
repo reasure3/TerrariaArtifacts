@@ -42,7 +42,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TIME_MORNING_KEY, "오전")
         add(TranslationKeys.TIME_AFTERNOON_KEY, "오후")
         add(TranslationKeys.TIME_BUTTON_MESSAGE, "시간")
-        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (\uD83D\uDCA7 %2\$s%%, ⚡ %3\$s%%)")
+        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (💧 %2\$s%%, ⚡ %3\$s%%)")
         add(TranslationKeys.WEATHER_CLEAR_KEY, "맑음")
         add(TranslationKeys.WEATHER_CLOUDY_KEY, "흐림")
         add(TranslationKeys.WEATHER_RAIN_KEY, "비")
