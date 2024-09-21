@@ -8,6 +8,11 @@ import net.minecraft.data.PackOutput
 class ModKoLangProvider(output: PackOutput) :
     ModBaseLangProvider(output, "ko_kr") {
     override fun addItems() {
+        add(ModItems.COPPER_CLOCK, "기본 구리 시계")
+        add(ModItems.TIN_CLOCK, "기본 주석 시계")
+        add(ModItems.SILVER_CLOCK, "기본 은 시계")
+        add(ModItems.TUNGSTEN_CLOCK, "기본 텅스텐 시계")
+        add(ModItems.PLATINUM_CLOCK, "기본 백금 시계")
         add(ModItems.COPPER_WATCH, "구리 시계")
         add(ModItems.TIN_WATCH, "주석 시계")
         add(ModItems.SILVER_WATCH, "은 시계")

@@ -33,6 +33,7 @@ object ModDataGenerators {
                     lookupProvider
                 )
             )
+            addProvider(event.includeServer(), ModRecipeProvider(output, lookupProvider))
             addProvider(event.includeServer(), ModCuriosDataProvider(output, exFileHelper, lookupProvider))
 
             addProvider(

@@ -10,6 +10,12 @@ import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 object ModItems {
     val ITEMS: DeferredRegister.Items = DeferredRegister.createItems(Terrartifacts.ID)
 
+    val COPPER_CLOCK: Item by ITEMS.register("copper_clock") { -> Item(Item.Properties()) }
+    val TIN_CLOCK: Item by ITEMS.register("tin_clock") { -> Item(Item.Properties()) }
+    val SILVER_CLOCK: Item by ITEMS.register("silver_clock") { -> Item(Item.Properties()) }
+    val TUNGSTEN_CLOCK: Item by ITEMS.register("tungsten_clock") { -> Item(Item.Properties()) }
+    val PLATINUM_CLOCK: Item by ITEMS.register("platinum_clock") { -> Item(Item.Properties()) }
+
     val COPPER_WATCH: Item by ITEMS.register("copper_watch") { ->
         WatchItem(Item.Properties().rarity(ModRarity.WHITE), WatchType.HOUR)
     }

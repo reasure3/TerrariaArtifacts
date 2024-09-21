@@ -8,6 +8,11 @@ import net.minecraft.data.PackOutput
 class ModEnLangProvider(output: PackOutput) :
     ModBaseLangProvider(output, "en_us") {
     override fun addItems() {
+        add(ModItems.COPPER_CLOCK, "Copper Clock")
+        add(ModItems.TIN_CLOCK, "Tin Clock")
+        add(ModItems.SILVER_CLOCK, "Silver Clock")
+        add(ModItems.TUNGSTEN_CLOCK, "Tungsten Clock")
+        add(ModItems.PLATINUM_CLOCK, "Platinum Clock")
         add(ModItems.COPPER_WATCH, "Copper Watch")
         add(ModItems.TIN_WATCH, "Tin Watch")
         add(ModItems.SILVER_WATCH, "Silver Watch")

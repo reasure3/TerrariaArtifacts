@@ -7,6 +7,7 @@ import net.minecraft.core.registries.Registries
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.Items
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
 
@@ -19,12 +20,20 @@ object ModCreativeTabs {
             .icon { ItemStack(ModItems.COPPER_WATCH) }
             .title(Component.translatable(TranslationKeys.GROUP_TERRARTIFACTS_KEY))
             .displayItems { _, entries ->
-                entries.accept(ItemStack(ModItems.COPPER_WATCH))
-                entries.accept(ItemStack(ModItems.TIN_WATCH))
-                entries.accept(ItemStack(ModItems.SILVER_WATCH))
-                entries.accept(ItemStack(ModItems.TUNGSTEN_WATCH))
-                entries.accept(ItemStack(ModItems.GOLD_WATCH))
-                entries.accept(ItemStack(ModItems.PLATINUM_WATCH))
+                with(entries) {
+                    accept(ModItems.COPPER_CLOCK)
+                    accept(ModItems.TIN_CLOCK)
+                    accept(ModItems.SILVER_CLOCK)
+                    accept(ModItems.TUNGSTEN_CLOCK)
+                    accept(Items.CLOCK)
+                    accept(ModItems.PLATINUM_CLOCK)
+                    accept(ModItems.COPPER_WATCH)
+                    accept(ModItems.TIN_WATCH)
+                    accept(ModItems.SILVER_WATCH)
+                    accept(ModItems.TUNGSTEN_WATCH)
+                    accept(ModItems.GOLD_WATCH)
+                    accept(ModItems.PLATINUM_WATCH)
+                }
             }
             .build()
     }
@@ -35,7 +44,7 @@ object ModCreativeTabs {
             .title(Component.translatable(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY))
             .alignedRight()
             .withSearchBar()
-            .displayItems{ parameters, entries ->
+            .displayItems { parameters, entries ->
                 if (parameters.hasPermissions) {
                     ModItems.ITEMS.entries.forEach {
                         entries.accept(ItemStack(it))

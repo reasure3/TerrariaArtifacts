@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "terrartifacts:tungsten_clock"
+    },
+    {
+      "tag": "c:chains"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "terrartifacts:tungsten_watch"
+  }
+}
