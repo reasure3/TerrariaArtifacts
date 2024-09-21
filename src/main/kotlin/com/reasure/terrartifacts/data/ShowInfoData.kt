@@ -15,7 +15,8 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
  * 인벤토리 화면에서 플레이어가 직접 수정 가능
  */
 data class ShowInfoData(
-    var showTime: Boolean = true
+    var showTime: Boolean = true,
+    var showWeather: Boolean = true
 ) : CustomPacketPayload {
     fun copyFrom(data: ShowInfoData) {
         showTime = data.showTime
@@ -25,10 +26,12 @@ data class ShowInfoData(
 
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
+        InformationType.WEATHER -> showWeather
     }
 
     operator fun set(type: InformationType, value: Boolean) = when (type) {
         InformationType.TIME -> showTime = value
+        InformationType.WEATHER -> showWeather = value
     }
 
     companion object {

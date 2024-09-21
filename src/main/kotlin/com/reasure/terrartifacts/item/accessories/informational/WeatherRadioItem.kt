@@ -1,15 +1,14 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
+import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.network.chat.Component
+import net.minecraft.world.item.Item.Properties
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class WatchItem(properties: Properties, private val watchType: WatchType) :
-    AbstractInformationalItem(properties, InformationType.TIME), IWatch {
-
-    override fun shouldUseInfoPacket(): Boolean = true
-
-    override fun watchType(): WatchType = this.watchType
+class WeatherRadioItem(properties: Properties) : AbstractInformationalItem(properties, InformationType.WEATHER),
+    IWeatherRadio {
+    override fun shouldUseInfoPacket(): Boolean = false
 
     override fun appendHoverText(
         stack: ItemStack,
@@ -18,6 +17,6 @@ class WatchItem(properties: Properties, private val watchType: WatchType) :
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(watchType.tooltip)
+        tooltipComponents.add(Component.translatable(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY))
     }
 }

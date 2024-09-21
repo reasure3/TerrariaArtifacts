@@ -24,6 +24,7 @@ class ModItemTagsProvider(
             .add(ModItems.TUNGSTEN_WATCH)
             .add(ModItems.GOLD_WATCH)
             .add(ModItems.PLATINUM_WATCH)
+            .add(ModItems.WEAHER_RADIO)
     }
 
 

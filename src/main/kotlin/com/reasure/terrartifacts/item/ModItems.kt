@@ -3,6 +3,7 @@ package com.reasure.terrartifacts.item
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
+import com.reasure.terrartifacts.item.accessories.informational.WeatherRadioItem
 import net.minecraft.world.item.Item
 import net.neoforged.neoforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.neoforge.forge.getValue
@@ -38,6 +39,10 @@ object ModItems {
 
     val PLATINUM_WATCH: Item by ITEMS.register("platinum_watch") { ->
         WatchItem(Item.Properties().rarity(ModRarity.BLUE), WatchType.MINUTE)
+    }
+
+    val WEAHER_RADIO: Item by ITEMS.register("weather_radio") { ->
+        WeatherRadioItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
     // Below line is for test

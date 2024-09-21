@@ -3,6 +3,7 @@ package com.reasure.terrartifacts.client.handler
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.IWatch
+import com.reasure.terrartifacts.item.accessories.informational.IWeatherRadio
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.util.CuriosUtil
@@ -23,6 +24,9 @@ object InformationHandler {
         if (ClientShowInfoData[InformationType.TIME] && ClientHasInfoAccessoryData.hasTimeInfo()) {
             infoComponent.add(IWatch.getInformation(level, ClientHasInfoAccessoryData.displayTimeType()))
         }
+        if (ClientShowInfoData[InformationType.WEATHER] && ClientHasInfoAccessoryData.hasWeatherInfo) {
+            infoComponent.add(IWeatherRadio.getInformation(player))
+        }
     }
 
     private fun checkInventory(player: LocalPlayer) {
@@ -30,13 +34,15 @@ object InformationHandler {
         val inventory = CuriosUtil.getAccessories(player)
         inventory.addAll(player.inventory.items)
         for (stack in inventory) {
-            when (val item = stack.item) {
-                is IWatch -> when (item.watchType()) {
+            val item = stack.item
+            if (item is IWatch) {
+                when (item.watchType()) {
                     WatchType.MINUTE -> ClientHasInfoAccessoryData.hasMinInfo = true
                     WatchType.HALF_HOUR -> ClientHasInfoAccessoryData.hasHalfHourInfo = true
                     WatchType.HOUR -> ClientHasInfoAccessoryData.hasHourInfo = true
                 }
             }
+            if (item is IWeatherRadio) ClientHasInfoAccessoryData.hasWeatherInfo = true
         }
     }
 

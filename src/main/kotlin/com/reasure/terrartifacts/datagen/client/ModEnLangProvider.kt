@@ -19,6 +19,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.TUNGSTEN_WATCH, "Tungsten Watch")
         add(ModItems.GOLD_WATCH, "Gold Watch")
         add(ModItems.PLATINUM_WATCH, "Platinum Watch")
+        add(ModItems.WEAHER_RADIO, "Weather Radio")
     }
 
     override fun addBlocks() {
@@ -29,6 +30,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.HOUR_TOOLTIP_KEY, "Displays the time down to the hour")
         add(TranslationKeys.HALF_HOUR_TOOLTIP_KEY, "Displays the time down to the half-hour")
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "Displays the time down to the minute")
+        add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "Displays the weather")
     }
 
     override fun addGui() {
@@ -39,6 +41,13 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TIME_MORNING_KEY, "AM")
         add(TranslationKeys.TIME_AFTERNOON_KEY, "PM")
         add(TranslationKeys.TIME_BUTTON_MESSAGE, "Time")
+        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (\uD83D\uDCA7 %2\$s%%, ⚡ %3\$s%%)")
+        add(TranslationKeys.WEATHER_CLEAR_KEY, "Clear")
+        add(TranslationKeys.WEATHER_CLOUDY_KEY, "Cloudy")
+        add(TranslationKeys.WEATHER_RAIN_KEY, "Rain")
+        add(TranslationKeys.WEATHER_SNOW_KEY, "Snow")
+        add(TranslationKeys.WEATHER_THUNDER_KEY, "Thunder")
+        add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "Weather")
     }
 
     override fun addConfigs() {

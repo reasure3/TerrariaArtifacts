@@ -19,6 +19,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.TUNGSTEN_WATCH, "텅스텐 시계")
         add(ModItems.GOLD_WATCH, "금 시계")
         add(ModItems.PLATINUM_WATCH, "백금 시계")
+        add(ModItems.WEAHER_RADIO, "날씨 라디오")
     }
 
 
@@ -30,6 +31,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.HOUR_TOOLTIP_KEY, "1시간 단위로 시간을 표시합니다.")
         add(TranslationKeys.HALF_HOUR_TOOLTIP_KEY, "30분 단위로 시간을 표시합니다.")
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "1분 단위로 시간을 표시합니다.")
+        add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "현재 날씨를 표시합니다.")
     }
 
     override fun addGui() {
@@ -40,6 +42,13 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TIME_MORNING_KEY, "오전")
         add(TranslationKeys.TIME_AFTERNOON_KEY, "오후")
         add(TranslationKeys.TIME_BUTTON_MESSAGE, "시간")
+        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (\uD83D\uDCA7 %2\$s%%, ⚡ %3\$s%%)")
+        add(TranslationKeys.WEATHER_CLEAR_KEY, "맑음")
+        add(TranslationKeys.WEATHER_CLOUDY_KEY, "흐림")
+        add(TranslationKeys.WEATHER_RAIN_KEY, "비")
+        add(TranslationKeys.WEATHER_SNOW_KEY, "눈")
+        add(TranslationKeys.WEATHER_THUNDER_KEY, "천둥번개")
+        add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "날씨")
     }
 
     override fun addConfigs() {

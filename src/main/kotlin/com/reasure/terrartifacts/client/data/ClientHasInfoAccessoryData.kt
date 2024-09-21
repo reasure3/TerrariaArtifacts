@@ -13,6 +13,7 @@ object ClientHasInfoAccessoryData {
     var hasMinInfo: Boolean = false
     var hasHalfHourInfo: Boolean = false
     var hasHourInfo: Boolean = false
+    var hasWeatherInfo: Boolean = false
 
     fun hasTimeInfo(): Boolean = hasMinInfo || hasHalfHourInfo || hasHourInfo
     fun displayTimeType(): WatchType =
@@ -24,9 +25,11 @@ object ClientHasInfoAccessoryData {
         hasMinInfo = false
         hasHalfHourInfo = false
         hasHourInfo = false
+        hasWeatherInfo = false
     }
 
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> hasTimeInfo()
+        InformationType.WEATHER -> hasWeatherInfo
     }
 }

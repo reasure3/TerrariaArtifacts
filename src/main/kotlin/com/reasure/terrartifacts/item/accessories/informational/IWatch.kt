@@ -1,17 +1,13 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
-import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.Style
 import net.minecraft.world.level.Level
 
 interface IWatch {
     fun watchType(): WatchType
 
     companion object {
-        private val ICON = Style.EMPTY.withFont(Terrartifacts.modLoc("terraria"))
-
         fun getInformation(level: Level, type: WatchType): Component {
             val formattedTime = formatTime(level.dayTime(), type)
             val amPmComponent =
@@ -20,7 +16,7 @@ interface IWatch {
                 else
                     Component.translatable(TranslationKeys.TIME_AFTERNOON_KEY)
             return Component.translatable(TranslationKeys.INFO_TIME_KEY, amPmComponent, formattedTime)
-                .withStyle(ICON)
+                .withStyle(AbstractInformationalItem.ICON)
         }
 
         private fun formatTime(daytime: Long, type: WatchType): String {
