@@ -19,7 +19,6 @@ class InfoButton(
     OnPress { ClientShowInfoData.toggleData(type) },
     type.message
 ) {
-
     override fun renderWidget(guiGraphics: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
         guiGraphics.blitSprite(sprites[isToggled(), isHoveredOrFocused], x, y, width, height)
 

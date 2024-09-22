@@ -14,14 +14,14 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
  * 인벤토리 화면에서 플레이어가 직접 수정 가능
  */
 data class ShowInfoData(
-    var showTime: Boolean = true,
-    var showWeather: Boolean = true
+    var showTime: Boolean,
+    var showWeather: Boolean
 ) : CustomPacketPayload {
     fun copyFrom(data: ShowInfoData) {
         showTime = data.showTime
     }
 
-    fun clone(): ShowInfoData = ShowInfoData(showTime)
+    fun clone(): ShowInfoData = ShowInfoData(showTime, showWeather)
 
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
@@ -39,6 +39,12 @@ data class ShowInfoData(
     }
 
     companion object {
+
+        fun create(): ShowInfoData = ShowInfoData(
+            showTime = true,
+            showWeather = true
+        )
+
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
             instance.group(
                 Codec.BOOL.fieldOf("showTime").forGetter(ShowInfoData::showTime),
@@ -47,7 +53,8 @@ data class ShowInfoData(
         }
 
         fun decode(buffer: ByteBuf): ShowInfoData = ShowInfoData(
-            buffer.readBoolean(), buffer.readBoolean()
+            buffer.readBoolean(),
+            buffer.readBoolean()
         )
 
         val TYPE = CustomPacketPayload.Type<ShowInfoData>(Terrartifacts.modLoc("show_info_data"))

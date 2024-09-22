@@ -21,7 +21,8 @@ object ClientShowInfoData {
     private fun sendDataToServer() {
         PacketDistributor.sendToServer(
             ShowInfoData(
-                showTime = ClientShowInfoData[InformationType.TIME]
+                showTime = ClientShowInfoData[InformationType.TIME],
+                showWeather = ClientShowInfoData[InformationType.WEATHER]
             )
         )
     }

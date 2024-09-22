@@ -11,6 +11,6 @@ object ModDataAttachments {
         DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, Terrartifacts.ID)
 
     val SHOW_INFO: AttachmentType<ShowInfoData> by ATTACHMENT_TYPES.register("show_info") { ->
-        AttachmentType.builder(::ShowInfoData).serialize(ShowInfoData.CODEC).build()
+        AttachmentType.builder(ShowInfoData::create).serialize(ShowInfoData.CODEC).build()
     }
 }
