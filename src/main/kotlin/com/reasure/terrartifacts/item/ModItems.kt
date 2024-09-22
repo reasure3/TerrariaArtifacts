@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.item
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.item.accessories.informational.FishermanPocketGuideItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.item.accessories.informational.WeatherRadioItem
@@ -43,6 +44,10 @@ object ModItems {
 
     val WEATHER_RADIO: Item by ITEMS.register("weather_radio") { ->
         WeatherRadioItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val FISHERMAN_POCKET_GUIDE: Item by ITEMS.register("fisherman_pocket_guide") { ->
+        FishermanPocketGuideItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
     // Below line is for test

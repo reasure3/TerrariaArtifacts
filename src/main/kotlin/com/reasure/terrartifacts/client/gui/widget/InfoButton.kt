@@ -45,9 +45,17 @@ class InfoButton(
             Terrartifacts.modLoc("icon/weather_disabled_focused")
         )
 
+        val FISHING_POWER_WIDGET = WidgetSprites(
+            Terrartifacts.modLoc("icon/fishing_power"),
+            Terrartifacts.modLoc("icon/fishing_power_disabled"),
+            Terrartifacts.modLoc("icon/fishing_power_focused"),
+            Terrartifacts.modLoc("icon/fishing_power_disabled_focused")
+        )
+
         fun getWidget(type: InformationType): WidgetSprites = when (type) {
             InformationType.TIME -> TIME_WIDGET
             InformationType.WEATHER -> WEATHER_WIDGET
+            InformationType.FISHING_POWER -> FISHING_POWER_WIDGET
         }
     }
 }

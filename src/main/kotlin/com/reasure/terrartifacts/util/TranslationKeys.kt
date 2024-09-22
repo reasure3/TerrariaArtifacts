@@ -20,4 +20,7 @@ object TranslationKeys {
     const val WEATHER_SNOW_KEY = "${Terrartifacts.ID}.weather_snow"
     const val WEATHER_THUNDER_KEY = "${Terrartifacts.ID}.weather_thunder"
     const val WEATHER_BUTTON_MESSAGE = "${Terrartifacts.ID}.message.button.info.weather"
+    const val INFO_FISHING_POWER_KEY = "${Terrartifacts.ID}.info.fishing_power"
+    const val FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY = "${Terrartifacts.ID}.tooltip.fisherman_pocket_guide"
+    const val FISHING_POWER_BUTTON_MESSAGE = "${Terrartifacts.ID}.message.button.info.fishing_power"
 }

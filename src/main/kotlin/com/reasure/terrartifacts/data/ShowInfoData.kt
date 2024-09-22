@@ -15,32 +15,38 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
  */
 data class ShowInfoData(
     val showTime: Boolean,
-    val showWeather: Boolean
+    val showWeather: Boolean,
+    val showFishingPower: Boolean
 ) : CustomPacketPayload {
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
         InformationType.WEATHER -> showWeather
+        InformationType.FISHING_POWER -> showFishingPower
     }
 
     fun encode(buffer: ByteBuf) {
         buffer.writeBoolean(showTime)
         buffer.writeBoolean(showWeather)
+        buffer.writeBoolean(showFishingPower)
     }
 
     companion object {
         fun create(): ShowInfoData = ShowInfoData(
             showTime = true,
-            showWeather = true
+            showWeather = true,
+            showFishingPower = true
         )
 
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
             instance.group(
                 Codec.BOOL.fieldOf("showTime").forGetter(ShowInfoData::showTime),
-                Codec.BOOL.fieldOf("showWeather").forGetter(ShowInfoData::showWeather)
+                Codec.BOOL.fieldOf("showWeather").forGetter(ShowInfoData::showWeather),
+                Codec.BOOL.fieldOf("showFishingPower").forGetter(ShowInfoData::showFishingPower)
             ).apply(instance, ::ShowInfoData)
         }
 
         fun decode(buffer: ByteBuf): ShowInfoData = ShowInfoData(
+            buffer.readBoolean(),
             buffer.readBoolean(),
             buffer.readBoolean()
         )

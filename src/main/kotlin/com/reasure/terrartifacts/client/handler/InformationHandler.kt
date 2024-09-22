@@ -2,6 +2,7 @@ package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
+import com.reasure.terrartifacts.item.accessories.informational.IFishermanPocketGuide
 import com.reasure.terrartifacts.item.accessories.informational.IWatch
 import com.reasure.terrartifacts.item.accessories.informational.IWeatherRadio
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
@@ -27,6 +28,9 @@ object InformationHandler {
         if (ClientShowInfoData[InformationType.WEATHER] && ClientHasInfoAccessoryData.hasWeatherInfo) {
             infoComponent.add(IWeatherRadio.getInformation(player))
         }
+        if (ClientShowInfoData[InformationType.FISHING_POWER] && ClientHasInfoAccessoryData.hasFishingPowerInfo) {
+            infoComponent.add(IFishermanPocketGuide.getInformation(player))
+        }
     }
 
     private fun checkInventory(player: LocalPlayer) {
@@ -43,6 +47,7 @@ object InformationHandler {
                 }
             }
             if (item is IWeatherRadio) ClientHasInfoAccessoryData.hasWeatherInfo = true
+            if (item is IFishermanPocketGuide) ClientHasInfoAccessoryData.hasFishingPowerInfo = true
         }
     }
 

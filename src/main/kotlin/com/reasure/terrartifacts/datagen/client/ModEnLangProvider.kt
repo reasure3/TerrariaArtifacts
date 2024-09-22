@@ -20,6 +20,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.GOLD_WATCH, "Gold Watch")
         add(ModItems.PLATINUM_WATCH, "Platinum Watch")
         add(ModItems.WEATHER_RADIO, "Weather Radio")
+        add(ModItems.FISHERMAN_POCKET_GUIDE, "Fisherman's Pocket Guide")
     }
 
     override fun addBlocks() {
@@ -31,6 +32,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.HALF_HOUR_TOOLTIP_KEY, "Displays the time down to the half-hour")
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "Displays the time down to the minute")
         add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "Displays the weather")
+        add(TranslationKeys.FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY, "Displays fishing power")
     }
 
     override fun addGui() {
@@ -48,6 +50,8 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.WEATHER_SNOW_KEY, "Snow")
         add(TranslationKeys.WEATHER_THUNDER_KEY, "Thunder")
         add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "Weather")
+        add(TranslationKeys.INFO_FISHING_POWER_KEY, "⑶ Luck: %s")
+        add(TranslationKeys.FISHING_POWER_BUTTON_MESSAGE, "Fishing Power")
     }
 
     override fun addConfigs() {

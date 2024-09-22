@@ -22,7 +22,8 @@ object ClientShowInfoData {
         PacketDistributor.sendToServer(
             ShowInfoData(
                 showTime = ClientShowInfoData[InformationType.TIME],
-                showWeather = ClientShowInfoData[InformationType.WEATHER]
+                showWeather = ClientShowInfoData[InformationType.WEATHER],
+                showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER]
             )
         )
     }

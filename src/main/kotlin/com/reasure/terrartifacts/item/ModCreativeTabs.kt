@@ -35,6 +35,7 @@ object ModCreativeTabs {
                     accept(ModItems.GOLD_WATCH)
                     accept(ModItems.PLATINUM_WATCH)
                     accept(ModItems.WEATHER_RADIO)
+                    accept(ModItems.FISHERMAN_POCKET_GUIDE)
                 }
             }
             .build()

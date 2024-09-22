@@ -20,6 +20,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.GOLD_WATCH, "금 시계")
         add(ModItems.PLATINUM_WATCH, "백금 시계")
         add(ModItems.WEATHER_RADIO, "날씨 라디오")
+        add(ModItems.FISHERMAN_POCKET_GUIDE, "낚시꾼의 휴대용 가이드")
     }
 
 
@@ -32,6 +33,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.HALF_HOUR_TOOLTIP_KEY, "30분 단위로 시간을 표시합니다.")
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "1분 단위로 시간을 표시합니다.")
         add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "현재 날씨를 표시합니다.")
+        add(TranslationKeys.FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY, "낚시 힘을 표시합니다.")
     }
 
     override fun addGui() {
@@ -49,6 +51,8 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.WEATHER_SNOW_KEY, "눈")
         add(TranslationKeys.WEATHER_THUNDER_KEY, "천둥번개")
         add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "날씨")
+        add(TranslationKeys.INFO_FISHING_POWER_KEY, "⑶ 운: %s")
+        add(TranslationKeys.FISHING_POWER_BUTTON_MESSAGE, "낚시 힘")
     }
 
     override fun addConfigs() {
