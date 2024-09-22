@@ -3,15 +3,13 @@ package com.reasure.terrartifacts.item.accessories.informational
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.network.chat.Component
-import net.minecraft.world.entity.ai.attributes.Attributes
 
-interface IFishermanPocketGuide {
+interface IDepthMeter {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
-            val luck = player.attributes.getValue(Attributes.LUCK)
             return Component.translatable(
-                TranslationKeys.INFO_FISHING_POWER_KEY,
-                String.format("%.1f", luck)
+                TranslationKeys.INFO_DEPTH_KEY,
+                String.format("%.1f", player.y)
             ).withStyle(AbstractInformationalItem.ICON)
         }
     }

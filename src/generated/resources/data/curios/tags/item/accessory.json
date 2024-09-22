@@ -7,6 +7,9 @@
     "terrartifacts:gold_watch",
     "terrartifacts:platinum_watch",
     "terrartifacts:weather_radio",
-    "terrartifacts:fisherman_pocket_guide"
+    "terrartifacts:fisherman_pocket_guide",
+    "terrartifacts:compass",
+    "terrartifacts:depth_meter",
+    "terrartifacts:gps"
   ]
 }

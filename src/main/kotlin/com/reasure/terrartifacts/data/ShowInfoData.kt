@@ -16,36 +16,48 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 data class ShowInfoData(
     val showTime: Boolean,
     val showWeather: Boolean,
-    val showFishingPower: Boolean
+    val showFishingPower: Boolean,
+    val showDirection: Boolean,
+    val showDepth: Boolean
 ) : CustomPacketPayload {
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
         InformationType.WEATHER -> showWeather
         InformationType.FISHING_POWER -> showFishingPower
+        InformationType.DIRECTION -> showDirection
+        InformationType.DEPTH -> showDepth
     }
 
     fun encode(buffer: ByteBuf) {
         buffer.writeBoolean(showTime)
         buffer.writeBoolean(showWeather)
         buffer.writeBoolean(showFishingPower)
+        buffer.writeBoolean(showDirection)
+        buffer.writeBoolean(showDepth)
     }
 
     companion object {
         fun create(): ShowInfoData = ShowInfoData(
             showTime = true,
             showWeather = true,
-            showFishingPower = true
+            showFishingPower = true,
+            showDirection = true,
+            showDepth = true
         )
 
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
             instance.group(
                 Codec.BOOL.fieldOf("showTime").forGetter(ShowInfoData::showTime),
                 Codec.BOOL.fieldOf("showWeather").forGetter(ShowInfoData::showWeather),
-                Codec.BOOL.fieldOf("showFishingPower").forGetter(ShowInfoData::showFishingPower)
+                Codec.BOOL.fieldOf("showFishingPower").forGetter(ShowInfoData::showFishingPower),
+                Codec.BOOL.fieldOf("showDirection").forGetter(ShowInfoData::showDirection),
+                Codec.BOOL.fieldOf("showDepth").forGetter(ShowInfoData::showDepth)
             ).apply(instance, ::ShowInfoData)
         }
 
         fun decode(buffer: ByteBuf): ShowInfoData = ShowInfoData(
+            buffer.readBoolean(),
+            buffer.readBoolean(),
             buffer.readBoolean(),
             buffer.readBoolean(),
             buffer.readBoolean()

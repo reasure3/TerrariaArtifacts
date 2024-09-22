@@ -10,12 +10,15 @@ import net.minecraft.client.gui.components.ImageButton
 import net.minecraft.client.gui.components.WidgetSprites
 
 class InfoButton(
-    x: Int,
-    y: Int,
-    sprites: WidgetSprites,
-    val type: InformationType
+    x: Int, y: Int, val type: InformationType
 ) : ImageButton(
-    x, y, 9, 9, sprites,
+    x, y, 9, 9,
+    WidgetSprites(
+        Terrartifacts.modLoc("icon/${type.id}"),
+        Terrartifacts.modLoc("icon/${type.id}_disabled"),
+        Terrartifacts.modLoc("icon/${type.id}_focused"),
+        Terrartifacts.modLoc("icon/${type.id}_disabled_focused")
+    ),
     OnPress { ClientShowInfoData.toggleData(type) },
     type.message
 ) {
@@ -29,33 +32,4 @@ class InfoButton(
     }
 
     private fun isToggled(): Boolean = ClientShowInfoData[type]
-
-    companion object {
-        val TIME_WIDGET = WidgetSprites(
-            Terrartifacts.modLoc("icon/time"),
-            Terrartifacts.modLoc("icon/time_disabled"),
-            Terrartifacts.modLoc("icon/time_focused"),
-            Terrartifacts.modLoc("icon/time_disabled_focused")
-        )
-
-        val WEATHER_WIDGET = WidgetSprites(
-            Terrartifacts.modLoc("icon/weather"),
-            Terrartifacts.modLoc("icon/weather_disabled"),
-            Terrartifacts.modLoc("icon/weather_focused"),
-            Terrartifacts.modLoc("icon/weather_disabled_focused")
-        )
-
-        val FISHING_POWER_WIDGET = WidgetSprites(
-            Terrartifacts.modLoc("icon/fishing_power"),
-            Terrartifacts.modLoc("icon/fishing_power_disabled"),
-            Terrartifacts.modLoc("icon/fishing_power_focused"),
-            Terrartifacts.modLoc("icon/fishing_power_disabled_focused")
-        )
-
-        fun getWidget(type: InformationType): WidgetSprites = when (type) {
-            InformationType.TIME -> TIME_WIDGET
-            InformationType.WEATHER -> WEATHER_WIDGET
-            InformationType.FISHING_POWER -> FISHING_POWER_WIDGET
-        }
-    }
 }

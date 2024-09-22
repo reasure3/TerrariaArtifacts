@@ -33,6 +33,9 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.PLATINUM_WATCH)
         basicItem(ModItems.WEATHER_RADIO)
         basicItem(ModItems.FISHERMAN_POCKET_GUIDE)
+        basicItem(ModItems.COMPASS)
+        basicItem(ModItems.DEPTH_METER)
+        basicItem(ModItems.GPS)
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {

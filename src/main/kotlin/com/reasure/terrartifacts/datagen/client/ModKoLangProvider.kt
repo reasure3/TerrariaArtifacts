@@ -21,6 +21,9 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.PLATINUM_WATCH, "백금 시계")
         add(ModItems.WEATHER_RADIO, "날씨 라디오")
         add(ModItems.FISHERMAN_POCKET_GUIDE, "낚시꾼의 휴대용 가이드")
+        add(ModItems.COMPASS, "나침반")
+        add(ModItems.DEPTH_METER, "깊이 측정기")
+        add(ModItems.GPS, "GPS")
     }
 
 
@@ -34,6 +37,8 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "1분 단위로 시간을 표시합니다.")
         add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "현재 날씨를 표시합니다.")
         add(TranslationKeys.FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY, "낚시 힘을 표시합니다.")
+        add(TranslationKeys.COMPASS_TOOLTIP_KEY, "수평 방향 정보를 표시합니다.")
+        add(TranslationKeys.DEPTH_METER_TOOLTIP_KEY, "수직 방향 정보를 표시합니다.")
     }
 
     override fun addGui() {
@@ -53,6 +58,10 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "날씨")
         add(TranslationKeys.INFO_FISHING_POWER_KEY, "⑶ 운: %s")
         add(TranslationKeys.FISHING_POWER_BUTTON_MESSAGE, "낚시 힘")
+        add(TranslationKeys.INFO_DIRECTION_KEY, "⑷ X: %1\$s, Z: %1\$s")
+        add(TranslationKeys.DIRECTION_BUTTON_MESSAGE, "수평 방향")
+        add(TranslationKeys.INFO_DEPTH_KEY, "⑸ 깊이: %s")
+        add(TranslationKeys.DEPTH_BUTTON_MESSAGE, "깊이")
     }
 
     override fun addConfigs() {

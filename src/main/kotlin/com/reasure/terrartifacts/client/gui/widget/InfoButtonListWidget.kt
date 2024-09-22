@@ -14,9 +14,7 @@ class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCr
         guiX + layout.offsetX(isCreative), guiY + layout.offsetY(isCreative), layout.width, layout.height,
         Component.literal("info toggle buttons")
     ) {
-    val buttons = InformationType.entries.map {
-        InfoButton(0, 0, InfoButton.getWidget(it), it)
-    }
+    val buttons = InformationType.entries.map { InfoButton(0, 0, it) }
 
     override fun renderWidget(
         gui: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float

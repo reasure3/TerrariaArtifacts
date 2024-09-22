@@ -1,4 +1,4 @@
-package com.reasure.terrartifacts.datagen.client
+package com.reasure.terrartifacts.datagen
 
 import com.reasure.terrartifacts.Terrartifacts
 import net.minecraft.core.HolderLookup

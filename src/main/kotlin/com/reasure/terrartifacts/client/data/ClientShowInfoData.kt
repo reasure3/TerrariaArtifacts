@@ -23,7 +23,9 @@ object ClientShowInfoData {
             ShowInfoData(
                 showTime = ClientShowInfoData[InformationType.TIME],
                 showWeather = ClientShowInfoData[InformationType.WEATHER],
-                showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER]
+                showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
+                showDirection = ClientHasInfoAccessoryData[InformationType.DIRECTION],
+                showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH]
             )
         )
     }

@@ -36,6 +36,9 @@ object ModCreativeTabs {
                     accept(ModItems.PLATINUM_WATCH)
                     accept(ModItems.WEATHER_RADIO)
                     accept(ModItems.FISHERMAN_POCKET_GUIDE)
+                    accept(ModItems.COMPASS)
+                    accept(ModItems.DEPTH_METER)
+                    accept(ModItems.GPS)
                 }
             }
             .build()

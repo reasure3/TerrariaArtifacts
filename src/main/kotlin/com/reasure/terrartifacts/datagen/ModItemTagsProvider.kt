@@ -17,6 +17,10 @@ class ModItemTagsProvider(
     exFileHelper: ExistingFileHelper
 ) : ItemTagsProvider(output, registries, blockTags, Terrartifacts.ID, exFileHelper) {
     override fun addTags(provider: HolderLookup.Provider) {
+        tag(ModTags.Items.FULL_WATCH)
+            .add(ModItems.GOLD_WATCH)
+            .add(ModItems.PLATINUM_WATCH)
+
         tag(ModTags.Items.CURIOS_ACCESSORIES)
             .add(ModItems.COPPER_WATCH)
             .add(ModItems.TIN_WATCH)
@@ -26,5 +30,8 @@ class ModItemTagsProvider(
             .add(ModItems.PLATINUM_WATCH)
             .add(ModItems.WEATHER_RADIO)
             .add(ModItems.FISHERMAN_POCKET_GUIDE)
+            .add(ModItems.COMPASS)
+            .add(ModItems.DEPTH_METER)
+            .add(ModItems.GPS)
     }
 }

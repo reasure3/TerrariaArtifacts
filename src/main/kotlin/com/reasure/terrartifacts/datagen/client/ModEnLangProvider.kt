@@ -21,6 +21,9 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.PLATINUM_WATCH, "Platinum Watch")
         add(ModItems.WEATHER_RADIO, "Weather Radio")
         add(ModItems.FISHERMAN_POCKET_GUIDE, "Fisherman's Pocket Guide")
+        add(ModItems.COMPASS, "Compass")
+        add(ModItems.DEPTH_METER, "Depth Meter")
+        add(ModItems.GPS, "GPS")
     }
 
     override fun addBlocks() {
@@ -33,6 +36,8 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.MINUTE_TOOLTIP_KEY, "Displays the time down to the minute")
         add(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY, "Displays the weather")
         add(TranslationKeys.FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY, "Displays fishing power")
+        add(TranslationKeys.COMPASS_TOOLTIP_KEY, "Displays the player's horizontal position")
+        add(TranslationKeys.DEPTH_METER_TOOLTIP_KEY, "Displays the player's vertical position")
     }
 
     override fun addGui() {
@@ -52,6 +57,10 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.WEATHER_BUTTON_MESSAGE, "Weather")
         add(TranslationKeys.INFO_FISHING_POWER_KEY, "⑶ Luck: %s")
         add(TranslationKeys.FISHING_POWER_BUTTON_MESSAGE, "Fishing Power")
+        add(TranslationKeys.INFO_DIRECTION_KEY, "⑷ X: %1\$s, Z: %1\$s")
+        add(TranslationKeys.DIRECTION_BUTTON_MESSAGE, "Direction")
+        add(TranslationKeys.INFO_DEPTH_KEY, "⑸ Depth: %s")
+        add(TranslationKeys.DEPTH_BUTTON_MESSAGE, "Depth")
     }
 
     override fun addConfigs() {

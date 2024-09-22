@@ -1,7 +1,10 @@
 package com.reasure.terrartifacts.item
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.item.accessories.informational.CompassItem
+import com.reasure.terrartifacts.item.accessories.informational.DepthMeterItem
 import com.reasure.terrartifacts.item.accessories.informational.FishermanPocketGuideItem
+import com.reasure.terrartifacts.item.accessories.informational.GPSItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.item.accessories.informational.WeatherRadioItem
@@ -48,6 +51,18 @@ object ModItems {
 
     val FISHERMAN_POCKET_GUIDE: Item by ITEMS.register("fisherman_pocket_guide") { ->
         FishermanPocketGuideItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val COMPASS: Item by ITEMS.register("compass") { ->
+        CompassItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val DEPTH_METER: Item by ITEMS.register("depth_meter") { ->
+        DepthMeterItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val GPS: Item by ITEMS.register("gps") { ->
+        GPSItem(Item.Properties().rarity(ModRarity.ORANGE))
     }
 
     // Below line is for test

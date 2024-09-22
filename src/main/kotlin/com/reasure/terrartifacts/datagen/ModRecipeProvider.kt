@@ -30,9 +30,11 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
         watchRecipe(ModItems.TUNGSTEN_WATCH, ModItems.TUNGSTEN_CLOCK, recipeOutput)
         watchRecipe(ModItems.GOLD_WATCH, Items.CLOCK, recipeOutput)
         watchRecipe(ModItems.PLATINUM_WATCH, ModItems.PLATINUM_CLOCK, recipeOutput)
+
+        addTinkersRecipe(recipeOutput)
     }
 
-    fun clockRecipe(clock: Item, mainIngredient: TagKey<Item>, recipeOutput: RecipeOutput) {
+    private fun clockRecipe(clock: Item, mainIngredient: TagKey<Item>, recipeOutput: RecipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, clock)
             .define('#', mainIngredient)
             .define('X', Items.REDSTONE)
@@ -43,11 +45,23 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
             .save(recipeOutput)
     }
 
-    fun watchRecipe(watch: Item, clock: Item, recipeOutput: RecipeOutput) {
+    private fun watchRecipe(watch: Item, clock: Item, recipeOutput: RecipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, watch)
             .requires(clock)
             .requires(Tags.Items.CHAINS)
             .unlockedBy("has_clock", has(clock))
             .save(recipeOutput)
+    }
+
+
+    private fun addTinkersRecipe(output: RecipeOutput) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GPS)
+            .requires(ModTags.Items.FULL_WATCH)
+            .requires(ModItems.COMPASS)
+            .requires(ModItems.DEPTH_METER)
+            .unlockedBy("has_watch", has(ModTags.Items.FULL_WATCH))
+            .unlockedBy("has_compass", has(ModItems.COMPASS))
+            .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
+            .save(output)
     }
 }
