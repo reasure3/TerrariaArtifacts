@@ -41,7 +41,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TIME_MORNING_KEY, "AM")
         add(TranslationKeys.TIME_AFTERNOON_KEY, "PM")
         add(TranslationKeys.TIME_BUTTON_MESSAGE, "Time")
-        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (\uD83D\uDCA7 %2\$s%%, ⚡ %3\$s%%)")
+        add(TranslationKeys.INFO_WEATHER_KEY, "⑵ %1\$s (💧 %2\$s%%, ⚡ %3\$s%%)")
         add(TranslationKeys.WEATHER_CLEAR_KEY, "Clear")
         add(TranslationKeys.WEATHER_CLOUDY_KEY, "Cloudy")
         add(TranslationKeys.WEATHER_RAIN_KEY, "Rain")
