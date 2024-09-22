@@ -10,7 +10,7 @@ class ModServerPayloadHandler {
         fun handle(clientData: ShowInfoData, context: IPayloadContext) {
             context.enqueueWork {
                 val player = context.player()
-                player.setData(ModDataAttachments.SHOW_INFO, clientData.clone())
+                player.setData(ModDataAttachments.SHOW_INFO, clientData.copy())
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null

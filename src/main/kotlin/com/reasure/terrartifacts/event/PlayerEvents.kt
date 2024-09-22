@@ -23,8 +23,8 @@ object PlayerEvents {
     @SubscribeEvent
     fun onPlayerDeath(event: PlayerEvent.Clone) {
         if (event.isWasDeath && event.original.hasData(ModDataAttachments.SHOW_INFO)) {
-            event.entity.getData(ModDataAttachments.SHOW_INFO)
-                .copyFrom(event.original.getData(ModDataAttachments.SHOW_INFO))
+            val old = event.original.getData(ModDataAttachments.SHOW_INFO)
+            event.entity.setData(ModDataAttachments.SHOW_INFO, old.copy())
         }
     }
 }
