@@ -5,7 +5,6 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import io.netty.buffer.ByteBuf
-import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 
@@ -34,20 +33,27 @@ data class ShowInfoData(
         InformationType.WEATHER -> showWeather = value
     }
 
+    fun encode(buffer: ByteBuf) {
+        buffer.writeBoolean(showTime)
+        buffer.writeBoolean(showWeather)
+    }
+
     companion object {
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
             instance.group(
-                Codec.BOOL.fieldOf("showTime").forGetter(ShowInfoData::showTime)
+                Codec.BOOL.fieldOf("showTime").forGetter(ShowInfoData::showTime),
+                Codec.BOOL.fieldOf("showWeather").forGetter(ShowInfoData::showWeather)
             ).apply(instance, ::ShowInfoData)
         }
 
+        fun decode(buffer: ByteBuf): ShowInfoData = ShowInfoData(
+            buffer.readBoolean(), buffer.readBoolean()
+        )
+
         val TYPE = CustomPacketPayload.Type<ShowInfoData>(Terrartifacts.modLoc("show_info_data"))
 
-        val STREAM_CODEC: StreamCodec<ByteBuf, ShowInfoData> = StreamCodec.composite(
-            ByteBufCodecs.BOOL,
-            ShowInfoData::showTime,
-            ::ShowInfoData
-        )
+        val STREAM_CODEC: StreamCodec<ByteBuf, ShowInfoData> =
+            StreamCodec.ofMember(ShowInfoData::encode, ShowInfoData::decode)
     }
 
     override fun type(): CustomPacketPayload.Type<out CustomPacketPayload> = TYPE
