@@ -1,6 +1,5 @@
 package com.reasure.terrartifacts.client
 
-import com.reasure.terrartifacts.client.gui.widget.InfoButton
 import com.reasure.terrartifacts.client.gui.widget.InfoButtonListWidget
 import net.neoforged.neoforge.common.ModConfigSpec
 import kotlin.reflect.KProperty

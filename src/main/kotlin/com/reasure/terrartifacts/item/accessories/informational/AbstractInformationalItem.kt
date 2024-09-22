@@ -4,7 +4,7 @@ import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.AccessoryItem
 import net.minecraft.network.chat.Style
 
-abstract class AbstractInformationalItem(properties: Properties, val infoType: InformationType) :
+abstract class AbstractInformationalItem(properties: Properties) :
     AccessoryItem(properties) {
 
     /**

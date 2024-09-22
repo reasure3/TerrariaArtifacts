@@ -8,9 +8,9 @@ import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
 
+@Suppress("unused")
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.MOD)
 object ModDataGenerators {
-
     @SubscribeEvent
     fun gatherData(event: GatherDataEvent) {
         with(event.generator) {

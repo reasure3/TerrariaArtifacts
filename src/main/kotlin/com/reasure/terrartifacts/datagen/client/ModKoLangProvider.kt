@@ -19,7 +19,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.TUNGSTEN_WATCH, "텅스텐 시계")
         add(ModItems.GOLD_WATCH, "금 시계")
         add(ModItems.PLATINUM_WATCH, "백금 시계")
-        add(ModItems.WEAHER_RADIO, "날씨 라디오")
+        add(ModItems.WEATHER_RADIO, "날씨 라디오")
     }
 
 

@@ -15,6 +15,7 @@ object ModCreativeTabs {
     val CREATIVE_TABS: DeferredRegister<CreativeModeTab> =
         DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Terrartifacts.ID)
 
+    @Suppress("unused")
     val TERRA_ARTIFACTS: CreativeModeTab by CREATIVE_TABS.register("terra_artifacts") { ->
         CreativeModeTab.builder()
             .icon { ItemStack(ModItems.COPPER_WATCH) }
@@ -33,12 +34,13 @@ object ModCreativeTabs {
                     accept(ModItems.TUNGSTEN_WATCH)
                     accept(ModItems.GOLD_WATCH)
                     accept(ModItems.PLATINUM_WATCH)
-                    accept(ModItems.WEAHER_RADIO)
+                    accept(ModItems.WEATHER_RADIO)
                 }
             }
             .build()
     }
 
+    @Suppress("unused")
     val DEVELOP_TAB: CreativeModeTab by CREATIVE_TABS.register("terra_artifacts_develop") { ->
         CreativeModeTab.builder()
             .icon { ItemStack(ModBlocks.EXAMPLE_BLOCK) }

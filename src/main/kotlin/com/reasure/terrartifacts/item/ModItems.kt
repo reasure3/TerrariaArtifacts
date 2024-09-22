@@ -41,16 +41,18 @@ object ModItems {
         WatchItem(Item.Properties().rarity(ModRarity.BLUE), WatchType.MINUTE)
     }
 
-    val WEAHER_RADIO: Item by ITEMS.register("weather_radio") { ->
+    val WEATHER_RADIO: Item by ITEMS.register("weather_radio") { ->
         WeatherRadioItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
     // Below line is for test
 
+    @Suppress("unused")
     val TEST_RAINBOW: Item by ITEMS.register("test_rainbow") { ->
         Item(Item.Properties().rarity(ModRarity.EXPERT))
     }
 
+    @Suppress("unused")
     val TEST_MASTER: Item by ITEMS.register("test_master") { ->
         Item(Item.Properties().rarity(ModRarity.MASTER))
     }

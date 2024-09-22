@@ -5,7 +5,7 @@ import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
 class WatchItem(properties: Properties, private val watchType: WatchType) :
-    AbstractInformationalItem(properties, InformationType.TIME), IWatch {
+    AbstractInformationalItem(properties), IWatch {
 
     override fun shouldUseInfoPacket(): Boolean = true
 

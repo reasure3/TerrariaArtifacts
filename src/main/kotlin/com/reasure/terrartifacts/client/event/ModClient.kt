@@ -15,6 +15,7 @@ import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 
+@Suppress("unused")
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT])
 object ModClient {
     @SubscribeEvent

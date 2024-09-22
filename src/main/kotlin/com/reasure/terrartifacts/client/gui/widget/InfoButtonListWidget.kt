@@ -9,7 +9,7 @@ import net.minecraft.client.gui.components.events.GuiEventListener
 import net.minecraft.client.gui.narration.NarrationElementOutput
 import net.minecraft.network.chat.Component
 
-class InfoButtonListWidget(val guiX: Int, val guiY: Int, val layout: LayoutPos, val isCreative: Boolean) :
+class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCreative: Boolean) :
     AbstractContainerWidget(
         guiX + layout.offsetX(isCreative), guiY + layout.offsetY(isCreative), layout.width, layout.height,
         Component.literal("info toggle buttons")

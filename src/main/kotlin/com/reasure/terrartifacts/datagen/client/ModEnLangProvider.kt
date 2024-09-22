@@ -19,7 +19,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.TUNGSTEN_WATCH, "Tungsten Watch")
         add(ModItems.GOLD_WATCH, "Gold Watch")
         add(ModItems.PLATINUM_WATCH, "Platinum Watch")
-        add(ModItems.WEAHER_RADIO, "Weather Radio")
+        add(ModItems.WEATHER_RADIO, "Weather Radio")
     }
 
     override fun addBlocks() {

@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item.Properties
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class WeatherRadioItem(properties: Properties) : AbstractInformationalItem(properties, InformationType.WEATHER),
+class WeatherRadioItem(properties: Properties) : AbstractInformationalItem(properties),
     IWeatherRadio {
     override fun shouldUseInfoPacket(): Boolean = false
 

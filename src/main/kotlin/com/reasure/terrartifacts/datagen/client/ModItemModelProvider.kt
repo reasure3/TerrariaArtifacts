@@ -31,7 +31,7 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.TUNGSTEN_WATCH)
         basicItem(ModItems.GOLD_WATCH)
         basicItem(ModItems.PLATINUM_WATCH)
-        basicItem(ModItems.WEAHER_RADIO)
+        basicItem(ModItems.WEATHER_RADIO)
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {
