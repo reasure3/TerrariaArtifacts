@@ -19,21 +19,13 @@ data class ShowInfoData(
     val showFishingPower: Boolean,
     val showDirection: Boolean,
     val showDepth: Boolean
-) : CustomPacketPayload {
+) {
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
         InformationType.WEATHER -> showWeather
         InformationType.FISHING_POWER -> showFishingPower
-        InformationType.DIRECTION -> showDirection
+        InformationType.POSITION -> showDirection
         InformationType.DEPTH -> showDepth
-    }
-
-    fun encode(buffer: ByteBuf) {
-        buffer.writeBoolean(showTime)
-        buffer.writeBoolean(showWeather)
-        buffer.writeBoolean(showFishingPower)
-        buffer.writeBoolean(showDirection)
-        buffer.writeBoolean(showDepth)
     }
 
     companion object {
@@ -54,20 +46,5 @@ data class ShowInfoData(
                 Codec.BOOL.fieldOf("showDepth").forGetter(ShowInfoData::showDepth)
             ).apply(instance, ::ShowInfoData)
         }
-
-        fun decode(buffer: ByteBuf): ShowInfoData = ShowInfoData(
-            buffer.readBoolean(),
-            buffer.readBoolean(),
-            buffer.readBoolean(),
-            buffer.readBoolean(),
-            buffer.readBoolean()
-        )
-
-        val TYPE = CustomPacketPayload.Type<ShowInfoData>(Terrartifacts.modLoc("show_info_data"))
-
-        val STREAM_CODEC: StreamCodec<ByteBuf, ShowInfoData> =
-            StreamCodec.ofMember(ShowInfoData::encode, ShowInfoData::decode)
     }
-
-    override fun type(): CustomPacketPayload.Type<out CustomPacketPayload> = TYPE
 }

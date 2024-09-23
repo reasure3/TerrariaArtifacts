@@ -19,6 +19,11 @@ import net.neoforged.api.distmarker.OnlyIn
 object InformationHandler {
     private val infoComponent: MutableList<Component> = mutableListOf()
 
+    fun reset() {
+        infoComponent.clear()
+        ClientHasInfoAccessoryData.reset()
+    }
+
     fun updateInfo(player: LocalPlayer) {
         if ((player.level().dayTime % 10).toInt() == 0)
             checkInventory(player)
@@ -33,7 +38,7 @@ object InformationHandler {
         if (ClientShowInfoData[InformationType.FISHING_POWER] && ClientHasInfoAccessoryData.hasFishingPowerInfo) {
             infoComponent.add(IFishermanPocketGuide.getInformation(player))
         }
-        if (ClientShowInfoData[InformationType.DIRECTION] && ClientHasInfoAccessoryData.hasDirectionInfo) {
+        if (ClientShowInfoData[InformationType.POSITION] && ClientHasInfoAccessoryData.hasDirectionInfo) {
             infoComponent.add(ICompass.getInformation(player))
         }
         if (ClientShowInfoData[InformationType.DEPTH] && ClientHasInfoAccessoryData.hasDepthInfo) {

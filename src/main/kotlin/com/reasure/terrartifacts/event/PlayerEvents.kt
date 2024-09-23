@@ -2,6 +2,8 @@ package com.reasure.terrartifacts.event
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.data.ModDataAttachments
+import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
+import com.reasure.terrartifacts.network.SendShowInfoDataPacket
 import net.minecraft.server.level.ServerPlayer
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -17,7 +19,11 @@ object PlayerEvents {
     fun onPlayerLogin(event: PlayerLoggedInEvent) {
         val player = event.entity
         if (player is ServerPlayer && player !is FakePlayer) {
-            PacketDistributor.sendToPlayer(player, player.getData(ModDataAttachments.SHOW_INFO))
+            PacketDistributor.sendToPlayer(player, PlayerLoggedInS2CPacket())
+            PacketDistributor.sendToPlayer(
+                player,
+                SendShowInfoDataPacket(player.getData(ModDataAttachments.SHOW_INFO))
+            )
         }
     }
 

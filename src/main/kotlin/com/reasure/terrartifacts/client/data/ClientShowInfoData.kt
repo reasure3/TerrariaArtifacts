@@ -2,6 +2,7 @@ package com.reasure.terrartifacts.client.data
 
 import com.reasure.terrartifacts.data.ShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.network.SendShowInfoDataPacket
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.neoforge.network.PacketDistributor
@@ -20,12 +21,14 @@ object ClientShowInfoData {
 
     private fun sendDataToServer() {
         PacketDistributor.sendToServer(
-            ShowInfoData(
-                showTime = ClientShowInfoData[InformationType.TIME],
-                showWeather = ClientShowInfoData[InformationType.WEATHER],
-                showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
-                showDirection = ClientHasInfoAccessoryData[InformationType.DIRECTION],
-                showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH]
+            SendShowInfoDataPacket(
+                ShowInfoData(
+                    showTime = ClientShowInfoData[InformationType.TIME],
+                    showWeather = ClientShowInfoData[InformationType.WEATHER],
+                    showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
+                    showDirection = ClientHasInfoAccessoryData[InformationType.POSITION],
+                    showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH]
+                )
             )
         )
     }
