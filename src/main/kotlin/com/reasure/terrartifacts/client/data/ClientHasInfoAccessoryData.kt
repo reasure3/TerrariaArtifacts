@@ -19,6 +19,7 @@ object ClientHasInfoAccessoryData {
     var hasDepthInfo: Boolean = false
     var hasEnemyCountInfo: Boolean = false
     var hasKillCountInfo: Boolean = false
+    var hasMoonPhaseInfo: Boolean = false
 
     fun hasTimeInfo(): Boolean = hasMinInfo || hasHalfHourInfo || hasHourInfo
     fun displayTimeType(): WatchType =
@@ -33,9 +34,10 @@ object ClientHasInfoAccessoryData {
         hasWeatherInfo = false
         hasFishingPowerInfo = false
         hasDirectionInfo = false
-        hasDirectionInfo = false
+        hasDepthInfo = false
         hasEnemyCountInfo = false
         hasKillCountInfo = false
+        hasMoonPhaseInfo = false
     }
 
     operator fun get(type: InformationType) = when (type) {
@@ -46,5 +48,6 @@ object ClientHasInfoAccessoryData {
         InformationType.DEPTH -> hasDepthInfo
         InformationType.ENEMY_COUNT -> hasEnemyCountInfo
         InformationType.KILL_COUNT -> hasKillCountInfo
+        InformationType.MOON_PHASE -> hasMoonPhaseInfo
     }
 }

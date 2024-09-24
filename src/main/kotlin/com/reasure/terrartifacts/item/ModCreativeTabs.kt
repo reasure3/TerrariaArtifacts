@@ -40,7 +40,9 @@ object ModCreativeTabs {
                     accept(ModItems.DEPTH_METER)
                     accept(ModItems.RADAR)
                     accept(ModItems.TALLY_COUNTER)
+                    accept(ModItems.SEXTANT)
                     accept(ModItems.GPS)
+                    accept(ModItems.FISH_FINDER)
                 }
             }
             .build()

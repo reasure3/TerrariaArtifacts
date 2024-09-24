@@ -8,6 +8,7 @@ import com.reasure.terrartifacts.item.accessories.informational.IDirectionInfo
 import com.reasure.terrartifacts.item.accessories.informational.IEnemyCountInfo
 import com.reasure.terrartifacts.item.accessories.informational.IFishingPowerInfo
 import com.reasure.terrartifacts.item.accessories.informational.IKillCountInfo
+import com.reasure.terrartifacts.item.accessories.informational.IMoonPhaseInfo
 import com.reasure.terrartifacts.item.accessories.informational.ITimeInfo
 import com.reasure.terrartifacts.item.accessories.informational.IWeatherInfo
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
@@ -63,6 +64,9 @@ object InformationHandler {
         if (ClientShowInfoData[InformationType.KILL_COUNT] && ClientHasInfoAccessoryData.hasKillCountInfo) {
             infoComponent.add(killCountComponent)
         }
+        if (ClientShowInfoData[InformationType.MOON_PHASE] && ClientHasInfoAccessoryData.hasMoonPhaseInfo) {
+            infoComponent.add(IMoonPhaseInfo.getInformation(level))
+        }
     }
 
     fun getKillCount(playerKillData: SendPlayerKillCountS2CPacket) {
@@ -98,6 +102,7 @@ object InformationHandler {
             if (item is IDepthInfo) ClientHasInfoAccessoryData.hasDepthInfo = true
             if (item is IEnemyCountInfo) ClientHasInfoAccessoryData.hasEnemyCountInfo = true
             if (item is IKillCountInfo) ClientHasInfoAccessoryData.hasKillCountInfo = true
+            if (item is IMoonPhaseInfo) ClientHasInfoAccessoryData.hasMoonPhaseInfo = true
         }
     }
 

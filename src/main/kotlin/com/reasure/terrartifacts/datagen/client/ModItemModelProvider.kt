@@ -37,7 +37,9 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.DEPTH_METER)
         basicItem(ModItems.RADAR)
         basicItem(ModItems.TALLY_COUNTER)
+        basicItem(ModItems.SEXTANT)
         basicItem(ModItems.GPS)
+        basicItem(ModItems.FISH_FINDER)
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {

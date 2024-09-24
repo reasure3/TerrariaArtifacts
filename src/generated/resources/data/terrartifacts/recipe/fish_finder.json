@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "terrartifacts:weather_radio"
+    },
+    {
+      "item": "terrartifacts:fisherman_pocket_guide"
+    },
+    {
+      "item": "terrartifacts:sextant"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "terrartifacts:fish_finder"
+  }
+}

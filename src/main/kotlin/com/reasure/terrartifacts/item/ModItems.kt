@@ -3,9 +3,11 @@ package com.reasure.terrartifacts.item
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.informational.CompassItem
 import com.reasure.terrartifacts.item.accessories.informational.DepthMeterItem
+import com.reasure.terrartifacts.item.accessories.informational.FishFinderItem
 import com.reasure.terrartifacts.item.accessories.informational.FishermanPocketGuideItem
 import com.reasure.terrartifacts.item.accessories.informational.GPSItem
 import com.reasure.terrartifacts.item.accessories.informational.RadarItem
+import com.reasure.terrartifacts.item.accessories.informational.SextantItem
 import com.reasure.terrartifacts.item.accessories.informational.TallyCounterItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
@@ -71,8 +73,16 @@ object ModItems {
         TallyCounterItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
+    val SEXTANT: Item by ITEMS.register("sextant") { ->
+        SextantItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
     val GPS: Item by ITEMS.register("gps") { ->
         GPSItem(Item.Properties().rarity(ModRarity.ORANGE))
+    }
+
+    val FISH_FINDER: Item by ITEMS.register("fish_finder") { ->
+        FishFinderItem(Item.Properties().rarity(ModRarity.ORANGE))
     }
 
     // Below line is for test

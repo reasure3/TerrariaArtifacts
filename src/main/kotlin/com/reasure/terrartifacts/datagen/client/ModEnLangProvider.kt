@@ -25,7 +25,9 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.DEPTH_METER, "Depth Meter")
         add(ModItems.RADAR, "Radar")
         add(ModItems.TALLY_COUNTER, "Tally Counter")
+        add(ModItems.SEXTANT, "Sextant")
         add(ModItems.GPS, "GPS")
+        add(ModItems.FISH_FINDER, "어류 탐지기")
     }
 
     override fun addBlocks() {
@@ -42,6 +44,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_DEPTH_METER, "Displays the player's vertical position")
         add(TranslationKeys.TOOLTIP_RADAR, "Displays number of nearby enemies")
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "Displays number of kills per enemy type")
+        add(TranslationKeys.TOOLTIP_SEXTANT, "Displays the current moon phase")
     }
 
     override fun addGui() {
@@ -71,6 +74,18 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_KILL_COUNT, "⑺ %1\$s: %2\$s")
         add(TranslationKeys.INFO_NO_KILL_COUNT, "⑺ Kill count unavailable")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "Kill Count")
+        add(TranslationKeys.INFO_MOON_PHASE_FULL_MOON, "⑻ Full moon")
+        add(TranslationKeys.INFO_MOON_PHASE_WANING_GIBBOUS, "⑻ Waning gibbous")
+        add(TranslationKeys.INFO_MOON_PHASE_LAST_QUARTER, "⑻ Last quarter")
+        add(TranslationKeys.INFO_MOON_PHASE_WANING_CRESCENT, "⑻ Waning crescent")
+        add(TranslationKeys.INFO_MOON_PHASE_NEW_MOON, "⑻ New moon")
+        add(TranslationKeys.INFO_MOON_PHASE_WAXING_CRESCENT, "⑻ Waxing crescent")
+        add(TranslationKeys.INFO_MOON_PHASE_FIRST_QUARTER, "⑻ First quarter")
+        add(TranslationKeys.INFO_MOON_PHASE_WAXING_GIBBOUS, "⑻ Waxing gibbous")
+        add(TranslationKeys.INFO_NO_MOON_PHASE, "⑼ No moon")
+        add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ Nether moon")
+        add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ End moon")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "Moon Phase")
     }
 
     override fun addConfigs() {

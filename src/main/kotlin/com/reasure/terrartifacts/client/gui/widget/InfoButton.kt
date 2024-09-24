@@ -13,12 +13,7 @@ class InfoButton(
     x: Int, y: Int, val type: InformationType
 ) : ImageButton(
     x, y, 9, 9,
-    WidgetSprites(
-        Terrartifacts.modLoc("icon/${type.id}"),
-        Terrartifacts.modLoc("icon/${type.id}_disabled"),
-        Terrartifacts.modLoc("icon/${type.id}_focused"),
-        Terrartifacts.modLoc("icon/${type.id}_disabled_focused")
-    ),
+    makeWidgetSprites(type),
     OnPress { ClientShowInfoData.toggleData(type) },
     type.message
 ) {
@@ -32,4 +27,27 @@ class InfoButton(
     }
 
     private fun isToggled(): Boolean = ClientShowInfoData[type]
+
+    companion object {
+        fun makeWidgetSprites(infoType: InformationType): WidgetSprites {
+            if (infoType == InformationType.MOON_PHASE) {
+                val level = Minecraft.getInstance().level
+                if (level != null && !level.dimensionType().natural) {
+                    return WidgetSprites(
+                        Terrartifacts.modLoc("icon/red_moon_phase"),
+                        Terrartifacts.modLoc("icon/red_moon_phase_disabled"),
+                        Terrartifacts.modLoc("icon/red_moon_phase_focused"),
+                        Terrartifacts.modLoc("icon/red_moon_phase_disabled_focused")
+                    )
+                }
+            }
+
+            return WidgetSprites(
+                Terrartifacts.modLoc("icon/${infoType.id}"),
+                Terrartifacts.modLoc("icon/${infoType.id}_disabled"),
+                Terrartifacts.modLoc("icon/${infoType.id}_focused"),
+                Terrartifacts.modLoc("icon/${infoType.id}_disabled_focused")
+            )
+        }
+    }
 }

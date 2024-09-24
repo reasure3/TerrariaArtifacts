@@ -10,7 +10,14 @@ import net.minecraft.world.phys.AABB
 interface IEnemyCountInfo {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
-            val count = player.level().getEntities(player, AABB(player.onPos).inflate(63.5)) { entity ->
+            val pos = player.position()
+            val count = player.level().getEntities(
+                player,
+                AABB(
+                    pos.x - 30.0, pos.y - 30.0, pos.z - 30.0,
+                    pos.x + 30.0, pos.y + 31.0, pos.z + 30.0
+                )
+            ) { entity ->
                 entity is Enemy
             }.size
             if (count == 0) return Component.translatable(TranslationKeys.INFO_NO_ENEMY_COUNT)

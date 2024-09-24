@@ -9,9 +9,9 @@ interface ITimeInfo {
 
     companion object {
         fun getInformation(level: Level, type: WatchType): Component {
-            val formattedTime = formatTime(level.dayTime(), type)
+            val formattedTime = formatTime(level.dayTime, type)
             val amPmComponent =
-                if (isMorning(level.dayTime()))
+                if (isMorning(level.dayTime))
                     Component.translatable(TranslationKeys.TIME_MORNING)
                 else
                     Component.translatable(TranslationKeys.TIME_AFTERNOON)

@@ -12,6 +12,8 @@
     "terrartifacts:depth_meter",
     "terrartifacts:radar",
     "terrartifacts:tally_counter",
-    "terrartifacts:gps"
+    "terrartifacts:sextant",
+    "terrartifacts:gps",
+    "terrartifacts:fish_finder"
   ]
 }

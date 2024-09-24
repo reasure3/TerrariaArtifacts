@@ -31,5 +31,9 @@ enum class InformationType(val id: String, val message: Component) {
     KILL_COUNT(
         "kill_count",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT)
+    ),
+    MOON_PHASE(
+        "moon_phase",
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE)
     )
 }

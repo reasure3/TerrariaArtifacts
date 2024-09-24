@@ -9,7 +9,7 @@ interface IDepthInfo {
         fun getInformation(player: LocalPlayer): Component {
             return Component.translatable(
                 TranslationKeys.INFO_DEPTH,
-                String.format("%.1f", player.y)
+                player.blockY
             ).withStyle(AbstractInformationalItem.ICON)
         }
     }

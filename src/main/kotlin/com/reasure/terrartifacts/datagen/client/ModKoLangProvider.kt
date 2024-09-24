@@ -25,7 +25,9 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.DEPTH_METER, "깊이 측정기")
         add(ModItems.RADAR, "레이더")
         add(ModItems.TALLY_COUNTER, "탤리 카운터")
+        add(ModItems.SEXTANT, "육분의")
         add(ModItems.GPS, "GPS")
+        add(ModItems.FISH_FINDER, "Fish Finder")
     }
 
 
@@ -43,6 +45,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_DEPTH_METER, "수직 방향 정보를 표시합니다.")
         add(TranslationKeys.TOOLTIP_RADAR, "근처 몬스터의 수를 표시합니다.")
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "각 엔티티 마다 죽인 횟수를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_SEXTANT, "달의 위상 정보를 표시합니다.")
     }
 
     override fun addGui() {
@@ -72,6 +75,18 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_KILL_COUNT, "⑺ %1\$s: %2\$s")
         add(TranslationKeys.INFO_NO_KILL_COUNT, "⑺ 죽인 횟수 없음")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "죽인 횟수")
+        add(TranslationKeys.INFO_MOON_PHASE_FULL_MOON, "⑻ 보름달")
+        add(TranslationKeys.INFO_MOON_PHASE_WANING_GIBBOUS, "⑻ 볼록 하현달")
+        add(TranslationKeys.INFO_MOON_PHASE_LAST_QUARTER, "⑻ 하현달")
+        add(TranslationKeys.INFO_MOON_PHASE_WANING_CRESCENT, "⑻ 그믐달")
+        add(TranslationKeys.INFO_MOON_PHASE_NEW_MOON, "⑻ 신월")
+        add(TranslationKeys.INFO_MOON_PHASE_WAXING_CRESCENT, "⑻ 초승달")
+        add(TranslationKeys.INFO_MOON_PHASE_FIRST_QUARTER, "⑻ 상현달")
+        add(TranslationKeys.INFO_MOON_PHASE_WAXING_GIBBOUS, "⑻ 볼록 상현달")
+        add(TranslationKeys.INFO_NO_MOON_PHASE, "⑼ 달 없음")
+        add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ 네더 달")
+        add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ 엔더 달")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "달의 위상")
     }
 
     override fun addConfigs() {

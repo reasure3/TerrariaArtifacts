@@ -9,8 +9,8 @@ interface IDirectionInfo {
         fun getInformation(player: LocalPlayer): Component {
             return Component.translatable(
                 TranslationKeys.INFO_POSITION,
-                String.format("%.1f", player.x),
-                String.format("%.1f", player.z)
+                player.blockX,
+                player.blockZ
             ).withStyle(AbstractInformationalItem.ICON)
         }
     }

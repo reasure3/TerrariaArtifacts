@@ -29,7 +29,8 @@ object ClientShowInfoData {
                     showDirection = ClientHasInfoAccessoryData[InformationType.POSITION],
                     showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH],
                     showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT],
-                    showKillCount = ClientHasInfoAccessoryData[InformationType.KILL_COUNT]
+                    showKillCount = ClientHasInfoAccessoryData[InformationType.KILL_COUNT],
+                    showMoonPhase = ClientHasInfoAccessoryData[InformationType.MOON_PHASE],
                 )
             )
         )

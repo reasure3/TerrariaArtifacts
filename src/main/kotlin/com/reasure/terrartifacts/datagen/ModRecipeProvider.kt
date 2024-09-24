@@ -63,5 +63,14 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
             .unlockedBy("has_compass", has(ModItems.COMPASS))
             .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
             .save(output)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.FISH_FINDER)
+            .requires(ModItems.WEATHER_RADIO)
+            .requires(ModItems.FISHERMAN_POCKET_GUIDE)
+            .requires(ModItems.SEXTANT)
+            .unlockedBy("has_weather_radio", has(ModItems.WEATHER_RADIO))
+            .unlockedBy("has_fisherman_pocket_guide", has(ModItems.FISHERMAN_POCKET_GUIDE))
+            .unlockedBy("has_sextant", has(ModItems.SEXTANT))
+            .save(output)
     }
 }
