@@ -2,11 +2,12 @@ package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.item.accessories.informational.ICompass
-import com.reasure.terrartifacts.item.accessories.informational.IDepthMeter
-import com.reasure.terrartifacts.item.accessories.informational.IFishermanPocketGuide
-import com.reasure.terrartifacts.item.accessories.informational.IWatch
-import com.reasure.terrartifacts.item.accessories.informational.IWeatherRadio
+import com.reasure.terrartifacts.item.accessories.informational.IDepthInfo
+import com.reasure.terrartifacts.item.accessories.informational.IDirectionInfo
+import com.reasure.terrartifacts.item.accessories.informational.IEnemyCountInfo
+import com.reasure.terrartifacts.item.accessories.informational.IFishingPowerInfo
+import com.reasure.terrartifacts.item.accessories.informational.ITimeInfo
+import com.reasure.terrartifacts.item.accessories.informational.IWeatherInfo
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.util.CuriosUtil
@@ -30,19 +31,22 @@ object InformationHandler {
         infoComponent.clear()
         val level = player.level()
         if (ClientShowInfoData[InformationType.TIME] && ClientHasInfoAccessoryData.hasTimeInfo()) {
-            infoComponent.add(IWatch.getInformation(level, ClientHasInfoAccessoryData.displayTimeType()))
+            infoComponent.add(ITimeInfo.getInformation(level, ClientHasInfoAccessoryData.displayTimeType()))
         }
         if (ClientShowInfoData[InformationType.WEATHER] && ClientHasInfoAccessoryData.hasWeatherInfo) {
-            infoComponent.add(IWeatherRadio.getInformation(player))
+            infoComponent.add(IWeatherInfo.getInformation(player))
         }
         if (ClientShowInfoData[InformationType.FISHING_POWER] && ClientHasInfoAccessoryData.hasFishingPowerInfo) {
-            infoComponent.add(IFishermanPocketGuide.getInformation(player))
+            infoComponent.add(IFishingPowerInfo.getInformation(player))
         }
         if (ClientShowInfoData[InformationType.POSITION] && ClientHasInfoAccessoryData.hasDirectionInfo) {
-            infoComponent.add(ICompass.getInformation(player))
+            infoComponent.add(IDirectionInfo.getInformation(player))
         }
         if (ClientShowInfoData[InformationType.DEPTH] && ClientHasInfoAccessoryData.hasDepthInfo) {
-            infoComponent.add(IDepthMeter.getInformation(player))
+            infoComponent.add(IDepthInfo.getInformation(player))
+        }
+        if (ClientShowInfoData[InformationType.ENEMY_COUNT] && ClientHasInfoAccessoryData.hasEnemyCountInfo) {
+            infoComponent.add(IEnemyCountInfo.getInformation(player))
         }
     }
 
@@ -52,17 +56,18 @@ object InformationHandler {
         inventory.addAll(player.inventory.items)
         for (stack in inventory) {
             val item = stack.item
-            if (item is IWatch) {
+            if (item is ITimeInfo) {
                 when (item.watchType()) {
                     WatchType.MINUTE -> ClientHasInfoAccessoryData.hasMinInfo = true
                     WatchType.HALF_HOUR -> ClientHasInfoAccessoryData.hasHalfHourInfo = true
                     WatchType.HOUR -> ClientHasInfoAccessoryData.hasHourInfo = true
                 }
             }
-            if (item is IWeatherRadio) ClientHasInfoAccessoryData.hasWeatherInfo = true
-            if (item is IFishermanPocketGuide) ClientHasInfoAccessoryData.hasFishingPowerInfo = true
-            if (item is ICompass) ClientHasInfoAccessoryData.hasDirectionInfo = true
-            if (item is IDepthMeter) ClientHasInfoAccessoryData.hasDepthInfo = true
+            if (item is IWeatherInfo) ClientHasInfoAccessoryData.hasWeatherInfo = true
+            if (item is IFishingPowerInfo) ClientHasInfoAccessoryData.hasFishingPowerInfo = true
+            if (item is IDirectionInfo) ClientHasInfoAccessoryData.hasDirectionInfo = true
+            if (item is IDepthInfo) ClientHasInfoAccessoryData.hasDepthInfo = true
+            if (item is IEnemyCountInfo) ClientHasInfoAccessoryData.hasEnemyCountInfo = true
         }
     }
 

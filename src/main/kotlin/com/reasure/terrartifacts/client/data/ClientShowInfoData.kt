@@ -27,7 +27,8 @@ object ClientShowInfoData {
                     showWeather = ClientShowInfoData[InformationType.WEATHER],
                     showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
                     showDirection = ClientHasInfoAccessoryData[InformationType.POSITION],
-                    showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH]
+                    showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH],
+                    showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT]
                 )
             )
         )

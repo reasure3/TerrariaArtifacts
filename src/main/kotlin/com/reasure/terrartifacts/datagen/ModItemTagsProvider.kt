@@ -32,6 +32,7 @@ class ModItemTagsProvider(
             .add(ModItems.FISHERMAN_POCKET_GUIDE)
             .add(ModItems.COMPASS)
             .add(ModItems.DEPTH_METER)
+            .add(ModItems.RADAR)
             .add(ModItems.GPS)
     }
 }

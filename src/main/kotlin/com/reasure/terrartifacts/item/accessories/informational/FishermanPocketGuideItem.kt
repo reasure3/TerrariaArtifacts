@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item.Properties
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class FishermanPocketGuideItem(properties: Properties) : AbstractInformationalItem(properties), IFishermanPocketGuide {
+class FishermanPocketGuideItem(properties: Properties) : AbstractInformationalItem(properties), IFishingPowerInfo {
     override fun shouldUseInfoPacket(): Boolean = false
 
     override fun appendHoverText(

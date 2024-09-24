@@ -35,6 +35,7 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.FISHERMAN_POCKET_GUIDE)
         basicItem(ModItems.COMPASS)
         basicItem(ModItems.DEPTH_METER)
+        basicItem(ModItems.RADAR)
         basicItem(ModItems.GPS)
     }
 

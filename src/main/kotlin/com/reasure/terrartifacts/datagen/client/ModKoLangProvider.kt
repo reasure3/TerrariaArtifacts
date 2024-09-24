@@ -23,6 +23,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.FISHERMAN_POCKET_GUIDE, "낚시꾼의 휴대용 가이드")
         add(ModItems.COMPASS, "나침반")
         add(ModItems.DEPTH_METER, "깊이 측정기")
+        add(ModItems.RADAR, "레이더")
         add(ModItems.GPS, "GPS")
     }
 
@@ -39,6 +40,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "낚시 힘을 표시합니다.")
         add(TranslationKeys.TOOLTIP_COMPASS, "수평 방향 정보를 표시합니다.")
         add(TranslationKeys.TOOLTIP_DEPTH_METER, "수직 방향 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_RADAR, "근처 몬스터의 수를 표시합니다.")
     }
 
     override fun addGui() {
@@ -62,6 +64,9 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "위치")
         add(TranslationKeys.INFO_DEPTH, "⑸ 깊이: %s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "깊이")
+        add(TranslationKeys.INFO_ENEMY_COUNT, "⑹ 근처에 적 %s마리!")
+        add(TranslationKeys.INFO_NO_ENEMY_COUNT, "⑹ 근처에 적 없음")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "몬스터 수")
     }
 
     override fun addConfigs() {

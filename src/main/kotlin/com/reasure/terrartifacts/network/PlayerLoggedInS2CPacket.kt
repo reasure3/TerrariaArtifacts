@@ -11,7 +11,7 @@ class PlayerLoggedInS2CPacket() : CustomPacketPayload {
     fun encode(buffer: ByteBuf) {}
 
     companion object {
-        fun decode(buffer: ByteBuf): PlayerLoggedInS2CPacket = PlayerLoggedInS2CPacket()
+        fun decode(buffer: ByteBuf) = PlayerLoggedInS2CPacket()
 
         val TYPE = CustomPacketPayload.Type<PlayerLoggedInS2CPacket>(Terrartifacts.modLoc("player_logged_in"))
 

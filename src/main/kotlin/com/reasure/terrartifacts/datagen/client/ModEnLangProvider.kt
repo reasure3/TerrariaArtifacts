@@ -23,6 +23,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.FISHERMAN_POCKET_GUIDE, "Fisherman's Pocket Guide")
         add(ModItems.COMPASS, "Compass")
         add(ModItems.DEPTH_METER, "Depth Meter")
+        add(ModItems.RADAR, "Radar")
         add(ModItems.GPS, "GPS")
     }
 
@@ -38,6 +39,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "Displays fishing power")
         add(TranslationKeys.TOOLTIP_COMPASS, "Displays the player's horizontal position")
         add(TranslationKeys.TOOLTIP_DEPTH_METER, "Displays the player's vertical position")
+        add(TranslationKeys.TOOLTIP_RADAR, "Displays number of nearby enemies")
     }
 
     override fun addGui() {
@@ -61,6 +63,9 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "Position")
         add(TranslationKeys.INFO_DEPTH, "⑸ Depth: %s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "Depth")
+        add(TranslationKeys.INFO_ENEMY_COUNT, "⑹ %s enemies nearby!")
+        add(TranslationKeys.INFO_NO_ENEMY_COUNT, "⑹ No enemies nearby")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "Enemy Count")
     }
 
     override fun addConfigs() {

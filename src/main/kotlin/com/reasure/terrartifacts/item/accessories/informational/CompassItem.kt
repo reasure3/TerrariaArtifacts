@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class CompassItem(properties: Properties) : AbstractInformationalItem(properties), ICompass {
+class CompassItem(properties: Properties) : AbstractInformationalItem(properties), IDirectionInfo {
     override fun shouldUseInfoPacket(): Boolean = false
 
     override fun appendHoverText(

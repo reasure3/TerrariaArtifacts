@@ -13,6 +13,7 @@ object TranslationKeys {
     const val TOOLTIP_FISHERMAN_POCKET_GUIDE = "${Terrartifacts.ID}.tooltip.fisherman_pocket_guide"
     const val TOOLTIP_COMPASS = "${Terrartifacts.ID}.tooltip.compass"
     const val TOOLTIP_DEPTH_METER = "${Terrartifacts.ID}.tooltip.depth_meter"
+    const val TOOLTIP_RADAR = "${Terrartifacts.ID}.tooltip.radar"
 
     const val INFO_TIME = "${Terrartifacts.ID}.info.time"
     const val INFO_WEATHER = "${Terrartifacts.ID}.info.weather"
@@ -20,6 +21,7 @@ object TranslationKeys {
     const val INFO_POSITION = "${Terrartifacts.ID}.info.position"
     const val INFO_DEPTH = "${Terrartifacts.ID}.info.depth"
     const val INFO_ENEMY_COUNT = "${Terrartifacts.ID}.info.enemy_count"
+    const val INFO_NO_ENEMY_COUNT = "${Terrartifacts.ID}.info.no_enemy_count"
 
     const val TIME_MORNING = "${Terrartifacts.ID}.time_morning"
     const val TIME_AFTERNOON = "${Terrartifacts.ID}.time_afternoon"

@@ -38,6 +38,7 @@ object ModCreativeTabs {
                     accept(ModItems.FISHERMAN_POCKET_GUIDE)
                     accept(ModItems.COMPASS)
                     accept(ModItems.DEPTH_METER)
+                    accept(ModItems.RADAR)
                     accept(ModItems.GPS)
                 }
             }

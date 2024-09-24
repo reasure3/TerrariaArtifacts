@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class GPSItem(properties: Properties) : AbstractInformationalItem(properties), IWatch, ICompass, IDepthMeter {
+class GPSItem(properties: Properties) : AbstractInformationalItem(properties), ITimeInfo, IDirectionInfo, IDepthInfo {
     override fun shouldUseInfoPacket(): Boolean = false
 
     override fun watchType(): WatchType = WatchType.MINUTE

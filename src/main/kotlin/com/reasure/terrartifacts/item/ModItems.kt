@@ -5,6 +5,7 @@ import com.reasure.terrartifacts.item.accessories.informational.CompassItem
 import com.reasure.terrartifacts.item.accessories.informational.DepthMeterItem
 import com.reasure.terrartifacts.item.accessories.informational.FishermanPocketGuideItem
 import com.reasure.terrartifacts.item.accessories.informational.GPSItem
+import com.reasure.terrartifacts.item.accessories.informational.RadarItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.item.accessories.informational.WeatherRadioItem
@@ -59,6 +60,10 @@ object ModItems {
 
     val DEPTH_METER: Item by ITEMS.register("depth_meter") { ->
         DepthMeterItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val RADAR: Item by ITEMS.register("radar") { ->
+        RadarItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
     val GPS: Item by ITEMS.register("gps") { ->

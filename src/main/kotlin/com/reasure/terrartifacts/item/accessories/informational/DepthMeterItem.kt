@@ -6,7 +6,7 @@ import net.minecraft.world.item.Item.TooltipContext
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.TooltipFlag
 
-class DepthMeterItem(properties: Properties) : AbstractInformationalItem(properties), IDepthMeter {
+class DepthMeterItem(properties: Properties) : AbstractInformationalItem(properties), IDepthInfo {
     override fun shouldUseInfoPacket(): Boolean = false
 
     override fun appendHoverText(

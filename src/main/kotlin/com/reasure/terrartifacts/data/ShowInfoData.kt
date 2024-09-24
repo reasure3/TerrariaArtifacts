@@ -2,11 +2,7 @@ package com.reasure.terrartifacts.data
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.informational.InformationType
-import io.netty.buffer.ByteBuf
-import net.minecraft.network.codec.StreamCodec
-import net.minecraft.network.protocol.common.custom.CustomPacketPayload
 
 /**
  * 플레이어가 정보 악세서리 소지 시, 해당 정보를 보여줄지 여부를 저장
@@ -18,7 +14,8 @@ data class ShowInfoData(
     val showWeather: Boolean,
     val showFishingPower: Boolean,
     val showDirection: Boolean,
-    val showDepth: Boolean
+    val showDepth: Boolean,
+    val showEnemyCount: Boolean
 ) {
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
@@ -26,6 +23,7 @@ data class ShowInfoData(
         InformationType.FISHING_POWER -> showFishingPower
         InformationType.POSITION -> showDirection
         InformationType.DEPTH -> showDepth
+        InformationType.ENEMY_COUNT -> showEnemyCount
     }
 
     companion object {
@@ -34,7 +32,8 @@ data class ShowInfoData(
             showWeather = true,
             showFishingPower = true,
             showDirection = true,
-            showDepth = true
+            showDepth = true,
+            showEnemyCount = true
         )
 
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
@@ -43,7 +42,8 @@ data class ShowInfoData(
                 Codec.BOOL.fieldOf("showWeather").forGetter(ShowInfoData::showWeather),
                 Codec.BOOL.fieldOf("showFishingPower").forGetter(ShowInfoData::showFishingPower),
                 Codec.BOOL.fieldOf("showDirection").forGetter(ShowInfoData::showDirection),
-                Codec.BOOL.fieldOf("showDepth").forGetter(ShowInfoData::showDepth)
+                Codec.BOOL.fieldOf("showDepth").forGetter(ShowInfoData::showDepth),
+                Codec.BOOL.fieldOf("showEnemyCount").forGetter(ShowInfoData::showEnemyCount)
             ).apply(instance, ::ShowInfoData)
         }
     }
