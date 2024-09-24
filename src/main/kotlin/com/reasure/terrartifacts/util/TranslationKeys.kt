@@ -14,6 +14,7 @@ object TranslationKeys {
     const val TOOLTIP_COMPASS = "${Terrartifacts.ID}.tooltip.compass"
     const val TOOLTIP_DEPTH_METER = "${Terrartifacts.ID}.tooltip.depth_meter"
     const val TOOLTIP_RADAR = "${Terrartifacts.ID}.tooltip.radar"
+    const val TOOLTIP_TALLY_COUNTER = "${Terrartifacts.ID}.tooltip.tally_counter"
 
     const val INFO_TIME = "${Terrartifacts.ID}.info.time"
     const val INFO_WEATHER = "${Terrartifacts.ID}.info.weather"
@@ -22,6 +23,8 @@ object TranslationKeys {
     const val INFO_DEPTH = "${Terrartifacts.ID}.info.depth"
     const val INFO_ENEMY_COUNT = "${Terrartifacts.ID}.info.enemy_count"
     const val INFO_NO_ENEMY_COUNT = "${Terrartifacts.ID}.info.no_enemy_count"
+    const val INFO_KILL_COUNT = "${Terrartifacts.ID}.info.kill_count"
+    const val INFO_NO_KILL_COUNT = "${Terrartifacts.ID}.info.no_kill_count"
 
     const val TIME_MORNING = "${Terrartifacts.ID}.time_morning"
     const val TIME_AFTERNOON = "${Terrartifacts.ID}.time_afternoon"
@@ -38,4 +41,5 @@ object TranslationKeys {
     const val BUTTON_MESSAGE_TOGGLE_POSITION = "${Terrartifacts.ID}.message.button.info.toggle_position"
     const val BUTTON_MESSAGE_TOGGLE_DEPTH = "${Terrartifacts.ID}.message.button.info.toggle_depth"
     const val BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT = "${Terrartifacts.ID}.message.button.info.toggle_enemy_count"
+    const val BUTTON_MESSAGE_TOGGLE_KILL_COUNT = "${Terrartifacts.ID}.message.button.info.toggle_kill_count"
 }

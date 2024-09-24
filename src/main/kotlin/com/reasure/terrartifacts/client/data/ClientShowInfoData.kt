@@ -28,7 +28,8 @@ object ClientShowInfoData {
                     showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
                     showDirection = ClientHasInfoAccessoryData[InformationType.POSITION],
                     showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH],
-                    showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT]
+                    showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT],
+                    showKillCount = ClientHasInfoAccessoryData[InformationType.KILL_COUNT]
                 )
             )
         )

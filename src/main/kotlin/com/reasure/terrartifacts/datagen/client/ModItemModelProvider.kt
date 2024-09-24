@@ -36,6 +36,7 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.COMPASS)
         basicItem(ModItems.DEPTH_METER)
         basicItem(ModItems.RADAR)
+        basicItem(ModItems.TALLY_COUNTER)
         basicItem(ModItems.GPS)
     }
 

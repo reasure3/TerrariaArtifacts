@@ -24,6 +24,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.COMPASS, "Compass")
         add(ModItems.DEPTH_METER, "Depth Meter")
         add(ModItems.RADAR, "Radar")
+        add(ModItems.TALLY_COUNTER, "Tally Counter")
         add(ModItems.GPS, "GPS")
     }
 
@@ -40,6 +41,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_COMPASS, "Displays the player's horizontal position")
         add(TranslationKeys.TOOLTIP_DEPTH_METER, "Displays the player's vertical position")
         add(TranslationKeys.TOOLTIP_RADAR, "Displays number of nearby enemies")
+        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "Displays number of kills per enemy type")
     }
 
     override fun addGui() {
@@ -61,11 +63,14 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER, "Fishing Power")
         add(TranslationKeys.INFO_POSITION, "⑷ X: %1\$s, Z: %1\$s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "Position")
-        add(TranslationKeys.INFO_DEPTH, "⑸ Depth: %s")
+        add(TranslationKeys.INFO_DEPTH, "⑸ Y: %s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "Depth")
         add(TranslationKeys.INFO_ENEMY_COUNT, "⑹ %s enemies nearby!")
         add(TranslationKeys.INFO_NO_ENEMY_COUNT, "⑹ No enemies nearby")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "Enemy Count")
+        add(TranslationKeys.INFO_KILL_COUNT, "⑺ %1\$s: %2\$s")
+        add(TranslationKeys.INFO_NO_KILL_COUNT, "⑺ Kill count unavailable")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "Kill Count")
     }
 
     override fun addConfigs() {

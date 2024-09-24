@@ -4,6 +4,8 @@ import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.handler.ModClientPayloadHandler
 import com.reasure.terrartifacts.network.ModServerPayloadHandler
 import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
+import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
+import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendShowInfoDataPacket
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
@@ -27,9 +29,21 @@ object RegisterEvents {
             SendShowInfoDataPacket.TYPE,
             SendShowInfoDataPacket.STREAM_CODEC,
             DirectionalPayloadHandler(
-                ModClientPayloadHandler.SendShowInfoData::handle,
-                ModServerPayloadHandler.SendShowInfoData::handle
+                ModClientPayloadHandler.ReceiveShowInfoData::handle,
+                ModServerPayloadHandler.ReceiveShowInfoData::handle
             )
+        )
+
+        registrar.playToClient(
+            SendPlayerKillCountS2CPacket.TYPE,
+            SendPlayerKillCountS2CPacket.STREAM_CODEC,
+            ModClientPayloadHandler.ReceivePlayerKillCount::handle
+        )
+
+        registrar.playToClient(
+            SendEntityKillCountS2CPacket.TYPE,
+            SendEntityKillCountS2CPacket.STREAM_CODEC,
+            ModClientPayloadHandler.ReceiveEntityKillCount::handle
         )
     }
 }

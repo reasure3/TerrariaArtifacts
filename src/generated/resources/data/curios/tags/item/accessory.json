@@ -11,6 +11,7 @@
     "terrartifacts:compass",
     "terrartifacts:depth_meter",
     "terrartifacts:radar",
+    "terrartifacts:tally_counter",
     "terrartifacts:gps"
   ]
 }

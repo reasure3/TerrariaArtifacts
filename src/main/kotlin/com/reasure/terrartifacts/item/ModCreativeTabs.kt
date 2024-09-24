@@ -39,6 +39,7 @@ object ModCreativeTabs {
                     accept(ModItems.COMPASS)
                     accept(ModItems.DEPTH_METER)
                     accept(ModItems.RADAR)
+                    accept(ModItems.TALLY_COUNTER)
                     accept(ModItems.GPS)
                 }
             }
