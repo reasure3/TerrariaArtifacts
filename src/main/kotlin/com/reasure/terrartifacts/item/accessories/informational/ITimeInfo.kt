@@ -4,7 +4,7 @@ import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.network.chat.Component
 import net.minecraft.world.level.Level
 
-interface IWatch {
+interface ITimeInfo {
     fun watchType(): WatchType
 
     companion object {

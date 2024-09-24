@@ -7,7 +7,7 @@ import net.minecraft.network.chat.Component
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.biome.Biome
 
-interface IWeatherRadio {
+interface IWeatherInfo {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
             val level = player.level()
