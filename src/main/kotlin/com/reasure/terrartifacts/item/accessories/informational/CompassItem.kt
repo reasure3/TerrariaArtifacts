@@ -15,6 +15,6 @@ class CompassItem(properties: Properties) : AbstractInformationalItem(properties
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(Component.translatable(TranslationKeys.COMPASS_TOOLTIP_KEY))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_COMPASS))
     }
 }

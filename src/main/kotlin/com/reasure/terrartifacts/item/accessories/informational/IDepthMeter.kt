@@ -8,7 +8,7 @@ interface IDepthMeter {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
             return Component.translatable(
-                TranslationKeys.INFO_DEPTH_KEY,
+                TranslationKeys.INFO_DEPTH,
                 String.format("%.1f", player.y)
             ).withStyle(AbstractInformationalItem.ICON)
         }

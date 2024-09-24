@@ -16,6 +16,6 @@ class DepthMeterItem(properties: Properties) : AbstractInformationalItem(propert
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(Component.translatable(TranslationKeys.DEPTH_METER_TOOLTIP_KEY))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_DEPTH_METER))
     }
 }

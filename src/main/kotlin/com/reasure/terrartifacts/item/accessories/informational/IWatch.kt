@@ -12,10 +12,10 @@ interface IWatch {
             val formattedTime = formatTime(level.dayTime(), type)
             val amPmComponent =
                 if (isMorning(level.dayTime()))
-                    Component.translatable(TranslationKeys.TIME_MORNING_KEY)
+                    Component.translatable(TranslationKeys.TIME_MORNING)
                 else
-                    Component.translatable(TranslationKeys.TIME_AFTERNOON_KEY)
-            return Component.translatable(TranslationKeys.INFO_TIME_KEY, amPmComponent, formattedTime)
+                    Component.translatable(TranslationKeys.TIME_AFTERNOON)
+            return Component.translatable(TranslationKeys.INFO_TIME, amPmComponent, formattedTime)
                 .withStyle(AbstractInformationalItem.ICON)
         }
 

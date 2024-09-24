@@ -10,7 +10,7 @@ interface IFishermanPocketGuide {
         fun getInformation(player: LocalPlayer): Component {
             val luck = player.attributes.getValue(Attributes.LUCK)
             return Component.translatable(
-                TranslationKeys.INFO_FISHING_POWER_KEY,
+                TranslationKeys.INFO_FISHING_POWER,
                 String.format("%.1f", luck)
             ).withStyle(AbstractInformationalItem.ICON)
         }

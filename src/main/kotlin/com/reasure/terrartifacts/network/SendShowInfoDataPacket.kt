@@ -20,7 +20,7 @@ class SendShowInfoDataPacket(val data: ShowInfoData) : CustomPacketPayload {
     }
 
     companion object {
-        fun decode(buffer: ByteBuf): SendShowInfoDataPacket = SendShowInfoDataPacket(
+        fun decode(buffer: ByteBuf) = SendShowInfoDataPacket(
             ShowInfoData(
                 buffer.readBoolean(),
                 buffer.readBoolean(),

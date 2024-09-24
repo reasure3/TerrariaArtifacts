@@ -8,7 +8,7 @@ interface ICompass {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
             return Component.translatable(
-                TranslationKeys.INFO_DIRECTION_KEY,
+                TranslationKeys.INFO_POSITION,
                 String.format("%.1f", player.x),
                 String.format("%.1f", player.z)
             ).withStyle(AbstractInformationalItem.ICON)

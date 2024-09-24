@@ -6,22 +6,26 @@ import net.minecraft.network.chat.Component
 enum class InformationType(val id: String, val message: Component) {
     TIME(
         "time",
-        Component.translatable(TranslationKeys.TIME_BUTTON_MESSAGE)
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME)
     ),
     WEATHER(
         "weather",
-        Component.translatable(TranslationKeys.WEATHER_BUTTON_MESSAGE)
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER)
     ),
     FISHING_POWER(
         "fishing_power",
-        Component.translatable(TranslationKeys.FISHING_POWER_BUTTON_MESSAGE)
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER)
     ),
-    DIRECTION(
-        "direction",
-        Component.translatable(TranslationKeys.DIRECTION_BUTTON_MESSAGE)
+    POSITION(
+        "position",
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION)
     ),
     DEPTH(
         "depth",
-        Component.translatable(TranslationKeys.DEPTH_BUTTON_MESSAGE)
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH)
+    ),
+    ENEMY_COUNT(
+        "enemy_count",
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT)
     )
 }

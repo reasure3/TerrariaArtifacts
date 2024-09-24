@@ -13,21 +13,21 @@ interface IWeatherRadio {
             val level = player.level()
             val weather = if (level.isThundering) {
                 when (level.getPrecipitationAt(player.onPos)) {
-                    Biome.Precipitation.NONE -> Component.translatable(TranslationKeys.WEATHER_CLEAR_KEY)
-                    Biome.Precipitation.RAIN -> Component.translatable(TranslationKeys.WEATHER_THUNDER_KEY)
-                    Biome.Precipitation.SNOW -> Component.translatable(TranslationKeys.WEATHER_THUNDER_KEY)
+                    Biome.Precipitation.NONE -> Component.translatable(TranslationKeys.WEATHER_CLEAR)
+                    Biome.Precipitation.RAIN -> Component.translatable(TranslationKeys.WEATHER_THUNDER)
+                    Biome.Precipitation.SNOW -> Component.translatable(TranslationKeys.WEATHER_THUNDER)
                 }
             } else if (level.isRaining) {
                 when (level.getPrecipitationAt(player.onPos)) {
-                    Biome.Precipitation.NONE -> Component.translatable(TranslationKeys.WEATHER_CLEAR_KEY)
-                    Biome.Precipitation.RAIN -> Component.translatable(TranslationKeys.WEATHER_RAIN_KEY)
-                    Biome.Precipitation.SNOW -> Component.translatable(TranslationKeys.WEATHER_SNOW_KEY)
+                    Biome.Precipitation.NONE -> Component.translatable(TranslationKeys.WEATHER_CLEAR)
+                    Biome.Precipitation.RAIN -> Component.translatable(TranslationKeys.WEATHER_RAIN)
+                    Biome.Precipitation.SNOW -> Component.translatable(TranslationKeys.WEATHER_SNOW)
                 }
-            } else if (level.dimension() == Level.OVERWORLD) Component.translatable(TranslationKeys.WEATHER_CLEAR_KEY)
-            else Component.translatable(TranslationKeys.WEATHER_CLOUDY_KEY)
+            } else if (level.dimension() == Level.OVERWORLD) Component.translatable(TranslationKeys.WEATHER_CLEAR)
+            else Component.translatable(TranslationKeys.WEATHER_CLOUDY)
 
             return Component.translatable(
-                TranslationKeys.INFO_WEATHER_KEY,
+                TranslationKeys.INFO_WEATHER,
                 weather,
                 (level.rainLevel * 100).toInt(),
                 (level.thunderLevel * 100).toInt()

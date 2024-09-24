@@ -16,6 +16,6 @@ class FishermanPocketGuideItem(properties: Properties) : AbstractInformationalIt
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(Component.translatable(TranslationKeys.FISHERMAN_POCKET_GUIDE_TOOLTIP_KEY))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE))
     }
 }

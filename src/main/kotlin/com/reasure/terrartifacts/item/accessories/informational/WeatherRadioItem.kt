@@ -17,6 +17,6 @@ class WeatherRadioItem(properties: Properties) : AbstractInformationalItem(prope
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(Component.translatable(TranslationKeys.WEATHER_RADIO_TOOLTIP_KEY))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_WEATHER_RADIO))
     }
 }

@@ -5,7 +5,7 @@ import net.minecraft.network.chat.Component
 import net.neoforged.neoforge.network.handling.IPayloadContext
 
 class ModServerPayloadHandler {
-    object SendShowInfoData {
+    object ReceiveShowInfoData {
         fun handle(clientPacket: SendShowInfoDataPacket, context: IPayloadContext) {
             context.enqueueWork {
                 val player = context.player()

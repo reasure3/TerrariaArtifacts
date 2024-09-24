@@ -17,8 +17,8 @@ class GPSItem(properties: Properties) : AbstractInformationalItem(properties), I
         tooltipFlag: TooltipFlag
     ) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
-        tooltipComponents.add(Component.translatable(TranslationKeys.MINUTE_TOOLTIP_KEY))
-        tooltipComponents.add(Component.translatable(TranslationKeys.COMPASS_TOOLTIP_KEY))
-        tooltipComponents.add(Component.translatable(TranslationKeys.DEPTH_METER_TOOLTIP_KEY))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_WATCH_MINUTE))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_COMPASS))
+        tooltipComponents.add(Component.translatable(TranslationKeys.TOOLTIP_DEPTH_METER))
     }
 }

@@ -38,7 +38,7 @@ object ClientHasInfoAccessoryData {
         InformationType.TIME -> hasTimeInfo()
         InformationType.WEATHER -> hasWeatherInfo
         InformationType.FISHING_POWER -> hasFishingPowerInfo
-        InformationType.DIRECTION -> hasDirectionInfo
+        InformationType.POSITION -> hasDirectionInfo
         InformationType.DEPTH -> hasDepthInfo
     }
 }
