@@ -89,8 +89,24 @@ class ModEnLangProvider(output: PackOutput) :
     }
 
     override fun addConfigs() {
-        addConfigDesc("infoButtonLayoutPos", "Info Accessory Toggle Button Layout")
-        addConfigDesc("infoButtonOffsetX", "Info Accessory Toggle Button X Offset")
-        addConfigDesc("infoButtonOffsetY", "Info Accessory Toggle Button Y Offset")
+        addConfigDesc("title", "Terrartifacts Configs")
+
+        addConfigDesc("section.terrartifacts.client.toml", "Terrartifacts Client Config File")
+        addConfigDesc("section.terrartifacts.client.toml.title", "Terrartifacts Client Configs")
+
+        addConfigDesc("infoButtonLayoutPos", "Info Toggle Button Layout")
+        addConfigDesc("infoButtonLayoutPos.tooltip", "Info Accessory Toggle Button Layout")
+
+        addConfigDesc("infoButtonOffsetX", "Info Toggle Button X Offset")
+        addConfigDesc("infoButtonOffsetX.tooltip", "Info Accessory Toggle Button X Offset")
+
+        addConfigDesc("infoButtonOffsetY", "Info Toggle Button Y Offset")
+        addConfigDesc("infoButtonOffsetY.tooltip", "Info Accessory Toggle Button Y Offset")
+
+        addConfigDesc("section.terrartifacts.common.toml", "Terrartifacts Common Config File")
+        addConfigDesc("section.terrartifacts.client.common.title", "Terrartifacts Common Configs")
+
+        addConfigDesc("radarDetectDistance", "Radar Detection Range")
+        addConfigDesc("radarDetectDistance.tooltip", "Define Radar Detection Range")
     }
 }

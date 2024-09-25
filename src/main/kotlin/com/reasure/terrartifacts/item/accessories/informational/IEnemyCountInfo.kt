@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
+import com.reasure.terrartifacts.CommonModConfig
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.ChatFormatting
 import net.minecraft.client.player.LocalPlayer
@@ -11,11 +12,12 @@ interface IEnemyCountInfo {
     companion object {
         fun getInformation(player: LocalPlayer): Component {
             val pos = player.position()
+            val distance = CommonModConfig.COMMON.radarDetectDistance
             val count = player.level().getEntities(
                 player,
                 AABB(
-                    pos.x - 30.0, pos.y - 30.0, pos.z - 30.0,
-                    pos.x + 30.0, pos.y + 31.0, pos.z + 30.0
+                    pos.x - distance, pos.y - distance, pos.z - distance,
+                    pos.x + distance, pos.y + distance + 1.0, pos.z + distance
                 )
             ) { entity ->
                 entity is Enemy

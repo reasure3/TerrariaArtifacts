@@ -39,6 +39,8 @@ class Terrartifacts(container: ModContainer) {
         ModCreativeTabs.CREATIVE_TABS.register(MOD_BUS)
         ModDataAttachments.ATTACHMENT_TYPES.register(MOD_BUS)
 
+        container.registerConfig(ModConfig.Type.COMMON, CommonModConfig.SPEC)
+
         runWhenOn(Dist.CLIENT) {
             container.registerConfig(ModConfig.Type.CLIENT, ClientModConfig.SPEC)
             val screenFactory = IConfigScreenFactory { container, screen -> ConfigurationScreen(container, screen) }
