@@ -27,7 +27,8 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.TALLY_COUNTER, "Tally Counter")
         add(ModItems.SEXTANT, "Sextant")
         add(ModItems.GPS, "GPS")
-        add(ModItems.FISH_FINDER, "어류 탐지기")
+        add(ModItems.FISH_FINDER, "Fish Finder")
+        add(ModItems.STOPWATCH, "Stopwatch")
     }
 
     override fun addBlocks() {
@@ -45,6 +46,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_RADAR, "Displays number of nearby enemies")
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "Displays number of kills per enemy type")
         add(TranslationKeys.TOOLTIP_SEXTANT, "Displays the current moon phase")
+        add(TranslationKeys.TOOLTIP_STOPWATCH, "Displays movement speed")
     }
 
     override fun addGui() {
@@ -86,6 +88,8 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ Nether moon")
         add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ End moon")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "Moon Phase")
+        add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "Movement Speed")
     }
 
     override fun addConfigs() {

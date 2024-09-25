@@ -5,13 +5,13 @@
       "file": "terrartifacts:font/info_icons.png",
       "ascent": 7,
       "chars": [
-        "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿"
+        "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀"
       ]
     },
     {
       "type": "reference",
       "id": "minecraft:default",
-      "skip": "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿"
+      "skip": "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀"
     }
   ]
 }

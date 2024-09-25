@@ -10,16 +10,17 @@ import net.neoforged.api.distmarker.OnlyIn
  */
 @OnlyIn(Dist.CLIENT)
 object ClientHasInfoAccessoryData {
-    var hasMinInfo: Boolean = false
-    var hasHalfHourInfo: Boolean = false
-    var hasHourInfo: Boolean = false
-    var hasWeatherInfo: Boolean = false
-    var hasFishingPowerInfo: Boolean = false
-    var hasDirectionInfo: Boolean = false
-    var hasDepthInfo: Boolean = false
-    var hasEnemyCountInfo: Boolean = false
-    var hasKillCountInfo: Boolean = false
-    var hasMoonPhaseInfo: Boolean = false
+    var hasMinInfo = false
+    var hasHalfHourInfo = false
+    var hasHourInfo = false
+    var hasWeatherInfo = false
+    var hasFishingPowerInfo = false
+    var hasDirectionInfo = false
+    var hasDepthInfo = false
+    var hasEnemyCountInfo = false
+    var hasKillCountInfo = false
+    var hasMoonPhaseInfo = false
+    var hasMovementSpeedInfo = false
 
     fun hasTimeInfo(): Boolean = hasMinInfo || hasHalfHourInfo || hasHourInfo
     fun displayTimeType(): WatchType =
@@ -38,6 +39,7 @@ object ClientHasInfoAccessoryData {
         hasEnemyCountInfo = false
         hasKillCountInfo = false
         hasMoonPhaseInfo = false
+        hasMovementSpeedInfo = false
     }
 
     operator fun get(type: InformationType) = when (type) {
@@ -49,5 +51,6 @@ object ClientHasInfoAccessoryData {
         InformationType.ENEMY_COUNT -> hasEnemyCountInfo
         InformationType.KILL_COUNT -> hasKillCountInfo
         InformationType.MOON_PHASE -> hasMoonPhaseInfo
+        InformationType.MOVEMENT_SPEED -> hasMovementSpeedInfo
     }
 }

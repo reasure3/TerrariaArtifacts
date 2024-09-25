@@ -18,6 +18,7 @@ data class ShowInfoData(
     val showEnemyCount: Boolean,
     val showKillCount: Boolean,
     val showMoonPhase: Boolean,
+    val showMovementSpeed: Boolean
 ) {
     operator fun get(type: InformationType) = when (type) {
         InformationType.TIME -> showTime
@@ -28,6 +29,7 @@ data class ShowInfoData(
         InformationType.ENEMY_COUNT -> showEnemyCount
         InformationType.KILL_COUNT -> showKillCount
         InformationType.MOON_PHASE -> showMoonPhase
+        InformationType.MOVEMENT_SPEED -> showMovementSpeed
     }
 
     companion object {
@@ -39,7 +41,8 @@ data class ShowInfoData(
             showDepth = true,
             showEnemyCount = true,
             showKillCount = true,
-            showMoonPhase = true
+            showMoonPhase = true,
+            showMovementSpeed = true
         )
 
         val CODEC: Codec<ShowInfoData> = RecordCodecBuilder.create { instance ->
@@ -51,7 +54,8 @@ data class ShowInfoData(
                 Codec.BOOL.fieldOf("showDepth").forGetter(ShowInfoData::showDepth),
                 Codec.BOOL.fieldOf("showEnemyCount").forGetter(ShowInfoData::showEnemyCount),
                 Codec.BOOL.fieldOf("showKillCount").forGetter(ShowInfoData::showKillCount),
-                Codec.BOOL.fieldOf("showMoonPhase").forGetter(ShowInfoData::showMoonPhase)
+                Codec.BOOL.fieldOf("showMoonPhase").forGetter(ShowInfoData::showMoonPhase),
+                Codec.BOOL.fieldOf("showMovementSpeed").forGetter(ShowInfoData::showMovementSpeed)
             ).apply(instance, ::ShowInfoData)
         }
     }

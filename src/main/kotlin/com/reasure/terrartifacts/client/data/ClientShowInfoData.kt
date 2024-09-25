@@ -31,6 +31,7 @@ object ClientShowInfoData {
                     showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT],
                     showKillCount = ClientHasInfoAccessoryData[InformationType.KILL_COUNT],
                     showMoonPhase = ClientHasInfoAccessoryData[InformationType.MOON_PHASE],
+                    showMovementSpeed = ClientHasInfoAccessoryData[InformationType.MOVEMENT_SPEED]
                 )
             )
         )

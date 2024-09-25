@@ -35,5 +35,9 @@ enum class InformationType(val id: String, val message: Component) {
     MOON_PHASE(
         "moon_phase",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE)
+    ),
+    MOVEMENT_SPEED(
+        "movement_speed",
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED)
     )
 }

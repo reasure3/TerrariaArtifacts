@@ -27,7 +27,8 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.TALLY_COUNTER, "탤리 카운터")
         add(ModItems.SEXTANT, "육분의")
         add(ModItems.GPS, "GPS")
-        add(ModItems.FISH_FINDER, "Fish Finder")
+        add(ModItems.FISH_FINDER, "어류 탐지기")
+        add(ModItems.STOPWATCH, "스톱워치")
     }
 
 
@@ -46,6 +47,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_RADAR, "근처 몬스터의 수를 표시합니다.")
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "각 엔티티 마다 죽인 횟수를 표시합니다.")
         add(TranslationKeys.TOOLTIP_SEXTANT, "달의 위상 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_STOPWATCH, "이동 속도를 표시합니다.")
     }
 
     override fun addGui() {
@@ -87,6 +89,8 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ 네더 달")
         add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ 엔더 달")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "달의 위상")
+        add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "이동 속도")
     }
 
     override fun addConfigs() {

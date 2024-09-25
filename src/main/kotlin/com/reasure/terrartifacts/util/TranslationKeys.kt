@@ -16,6 +16,7 @@ object TranslationKeys {
     const val TOOLTIP_RADAR = "${Terrartifacts.ID}.tooltip.radar"
     const val TOOLTIP_TALLY_COUNTER = "${Terrartifacts.ID}.tooltip.tally_counter"
     const val TOOLTIP_SEXTANT = "${Terrartifacts.ID}.tooltip.sextant"
+    const val TOOLTIP_STOPWATCH = "${Terrartifacts.ID}.tooltip.stopwatch"
 
     const val INFO_TIME = "${Terrartifacts.ID}.info.time"
     const val INFO_WEATHER = "${Terrartifacts.ID}.info.weather"
@@ -37,6 +38,7 @@ object TranslationKeys {
     const val INFO_NO_MOON_PHASE = "${Terrartifacts.ID}.info.no_moon_phase"
     const val INFO_NETHER_MOON_PHASE = "${Terrartifacts.ID}.info.nether_moon_phase"
     const val INFO_END_MOON_PHASE = "${Terrartifacts.ID}.info.end_moon_phase"
+    const val INFO_MOVEMENT_SPEED = "${Terrartifacts.ID}.info.movement_speed"
 
     const val TIME_MORNING = "${Terrartifacts.ID}.time_morning"
     const val TIME_AFTERNOON = "${Terrartifacts.ID}.time_afternoon"
@@ -55,4 +57,5 @@ object TranslationKeys {
     const val BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT = "${Terrartifacts.ID}.message.button.info.toggle_enemy_count"
     const val BUTTON_MESSAGE_TOGGLE_KILL_COUNT = "${Terrartifacts.ID}.message.button.info.toggle_kill_count"
     const val BUTTON_MESSAGE_TOGGLE_MOON_PHASE = "${Terrartifacts.ID}.message.button.info.toggle_moon_phase"
+    const val BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED = "${Terrartifacts.ID}.message.button.info.toggle_movement_speed"
 }

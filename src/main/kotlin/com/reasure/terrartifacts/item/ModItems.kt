@@ -8,6 +8,7 @@ import com.reasure.terrartifacts.item.accessories.informational.FishermanPocketG
 import com.reasure.terrartifacts.item.accessories.informational.GPSItem
 import com.reasure.terrartifacts.item.accessories.informational.RadarItem
 import com.reasure.terrartifacts.item.accessories.informational.SextantItem
+import com.reasure.terrartifacts.item.accessories.informational.StopwatchItem
 import com.reasure.terrartifacts.item.accessories.informational.TallyCounterItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchItem
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
@@ -75,6 +76,10 @@ object ModItems {
 
     val SEXTANT: Item by ITEMS.register("sextant") { ->
         SextantItem(Item.Properties().rarity(ModRarity.BLUE))
+    }
+
+    val STOPWATCH: Item by ITEMS.register("stopwatch") { ->
+        StopwatchItem(Item.Properties().rarity(ModRarity.BLUE))
     }
 
     val GPS: Item by ITEMS.register("gps") { ->
