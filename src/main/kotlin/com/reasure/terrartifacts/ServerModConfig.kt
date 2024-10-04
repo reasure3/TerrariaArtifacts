@@ -4,19 +4,19 @@ import com.reasure.terrartifacts.util.BaseConfig
 import net.neoforged.neoforge.common.ModConfigSpec
 
 
-object CommonModConfig {
-    val COMMON: Common
+object ServerModConfig {
+    val SERVER: Server
     val SPEC: ModConfigSpec
 
     init {
-        with(ModConfigSpec.Builder().configure(::Common)) {
-            COMMON = left
+        with(ModConfigSpec.Builder().configure(::Server)) {
+            SERVER = left
             SPEC = right
         }
     }
 }
 
-class Common(builder: ModConfigSpec.Builder) : BaseConfig(builder) {
+class Server(builder: ModConfigSpec.Builder) : BaseConfig(builder) {
     val radarDetectDistance: Double by builder
         .defineInRange("radarDetectDistance", 30.0, 0.1, 512.0)
 }

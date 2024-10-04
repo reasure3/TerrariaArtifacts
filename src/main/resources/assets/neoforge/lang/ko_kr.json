@@ -1,0 +1,35 @@
+{
+  "neoforge.configuration.uitext.rangetooltip": [
+    {
+      "text": "\n\n범위: ",
+      "color": "gray"
+    },
+    {
+      "index": 0,
+      "color": "gray"
+    }
+  ],
+  "neoforge.configuration.uitext.filenametooltip": [
+    {
+      "text": "파일: \"",
+      "color": "gray"
+    },
+    {
+      "index": 0,
+      "color": "gray"
+    },
+    {
+      "text": "\"",
+      "color": "gray"
+    }
+  ],
+  "neoforge.configuration.uitext.common": "공통 설정",
+  "neoforge.configuration.uitext.client": "클라이언트 설정",
+  "neoforge.configuration.uitext.server": "서버 설정 (월드 별 설정)",
+  "neoforge.configuration.uitext.notloaded": [
+    {
+      "text": "이 설정은 월드가 로딩되어야 변경 가능합니다.",
+      "color": "red"
+    }
+  ]
+}

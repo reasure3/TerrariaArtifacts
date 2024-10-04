@@ -1,6 +1,6 @@
 package com.reasure.terrartifacts.client.handler
 
-import com.reasure.terrartifacts.CommonModConfig
+import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
@@ -88,7 +88,7 @@ object InfoComponentHandler {
     }
 
     fun getEnemyCountComponent(player: LocalPlayer): Component {
-        val distance = CommonModConfig.COMMON.radarDetectDistance
+        val distance = ServerModConfig.SERVER.radarDetectDistance
         val count = player.getNearbyEntityCount(distance) { entity ->
             entity is Enemy
         }
