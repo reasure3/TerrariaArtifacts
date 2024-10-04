@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.client.gui.widget
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button.OnPress
@@ -10,7 +10,7 @@ import net.minecraft.client.gui.components.ImageButton
 import net.minecraft.client.gui.components.WidgetSprites
 
 class InfoButton(
-    x: Int, y: Int, val type: InformationType
+    x: Int, y: Int, val type: InfoType
 ) : ImageButton(
     x, y, 9, 9,
     makeWidgetSprites(type),
@@ -29,8 +29,8 @@ class InfoButton(
     private fun isToggled(): Boolean = ClientShowInfoData[type]
 
     companion object {
-        fun makeWidgetSprites(infoType: InformationType): WidgetSprites {
-            if (infoType == InformationType.MOON_PHASE) {
+        fun makeWidgetSprites(infoType: InfoType): WidgetSprites {
+            if (infoType == InfoType.MOON_PHASE) {
                 val level = Minecraft.getInstance().level
                 if (level != null && !level.dimensionType().natural) {
                     return WidgetSprites(

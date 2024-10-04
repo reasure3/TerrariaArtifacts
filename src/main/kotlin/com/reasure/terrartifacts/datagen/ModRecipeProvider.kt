@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.datagen
 
+import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.ModItems
 import com.reasure.terrartifacts.util.ModTags
 import net.minecraft.core.HolderLookup
@@ -56,13 +57,23 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
 
     private fun addTinkersRecipe(output: RecipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GPS)
-            .requires(ModTags.Items.FULL_WATCH)
+            .requires(ModItems.GOLD_WATCH)
             .requires(ModItems.COMPASS)
             .requires(ModItems.DEPTH_METER)
-            .unlockedBy("has_watch", has(ModTags.Items.FULL_WATCH))
+            .unlockedBy("has_gold_watch", has(ModItems.GOLD_WATCH))
             .unlockedBy("has_compass", has(ModItems.COMPASS))
             .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
-            .save(output)
+            .save(output, Terrartifacts.modLoc("gps_from_gold_watch"))
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GPS)
+            .requires(ModItems.PLATINUM_WATCH)
+            .requires(ModItems.COMPASS)
+            .requires(ModItems.DEPTH_METER)
+            .unlockedBy("has_platinum_watch", has(ModItems.PLATINUM_WATCH))
+            .unlockedBy("has_compass", has(ModItems.COMPASS))
+            .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
+            .save(output, Terrartifacts.modLoc("gps_from_platinum_watch"))
+
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.FISH_FINDER)
             .requires(ModItems.WEATHER_RADIO)

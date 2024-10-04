@@ -26,7 +26,7 @@ class ModClientPayloadHandler {
     object OnLoggedIn {
         fun handle(@Suppress("unused") serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) {
             context.enqueueWork {
-                InformationHandler.reset()
+                InfoItemHandler.reset()
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null
@@ -37,7 +37,7 @@ class ModClientPayloadHandler {
     object ReceivePlayerKillCount {
         fun handle(serverPacket: SendPlayerKillCountS2CPacket, context: IPayloadContext) {
             context.enqueueWork {
-                InformationHandler.getKillCount(serverPacket)
+                InfoItemHandler.receiveKillCount(serverPacket.targetPlayerName, serverPacket.killCount)
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null
@@ -48,7 +48,7 @@ class ModClientPayloadHandler {
     object ReceiveEntityKillCount {
         fun handle(serverPacket: SendEntityKillCountS2CPacket, context: IPayloadContext) {
             context.enqueueWork {
-                InformationHandler.getKillCount(serverPacket)
+                InfoItemHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null

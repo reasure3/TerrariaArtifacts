@@ -30,7 +30,7 @@ object PlayerEvents {
             PacketDistributor.sendToPlayer(player, PlayerLoggedInS2CPacket())
             PacketDistributor.sendToPlayer(
                 player,
-                SendShowInfoDataPacket(player.getData(ModDataAttachments.SHOW_INFO))
+                SendShowInfoDataPacket(player.getData(ModDataAttachments.SHOW_INFO).copy())
             )
         }
     }

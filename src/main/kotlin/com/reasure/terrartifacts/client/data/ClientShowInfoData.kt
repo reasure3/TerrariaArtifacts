@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client.data
 
 import com.reasure.terrartifacts.data.ShowInfoData
-import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.network.SendShowInfoDataPacket
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
@@ -15,35 +15,35 @@ import java.util.*
 object ClientShowInfoData {
     private const val DEFAULT_VALUE = false
 
-    val data = EnumMap(InformationType.entries.associateWith { DEFAULT_VALUE })
+    val data: EnumMap<InfoType, Boolean> = EnumMap(InfoType.entries.associateWith { DEFAULT_VALUE })
 
-    fun copyFrom(serverData: ShowInfoData) = InformationType.entries.forEach { data[it] = serverData[it] }
+    fun copyFrom(serverData: ShowInfoData) = InfoType.entries.forEach { data[it] = serverData[it] }
 
     private fun sendDataToServer() {
         PacketDistributor.sendToServer(
             SendShowInfoDataPacket(
                 ShowInfoData(
-                    showTime = ClientShowInfoData[InformationType.TIME],
-                    showWeather = ClientShowInfoData[InformationType.WEATHER],
-                    showFishingPower = ClientHasInfoAccessoryData[InformationType.FISHING_POWER],
-                    showDirection = ClientHasInfoAccessoryData[InformationType.POSITION],
-                    showDepth = ClientHasInfoAccessoryData[InformationType.DEPTH],
-                    showEnemyCount = ClientHasInfoAccessoryData[InformationType.ENEMY_COUNT],
-                    showKillCount = ClientHasInfoAccessoryData[InformationType.KILL_COUNT],
-                    showMoonPhase = ClientHasInfoAccessoryData[InformationType.MOON_PHASE],
-                    showMovementSpeed = ClientHasInfoAccessoryData[InformationType.MOVEMENT_SPEED]
+                    showTime = ClientShowInfoData[InfoType.TIME],
+                    showWeather = ClientShowInfoData[InfoType.WEATHER],
+                    showFishingPower = ClientShowInfoData[InfoType.FISHING_POWER],
+                    showDirection = ClientShowInfoData[InfoType.POSITION],
+                    showDepth = ClientShowInfoData[InfoType.DEPTH],
+                    showEnemyCount = ClientShowInfoData[InfoType.ENEMY_COUNT],
+                    showKillCount = ClientShowInfoData[InfoType.KILL_COUNT],
+                    showMoonPhase = ClientShowInfoData[InfoType.MOON_PHASE],
+                    showMovementSpeed = ClientShowInfoData[InfoType.MOVEMENT_SPEED]
                 )
             )
         )
     }
 
-    fun toggleData(type: InformationType) {
+    fun toggleData(type: InfoType) {
         data[type] = !ClientShowInfoData[type]
         sendDataToServer()
     }
 
-    operator fun get(type: InformationType) = data[type] ?: DEFAULT_VALUE
-    operator fun set(type: InformationType, value: Boolean) {
+    operator fun get(type: InfoType) = data[type] ?: DEFAULT_VALUE
+    operator fun set(type: InfoType, value: Boolean) {
         data[type] = value
         sendDataToServer()
     }

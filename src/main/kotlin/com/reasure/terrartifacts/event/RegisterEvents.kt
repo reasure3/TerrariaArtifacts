@@ -16,7 +16,7 @@ import net.neoforged.neoforge.network.handling.DirectionalPayloadHandler
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.MOD)
 object RegisterEvents {
     @SubscribeEvent
-    fun register(event: RegisterPayloadHandlersEvent) {
+    fun registerPayload(event: RegisterPayloadHandlersEvent) {
         val registrar = event.registrar("1")
 
         registrar.playToClient(

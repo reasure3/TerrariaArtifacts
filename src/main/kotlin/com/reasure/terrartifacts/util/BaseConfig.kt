@@ -15,5 +15,4 @@ open class BaseConfig(builder: ModConfigSpec.Builder) {
     operator fun <T : Enum<T>> ModConfigSpec.EnumValue<T>.getValue(any: Any?, property: KProperty<*>): T {
         return get()
     }
-
 }

@@ -109,7 +109,7 @@ class ModKoLangProvider(output: PackOutput) :
         addConfigDesc("infoButtonOffsetY.tooltip", "정보 악세서리 토글 버튼 Y 오프셋")
 
         addConfigDesc("section.terrartifacts.common.toml", "테라리아 유물들 공통 설정 파일")
-        addConfigDesc("section.terrartifacts.client.common.title", "테라리아 유물들 공통 설정")
+        addConfigDesc("section.terrartifacts.common.toml.title", "테라리아 유물들 공통 설정")
 
         addConfigDesc("radarDetectDistance", "레이더 감지 거리")
         addConfigDesc("radarDetectDistance.tooltip", "레이더 감지 거리 설정")

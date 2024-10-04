@@ -1,8 +1,8 @@
 package com.reasure.terrartifacts.client.gui.widget
 
 import com.reasure.terrartifacts.client.ClientModConfig
-import com.reasure.terrartifacts.client.data.ClientHasInfoAccessoryData
-import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
+import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractContainerWidget
 import net.minecraft.client.gui.components.events.GuiEventListener
@@ -14,7 +14,7 @@ class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCr
         guiX + layout.offsetX(isCreative), guiY + layout.offsetY(isCreative), layout.width, layout.height,
         Component.literal("info toggle buttons")
     ) {
-    val buttons = InformationType.entries.map { InfoButton(0, 0, it) }
+    val buttons = InfoType.entries.map { InfoButton(0, 0, it) }
 
     override fun renderWidget(
         gui: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float
@@ -23,7 +23,7 @@ class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCr
         var offsetY = 0
 
         buttons.forEach {
-            it.visible = ClientHasInfoAccessoryData[it.type]
+            it.visible = ClientHasInfoItemData[it.type]
             if (it.visible) {
                 it.x = this.x + offsetX
                 it.y = this.y + offsetY

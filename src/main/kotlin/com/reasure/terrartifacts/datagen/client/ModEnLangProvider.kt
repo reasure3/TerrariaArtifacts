@@ -108,7 +108,7 @@ class ModEnLangProvider(output: PackOutput) :
         addConfigDesc("infoButtonOffsetY.tooltip", "Info Accessory Toggle Button Y Offset")
 
         addConfigDesc("section.terrartifacts.common.toml", "Terrartifacts Common Config File")
-        addConfigDesc("section.terrartifacts.client.common.title", "Terrartifacts Common Configs")
+        addConfigDesc("section.terrartifacts.common.toml.title", "Terrartifacts Common Configs")
 
         addConfigDesc("radarDetectDistance", "Radar Detection Range")
         addConfigDesc("radarDetectDistance.tooltip", "Define Radar Detection Range")

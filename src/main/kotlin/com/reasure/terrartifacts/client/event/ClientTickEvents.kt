@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client.event
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.handler.InformationHandler
+import com.reasure.terrartifacts.client.handler.InfoItemHandler
 import net.minecraft.client.Minecraft
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.bus.api.SubscribeEvent
@@ -15,6 +15,6 @@ object ClientTickEvents {
     fun clientTick(event: ClientTickEvent.Post) {
         val mc = Minecraft.getInstance()
         val player = mc.player ?: return
-        InformationHandler.updateInfo(player)
+        InfoItemHandler.updateInfo(player)
     }
 }

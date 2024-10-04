@@ -3,7 +3,7 @@ package com.reasure.terrartifacts.item.accessories.informational
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.network.chat.Component
 
-enum class InformationType(val id: String, val message: Component) {
+enum class InfoType(val id: String, val message: Component) {
     TIME(
         "time",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME)

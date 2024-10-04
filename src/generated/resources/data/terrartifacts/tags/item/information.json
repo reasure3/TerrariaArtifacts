@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#terrartifacts:information/time",
+    "#terrartifacts:information/weather",
+    "#terrartifacts:information/fishing_power",
+    "#terrartifacts:information/position",
+    "#terrartifacts:information/depth",
+    "#terrartifacts:information/enemy_count",
+    "#terrartifacts:information/kill_count",
+    "#terrartifacts:information/moon_phase",
+    "#terrartifacts:information/movement_speed"
+  ]
+}

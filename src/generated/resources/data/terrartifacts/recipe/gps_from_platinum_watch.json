@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "terrartifacts:platinum_watch"
+    },
+    {
+      "item": "terrartifacts:compass"
+    },
+    {
+      "item": "terrartifacts:depth_meter"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "terrartifacts:gps"
+  }
+}

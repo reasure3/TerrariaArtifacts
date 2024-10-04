@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.data
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder
-import com.reasure.terrartifacts.item.accessories.informational.InformationType
+import com.reasure.terrartifacts.item.accessories.informational.InfoType
 
 /**
  * 플레이어가 정보 악세서리 소지 시, 해당 정보를 보여줄지 여부를 저장
@@ -20,16 +20,16 @@ data class ShowInfoData(
     val showMoonPhase: Boolean,
     val showMovementSpeed: Boolean
 ) {
-    operator fun get(type: InformationType) = when (type) {
-        InformationType.TIME -> showTime
-        InformationType.WEATHER -> showWeather
-        InformationType.FISHING_POWER -> showFishingPower
-        InformationType.POSITION -> showDirection
-        InformationType.DEPTH -> showDepth
-        InformationType.ENEMY_COUNT -> showEnemyCount
-        InformationType.KILL_COUNT -> showKillCount
-        InformationType.MOON_PHASE -> showMoonPhase
-        InformationType.MOVEMENT_SPEED -> showMovementSpeed
+    operator fun get(type: InfoType) = when (type) {
+        InfoType.TIME -> showTime
+        InfoType.WEATHER -> showWeather
+        InfoType.FISHING_POWER -> showFishingPower
+        InfoType.POSITION -> showDirection
+        InfoType.DEPTH -> showDepth
+        InfoType.ENEMY_COUNT -> showEnemyCount
+        InfoType.KILL_COUNT -> showKillCount
+        InfoType.MOON_PHASE -> showMoonPhase
+        InfoType.MOVEMENT_SPEED -> showMovementSpeed
     }
 
     companion object {
