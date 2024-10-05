@@ -42,6 +42,7 @@ object ModCreativeTabs {
                     accept(ModItems.TALLY_COUNTER)
                     accept(ModItems.SEXTANT)
                     accept(ModItems.STOPWATCH)
+                    accept(ModItems.METAL_DETECTOR)
                     accept(ModItems.GPS)
                     accept(ModItems.FISH_FINDER)
                 }

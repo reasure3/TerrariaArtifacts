@@ -27,9 +27,10 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.RADAR, "레이더")
         add(ModItems.TALLY_COUNTER, "탤리 카운터")
         add(ModItems.SEXTANT, "육분의")
+        add(ModItems.STOPWATCH, "스톱워치")
+        add(ModItems.METAL_DETECTOR, "금속 감지기")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "어류 탐지기")
-        add(ModItems.STOPWATCH, "스톱워치")
     }
 
 
@@ -49,6 +50,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "각 엔티티 마다 죽인 횟수를 표시합니다.")
         add(TranslationKeys.TOOLTIP_SEXTANT, "달의 위상 정보를 표시합니다.")
         add(TranslationKeys.TOOLTIP_STOPWATCH, "이동 속도를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "주변의 보물을 표시합니다.")
     }
 
     override fun addGui() {
@@ -92,6 +94,9 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "달의 위상")
         add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "이동 속도")
+        add(TranslationKeys.INFO_TREASURE, "⑾ 근처에 %s 탐지됨!")
+        add(TranslationKeys.INFO_NO_TREASURE, "⑾ 탐지된 보물 없음")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "보물")
     }
 
     override fun addConfigs() {
@@ -114,6 +119,9 @@ class ModKoLangProvider(output: PackOutput) :
 
         addConfigDesc("radarDetectDistance", "레이더 감지 거리")
         addConfigDesc("radarDetectDistance.tooltip", "레이더 감지 거리 설정")
+
+        addConfigDesc("treasureDetectDistance", "보물 탐지 거리")
+        addConfigDesc("treasureDetectDistance.tooltip", "보물 탐지 거리 설정")
     }
 
     override fun addTags() {
@@ -134,6 +142,7 @@ class ModKoLangProvider(output: PackOutput) :
         addTag(ModTags.Items.INFORMATION_KILL_COUNT, "죽인 횟수 표시")
         addTag(ModTags.Items.INFORMATION_MOON_PHASE, "달의 위상 표시")
         addTag(ModTags.Items.INFORMATION_MOVEMENT_SPEED, "이동 속도 표시")
+        addTag(ModTags.Items.INFORMATION_TREASURE, "보물 표시")
         addTag(ModTags.Items.CURIOS_ACCESSORIES, "악세서리")
     }
 }

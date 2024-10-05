@@ -28,6 +28,7 @@ class ModItemTagsProvider(
             .addTag(ModTags.Items.INFORMATION_KILL_COUNT)
             .addTag(ModTags.Items.INFORMATION_MOON_PHASE)
             .addTag(ModTags.Items.INFORMATION_MOVEMENT_SPEED)
+            .addTag(ModTags.Items.INFORMATION_TREASURE)
 
         tag(ModTags.Items.INFORMATION_TIME)
             .addTag(ModTags.Items.INFORMATION_TIME_HOUR)
@@ -75,6 +76,9 @@ class ModItemTagsProvider(
 
         tag(ModTags.Items.INFORMATION_MOVEMENT_SPEED)
             .add(ModItems.STOPWATCH)
+
+        tag(ModTags.Items.INFORMATION_TREASURE)
+            .add(ModItems.METAL_DETECTOR)
 
         with(tag(ModTags.Items.CURIOS_ACCESSORIES)) {
             ModItems.ITEMS.entries

@@ -3,6 +3,7 @@ package com.reasure.terrartifacts.client.handler
 import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
+import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.util.LevelUtil.getNearbyEntityCount
@@ -20,6 +21,11 @@ import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.monster.Enemy
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.biome.Biome
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.state.BlockState
+import net.minecraft.world.phys.AABB
+import java.util.concurrent.atomic.AtomicInteger
+import java.util.concurrent.atomic.AtomicReference
 
 object InfoComponentHandler {
     val ICON = Style.EMPTY.withFont(Terrartifacts.modLoc("terraria"))
@@ -135,6 +141,29 @@ object InfoComponentHandler {
         }
     }
 
+    fun getTreasureComponent(level: Level, pos: BlockPos): Component {
+        val maxRare = AtomicInteger(0)
+        val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
+        val distance = ServerModConfig.SERVER.treasureDetectDistance
+        level.getBlockStates(
+            AABB(
+                pos.x - distance, pos.y - distance, pos.z - distance,
+                pos.x + distance, pos.y + distance, pos.z + distance
+            )
+        ).forEach { block ->
+            val data = block.blockHolder.getData(ModDataMaps.RARE_BLOCK_DATA) ?: return@forEach
+            if (data.value > maxRare.get()) {
+                maxRare.set(data.value)
+                detectedBlockState.set(block)
+            }
+        }
+        val detectedBlock = detectedBlockState.get()
+        if (!detectedBlock.`is`(Blocks.AIR)) {
+            return Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
+        }
+        return Component.translatable(TranslationKeys.INFO_NO_TREASURE).disabled()
+    }
+
     private fun defaultKillCountComponent() = Component.translatable(TranslationKeys.INFO_NO_KILL_COUNT).disabled()
 
     private fun MutableComponent.withIcon(): MutableComponent = withStyle(ICON)
@@ -151,5 +180,6 @@ object InfoComponentHandler {
         InfoType.KILL_COUNT -> killCountComponent
         InfoType.MOON_PHASE -> getMoonPhaseComponent(player.level())
         InfoType.MOVEMENT_SPEED -> getMovementSpeedComponent(player)
+        InfoType.TREASURE -> getTreasureComponent(player.level(), player.onPos)
     }
 }

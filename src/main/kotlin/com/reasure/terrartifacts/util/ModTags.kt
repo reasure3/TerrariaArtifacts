@@ -26,6 +26,7 @@ class ModTags {
         val INFORMATION_KILL_COUNT: TagKey<Item> = modTag("information/kill_count")
         val INFORMATION_MOON_PHASE: TagKey<Item> = modTag("information/moon_phase")
         val INFORMATION_MOVEMENT_SPEED: TagKey<Item> = modTag("information/movement_speed")
+        val INFORMATION_TREASURE: TagKey<Item> = modTag("information/treasure")
 
         val CURIOS_ACCESSORIES: TagKey<Item> = curiosTag("accessory")
 

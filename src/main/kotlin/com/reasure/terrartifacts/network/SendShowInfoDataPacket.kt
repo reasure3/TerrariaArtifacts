@@ -14,18 +14,20 @@ class SendShowInfoDataPacket(val data: ShowInfoData) : CustomPacketPayload {
             buffer.writeBoolean(showTime)
             buffer.writeBoolean(showWeather)
             buffer.writeBoolean(showFishingPower)
-            buffer.writeBoolean(showDirection)
+            buffer.writeBoolean(showPosition)
             buffer.writeBoolean(showDepth)
             buffer.writeBoolean(showEnemyCount)
             buffer.writeBoolean(showKillCount)
             buffer.writeBoolean(showMoonPhase)
             buffer.writeBoolean(showMovementSpeed)
+            buffer.writeBoolean(showTreasure)
         }
     }
 
     companion object {
         fun decode(buffer: ByteBuf) = SendShowInfoDataPacket(
             ShowInfoData(
+                buffer.readBoolean(),
                 buffer.readBoolean(),
                 buffer.readBoolean(),
                 buffer.readBoolean(),

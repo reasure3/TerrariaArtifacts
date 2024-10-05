@@ -96,6 +96,13 @@ object ModItems {
         )
     }
 
+    val METAL_DETECTOR: Item by ITEMS.register("metal_detector") { ->
+        AccessoryItem(
+            rarity = ModRarity.BLUE,
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_METAL_DETECTOR)
+        )
+    }
+
     val GPS: Item by ITEMS.register("gps") { ->
         AccessoryItem(
             rarity = ModRarity.ORANGE,

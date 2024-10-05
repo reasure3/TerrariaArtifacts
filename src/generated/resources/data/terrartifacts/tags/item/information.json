@@ -8,6 +8,7 @@
     "#terrartifacts:information/enemy_count",
     "#terrartifacts:information/kill_count",
     "#terrartifacts:information/moon_phase",
-    "#terrartifacts:information/movement_speed"
+    "#terrartifacts:information/movement_speed",
+    "#terrartifacts:information/treasure"
   ]
 }

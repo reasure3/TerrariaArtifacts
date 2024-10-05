@@ -39,6 +39,7 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.TALLY_COUNTER)
         basicItem(ModItems.SEXTANT)
         basicItem(ModItems.STOPWATCH)
+        basicItem(ModItems.METAL_DETECTOR)
         basicItem(ModItems.GPS)
         basicItem(ModItems.FISH_FINDER)
     }

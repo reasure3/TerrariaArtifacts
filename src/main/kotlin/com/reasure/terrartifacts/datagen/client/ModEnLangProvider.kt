@@ -27,9 +27,10 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.RADAR, "Radar")
         add(ModItems.TALLY_COUNTER, "Tally Counter")
         add(ModItems.SEXTANT, "Sextant")
+        add(ModItems.STOPWATCH, "Stopwatch")
+        add(ModItems.METAL_DETECTOR, "Metal Detector")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "Fish Finder")
-        add(ModItems.STOPWATCH, "Stopwatch")
     }
 
     override fun addBlocks() {
@@ -48,6 +49,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "Displays number of kills per enemy type")
         add(TranslationKeys.TOOLTIP_SEXTANT, "Displays the current moon phase")
         add(TranslationKeys.TOOLTIP_STOPWATCH, "Displays movement speed")
+        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "Displays nearby valuable objects")
     }
 
     override fun addGui() {
@@ -91,6 +93,9 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "Moon Phase")
         add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "Movement Speed")
+        add(TranslationKeys.INFO_TREASURE, "⑾ %s detected nearby!")
+        add(TranslationKeys.INFO_NO_TREASURE, "⑾ No treasure nearby")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "Treasure")
     }
 
     override fun addConfigs() {
@@ -113,6 +118,9 @@ class ModEnLangProvider(output: PackOutput) :
 
         addConfigDesc("radarDetectDistance", "Radar Detection Range")
         addConfigDesc("radarDetectDistance.tooltip", "Define Radar Detection Range")
+
+        addConfigDesc("treasureDetectDistance", "Treasure Detection Range")
+        addConfigDesc("treasureDetectDistance.tooltip", "Define Treasure Detection Range")
     }
 
     override fun addTags() {
@@ -133,6 +141,7 @@ class ModEnLangProvider(output: PackOutput) :
         addTag(ModTags.Items.INFORMATION_KILL_COUNT, "Display Kill Count")
         addTag(ModTags.Items.INFORMATION_MOON_PHASE, "Display Moon Phase")
         addTag(ModTags.Items.INFORMATION_MOVEMENT_SPEED, "Display Movement Speed")
+        addTag(ModTags.Items.INFORMATION_TREASURE, "Display Treasure")
         addTag(ModTags.Items.CURIOS_ACCESSORIES, "Accessories")
     }
 }

@@ -39,5 +39,9 @@ enum class InfoType(val id: String, val message: Component) {
     MOVEMENT_SPEED(
         "movement_speed",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED)
+    ),
+    TREASURE(
+        "treasure",
+        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE)
     )
 }

@@ -26,12 +26,13 @@ object ClientShowInfoData {
                     showTime = ClientShowInfoData[InfoType.TIME],
                     showWeather = ClientShowInfoData[InfoType.WEATHER],
                     showFishingPower = ClientShowInfoData[InfoType.FISHING_POWER],
-                    showDirection = ClientShowInfoData[InfoType.POSITION],
+                    showPosition = ClientShowInfoData[InfoType.POSITION],
                     showDepth = ClientShowInfoData[InfoType.DEPTH],
                     showEnemyCount = ClientShowInfoData[InfoType.ENEMY_COUNT],
                     showKillCount = ClientShowInfoData[InfoType.KILL_COUNT],
                     showMoonPhase = ClientShowInfoData[InfoType.MOON_PHASE],
-                    showMovementSpeed = ClientShowInfoData[InfoType.MOVEMENT_SPEED]
+                    showMovementSpeed = ClientShowInfoData[InfoType.MOVEMENT_SPEED],
+                    showTreasure = ClientShowInfoData[InfoType.TREASURE]
                 )
             )
         )

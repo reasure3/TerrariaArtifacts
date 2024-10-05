@@ -25,7 +25,8 @@ object InfoItemHandler {
         ModTags.Items.INFORMATION_ENEMY_COUNT to InfoType.ENEMY_COUNT,
         ModTags.Items.INFORMATION_KILL_COUNT to InfoType.KILL_COUNT,
         ModTags.Items.INFORMATION_MOON_PHASE to InfoType.MOON_PHASE,
-        ModTags.Items.INFORMATION_MOVEMENT_SPEED to InfoType.MOVEMENT_SPEED
+        ModTags.Items.INFORMATION_MOVEMENT_SPEED to InfoType.MOVEMENT_SPEED,
+        ModTags.Items.INFORMATION_TREASURE to InfoType.TREASURE
     )
 
     private val infoComponent: MutableList<Component> = mutableListOf()
