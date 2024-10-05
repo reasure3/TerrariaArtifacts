@@ -1,16 +1,2 @@
-// 1.21	2024-10-05T16:35:52.5410845	Tags for minecraft:item mod id terrartifacts
+// 1.21	2024-10-05T20:16:17.6029583	Tags for minecraft:item mod id terrartifacts
 a208f1274ff6d78b35a1073a218c23296e35667b data/curios/tags/item/accessory.json
-57be7fc437812e4ed7bfacb2ba5548638fbfa7d7 data/terrartifacts/tags/item/information.json
-6ea8618c2ad9e58f1e65cf3a3ac14b0af000e69e data/terrartifacts/tags/item/information/depth.json
-13261c80b63d36e85a2427c751785119611cbfdb data/terrartifacts/tags/item/information/enemy_count.json
-0fd507e04d22d86ac8dbfdafaaceb4ebcde71661 data/terrartifacts/tags/item/information/fishing_power.json
-8ea3a7b15728e09b55b7e17a13f57ef3d88c70c6 data/terrartifacts/tags/item/information/kill_count.json
-7b3f99aa636f624c4c73c874d5e4f3136a685ee6 data/terrartifacts/tags/item/information/moon_phase.json
-40561edb136d578f5aeb9d77d5beae9a71be1a17 data/terrartifacts/tags/item/information/movement_speed.json
-b42d434228b1cb9f043ed6055a04558fe6aff417 data/terrartifacts/tags/item/information/position.json
-b46a8ac8d02c99785bbbd71ed3afaa5c7ca75323 data/terrartifacts/tags/item/information/time.json
-85a236388f187d5eb4da55d351ad5332ece73971 data/terrartifacts/tags/item/information/time/half_hour.json
-ed525eb214fc1bdff9769b481c053d595f653e22 data/terrartifacts/tags/item/information/time/hour.json
-258a770588d647e988009c8ff5a28347134c722b data/terrartifacts/tags/item/information/time/minute.json
-1d9dee524e0f3e15585fac9656b1f6f1feed55f4 data/terrartifacts/tags/item/information/treasure.json
-df04456e0c86eb2a27a305be1a2a56f6687d458e data/terrartifacts/tags/item/information/weather.json

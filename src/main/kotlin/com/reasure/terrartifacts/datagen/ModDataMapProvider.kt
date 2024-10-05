@@ -1,13 +1,16 @@
 package com.reasure.terrartifacts.datagen
 
+import com.reasure.terrartifacts.data.DisplayInfoData
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.data.RareBlockData
 import com.reasure.terrartifacts.data.RareEntityData
+import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
 import net.minecraft.world.entity.EntityType
+import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.neoforged.neoforge.common.Tags
@@ -17,6 +20,25 @@ import java.util.concurrent.CompletableFuture
 class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) :
     DataMapProvider(output, registries) {
     override fun gather() {
+        builder(ModDataMaps.DISPLAY_INFO_DATA)
+            .displayInfo(ModItems.COPPER_WATCH, timeHour = true)
+            .displayInfo(ModItems.TIN_WATCH, timeHour = true)
+            .displayInfo(ModItems.SILVER_WATCH, timeHour = true)
+            .displayInfo(ModItems.TUNGSTEN_WATCH, timeHour = true)
+            .displayInfo(ModItems.GOLD_WATCH, timeMinute = true)
+            .displayInfo(ModItems.PLATINUM_WATCH, timeMinute = true)
+            .displayInfo(ModItems.WEATHER_RADIO, weather = true)
+            .displayInfo(ModItems.FISHERMAN_POCKET_GUIDE, fishingPower = true)
+            .displayInfo(ModItems.COMPASS, position = true)
+            .displayInfo(ModItems.DEPTH_METER, depth = true)
+            .displayInfo(ModItems.RADAR, enemyCount = true)
+            .displayInfo(ModItems.TALLY_COUNTER, killCount = true)
+            .displayInfo(ModItems.SEXTANT, moonPhase = true)
+            .displayInfo(ModItems.STOPWATCH, movementSpeed = true)
+            .displayInfo(ModItems.METAL_DETECTOR, treasure = true)
+            .displayInfo(ModItems.GPS, timeMinute = true, position = true, depth = true)
+            .displayInfo(ModItems.FISH_FINDER, weather = true, fishingPower = true, moonPhase = true)
+
         builder(ModDataMaps.RARE_BLOCK_DATA)
             .rareBlock(Blocks.DECORATED_POT, 50)
             .rareBlock(Tags.Blocks.ORES_QUARTZ, 100)
@@ -80,6 +102,41 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             .rareEntity(EntityType.EVOKER, 2)
             .rareEntity(EntityType.PHANTOM, 1)
     }
+
+    @Suppress("DEPRECATION")
+    private fun Builder<DisplayInfoData, Item>.displayInfo(
+        item: Item,
+        timeHour: Boolean = false,
+        timeHalfHour: Boolean = false,
+        timeMinute: Boolean = false,
+        weather: Boolean = false,
+        fishingPower: Boolean = false,
+        position: Boolean = false,
+        depth: Boolean = false,
+        enemyCount: Boolean = false,
+        killCount: Boolean = false,
+        moonPhase: Boolean = false,
+        movementSpeed: Boolean = false,
+        treasure: Boolean = false
+    ): Builder<DisplayInfoData, Item> =
+        add(
+            item.builtInRegistryHolder(),
+            DisplayInfoData(
+                timeHour,
+                timeHalfHour,
+                timeMinute,
+                weather,
+                fishingPower,
+                position,
+                depth,
+                enemyCount,
+                killCount,
+                moonPhase,
+                movementSpeed,
+                treasure
+            ),
+            false
+        )
 
     @Suppress("DEPRECATION")
     private fun Builder<RareBlockData, Block>.rareBlock(
