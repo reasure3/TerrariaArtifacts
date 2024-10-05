@@ -2,10 +2,12 @@ package com.reasure.terrartifacts.datagen
 
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.data.RareBlockData
+import com.reasure.terrartifacts.data.RareEntityData
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.neoforged.neoforge.common.Tags
@@ -51,6 +53,32 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             .rareBlock(BlockTags.SHULKER_BOXES, 5020)
             .rareBlock(BlockTags.SHULKER_BOXES, 5020)
             .rareBlock(Blocks.DRAGON_EGG, 10000)
+
+        builder(ModDataMaps.RARE_ENTITY_DATA)
+            .rareEntity(EntityType.ENDER_DRAGON, 100)
+            .rareEntity(EntityType.WITHER, 90)
+            .rareEntity(EntityType.WARDEN, 80)
+            .rareEntity(EntityType.ELDER_GUARDIAN, 50)
+            .rareEntity(EntityType.SKELETON_HORSE, 40)
+            .rareEntity(EntityType.PIGLIN_BRUTE, 19)
+            .rareEntity(EntityType.MOOSHROOM, 18)
+            .rareEntity(EntityType.SHULKER, 17)
+            .rareEntity(EntityType.ENDERMITE, 16)
+            .rareEntity(EntityType.BREEZE, 15)
+            .rareEntity(EntityType.BLAZE, 14)
+            .rareEntity(EntityType.WITHER_SKELETON, 13)
+            .rareEntity(EntityType.SNIFFER, 12)
+            .rareEntity(EntityType.ALLAY, 11)
+            .rareEntity(EntityType.AXOLOTL, 10)
+            .rareEntity(EntityType.GUARDIAN, 9)
+            .rareEntity(EntityType.SILVERFISH, 8)
+            .rareEntity(EntityType.ARMADILLO, 7)
+            .rareEntity(EntityType.BEE, 6)
+            .rareEntity(EntityType.PANDA, 5)
+            .rareEntity(EntityType.WOLF, 4)
+            .rareEntity(EntityType.GOAT, 3)
+            .rareEntity(EntityType.EVOKER, 2)
+            .rareEntity(EntityType.PHANTOM, 1)
     }
 
     @Suppress("DEPRECATION")
@@ -65,4 +93,11 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
         value: Int
     ): Builder<RareBlockData, Block> =
         add(blockTag, RareBlockData(value), false)
+
+    @Suppress("DEPRECATION")
+    private fun Builder<RareEntityData, EntityType<*>>.rareEntity(
+        entity: EntityType<*>,
+        rarity: Int
+    ): Builder<RareEntityData, EntityType<*>> =
+        add(entity.builtInRegistryHolder(), RareEntityData(rarity), false)
 }

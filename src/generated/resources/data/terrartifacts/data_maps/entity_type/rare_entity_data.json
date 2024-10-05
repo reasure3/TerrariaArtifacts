@@ -1,0 +1,76 @@
+{
+  "values": {
+    "minecraft:allay": {
+      "rarity": 11
+    },
+    "minecraft:armadillo": {
+      "rarity": 7
+    },
+    "minecraft:axolotl": {
+      "rarity": 10
+    },
+    "minecraft:bee": {
+      "rarity": 6
+    },
+    "minecraft:blaze": {
+      "rarity": 14
+    },
+    "minecraft:breeze": {
+      "rarity": 15
+    },
+    "minecraft:elder_guardian": {
+      "rarity": 50
+    },
+    "minecraft:ender_dragon": {
+      "rarity": 100
+    },
+    "minecraft:endermite": {
+      "rarity": 16
+    },
+    "minecraft:evoker": {
+      "rarity": 2
+    },
+    "minecraft:goat": {
+      "rarity": 3
+    },
+    "minecraft:guardian": {
+      "rarity": 9
+    },
+    "minecraft:mooshroom": {
+      "rarity": 18
+    },
+    "minecraft:panda": {
+      "rarity": 5
+    },
+    "minecraft:phantom": {
+      "rarity": 1
+    },
+    "minecraft:piglin_brute": {
+      "rarity": 19
+    },
+    "minecraft:shulker": {
+      "rarity": 17
+    },
+    "minecraft:silverfish": {
+      "rarity": 8
+    },
+    "minecraft:skeleton_horse": {
+      "rarity": 40
+    },
+    "minecraft:sniffer": {
+      "rarity": 12
+    },
+    "minecraft:warden": {
+      "rarity": 80
+    },
+    "minecraft:wither": {
+      "rarity": 90
+    },
+    "minecraft:wither_skeleton": {
+      "rarity": 13
+    },
+    "minecraft:wolf": {
+      "rarity": 4
+    }
+  }
+}

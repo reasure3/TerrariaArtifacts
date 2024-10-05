@@ -2,6 +2,7 @@ package com.reasure.terrartifacts.data
 
 import com.reasure.terrartifacts.Terrartifacts
 import net.minecraft.core.registries.Registries
+import net.minecraft.world.entity.EntityType
 import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.registries.datamaps.DataMapType
 
@@ -15,6 +16,15 @@ object ModDataMaps {
         RareBlockData.CODEC
     ).synced(
         RareBlockData.CODEC,
+        false
+    ).build()
+
+    val RARE_ENTITY_DATA: DataMapType<EntityType<*>, RareEntityData> = DataMapType.builder(
+        Terrartifacts.modLoc("rare_entity_data"),
+        Registries.ENTITY_TYPE,
+        RareEntityData.CODEC
+    ).synced(
+        RareEntityData.CODEC,
         false
     ).build()
 }
