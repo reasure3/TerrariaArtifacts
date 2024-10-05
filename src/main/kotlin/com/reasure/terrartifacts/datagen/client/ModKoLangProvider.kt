@@ -2,6 +2,7 @@ package com.reasure.terrartifacts.datagen.client
 
 import com.reasure.terrartifacts.block.ModBlocks
 import com.reasure.terrartifacts.item.ModItems
+import com.reasure.terrartifacts.util.ModTags
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.data.PackOutput
 
@@ -113,5 +114,26 @@ class ModKoLangProvider(output: PackOutput) :
 
         addConfigDesc("radarDetectDistance", "레이더 감지 거리")
         addConfigDesc("radarDetectDistance.tooltip", "레이더 감지 거리 설정")
+    }
+
+    override fun addTags() {
+        addTag(ModTags.Items.INGOTS_TIN, "주석 주괴")
+        addTag(ModTags.Items.INGOTS_SILVER, "은 주괴")
+        addTag(ModTags.Items.INGOTS_TUNGSTEN, "텅스텐 주괴")
+        addTag(ModTags.Items.INGOTS_PLATINUM, "백금 주괴")
+        addTag(ModTags.Items.INFORMATION, "정보 표시")
+        addTag(ModTags.Items.INFORMATION_TIME, "시간 표시")
+        addTag(ModTags.Items.INFORMATION_TIME_HOUR, "시간 단위 표시")
+        addTag(ModTags.Items.INFORMATION_TIME_HALF_HOUR, "30분 단위 표시")
+        addTag(ModTags.Items.INFORMATION_TIME_MINUTE, "분 단위 표시")
+        addTag(ModTags.Items.INFORMATION_WEATHER, "날씨 표시")
+        addTag(ModTags.Items.INFORMATION_FISHING_POWER, "낚시 힘 표시")
+        addTag(ModTags.Items.INFORMATION_POSITION, "위치 표시")
+        addTag(ModTags.Items.INFORMATION_DEPTH, "깊이 표시")
+        addTag(ModTags.Items.INFORMATION_ENEMY_COUNT, "몬스터 수 표시")
+        addTag(ModTags.Items.INFORMATION_KILL_COUNT, "죽인 횟수 표시")
+        addTag(ModTags.Items.INFORMATION_MOON_PHASE, "달의 위상 표시")
+        addTag(ModTags.Items.INFORMATION_MOVEMENT_SPEED, "이동 속도 표시")
+        addTag(ModTags.Items.CURIOS_ACCESSORIES, "악세서리")
     }
 }

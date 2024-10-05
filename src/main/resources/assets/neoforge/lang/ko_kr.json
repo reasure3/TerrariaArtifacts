@@ -1,4 +1,8 @@
 {
+  "neoforge.configuration.uitext.undo": "되돌리기",
+  "neoforge.configuration.uitext.undo.tooltip": "이 화면에서 변경한 내용을 되돌립니다.",
+  "neoforge.configuration.uitext.reset": "초기화",
+  "neoforge.configuration.uitext.reset.tooltip": "모든 값을 기본 값으로 초기화합니다.",
   "neoforge.configuration.uitext.rangetooltip": [
     {
       "text": "\n\n범위: ",
@@ -25,7 +29,7 @@
   ],
   "neoforge.configuration.uitext.common": "공통 설정",
   "neoforge.configuration.uitext.client": "클라이언트 설정",
-  "neoforge.configuration.uitext.server": "서버 설정 (월드 별 설정)",
+  "neoforge.configuration.uitext.server": "서버 설정",
   "neoforge.configuration.uitext.notloaded": [
     {
       "text": "이 설정은 월드가 로딩되어야 변경 가능합니다.",

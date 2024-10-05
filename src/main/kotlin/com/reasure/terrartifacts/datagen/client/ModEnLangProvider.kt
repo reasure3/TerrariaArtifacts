@@ -2,6 +2,7 @@ package com.reasure.terrartifacts.datagen.client
 
 import com.reasure.terrartifacts.block.ModBlocks
 import com.reasure.terrartifacts.item.ModItems
+import com.reasure.terrartifacts.util.ModTags
 import com.reasure.terrartifacts.util.TranslationKeys
 import net.minecraft.data.PackOutput
 
@@ -112,5 +113,26 @@ class ModEnLangProvider(output: PackOutput) :
 
         addConfigDesc("radarDetectDistance", "Radar Detection Range")
         addConfigDesc("radarDetectDistance.tooltip", "Define Radar Detection Range")
+    }
+
+    override fun addTags() {
+        addTag(ModTags.Items.INGOTS_TIN, "Tin Ingots")
+        addTag(ModTags.Items.INGOTS_SILVER, "Silver Ingots")
+        addTag(ModTags.Items.INGOTS_TUNGSTEN, "Tungsten Ingots")
+        addTag(ModTags.Items.INGOTS_PLATINUM, "Platinum Ingots")
+        addTag(ModTags.Items.INFORMATION, "Display Information")
+        addTag(ModTags.Items.INFORMATION_TIME, "Display Time")
+        addTag(ModTags.Items.INFORMATION_TIME_HOUR, "Display Hour Time")
+        addTag(ModTags.Items.INFORMATION_TIME_HALF_HOUR, "Display Half-Hour Time")
+        addTag(ModTags.Items.INFORMATION_TIME_MINUTE, "Display Minute Time")
+        addTag(ModTags.Items.INFORMATION_WEATHER, "Display Weather")
+        addTag(ModTags.Items.INFORMATION_FISHING_POWER, "Display Fishing Power")
+        addTag(ModTags.Items.INFORMATION_POSITION, "Display Position")
+        addTag(ModTags.Items.INFORMATION_DEPTH, "Display Depth")
+        addTag(ModTags.Items.INFORMATION_ENEMY_COUNT, "Display Enemy Count")
+        addTag(ModTags.Items.INFORMATION_KILL_COUNT, "Display Kill Count")
+        addTag(ModTags.Items.INFORMATION_MOON_PHASE, "Display Moon Phase")
+        addTag(ModTags.Items.INFORMATION_MOVEMENT_SPEED, "Display Movement Speed")
+        addTag(ModTags.Items.CURIOS_ACCESSORIES, "Accessories")
     }
 }
