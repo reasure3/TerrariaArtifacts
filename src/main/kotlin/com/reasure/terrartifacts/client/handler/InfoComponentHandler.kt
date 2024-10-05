@@ -30,10 +30,18 @@ import java.util.concurrent.atomic.AtomicReference
 object InfoComponentHandler {
     val ICON = Style.EMPTY.withFont(Terrartifacts.modLoc("terraria"))
 
-    private var killCountComponent: Component = defaultKillCountComponent()
+    private val defaultKillCountComponent: Component =
+        Component.translatable(TranslationKeys.INFO_NO_KILL_COUNT).disabled()
+
+    private val noTreasureComponent: Component =
+        Component.translatable(TranslationKeys.INFO_NO_TREASURE).disabled()
+
+    private var killCountComponent: Component = defaultKillCountComponent
+
+    private var treasureComponent: Component = noTreasureComponent
 
     fun reset() {
-        killCountComponent = defaultKillCountComponent()
+        killCountComponent = defaultKillCountComponent
     }
 
     fun getTimeComponent(level: Level, type: WatchType): Component {
@@ -142,6 +150,7 @@ object InfoComponentHandler {
     }
 
     fun getTreasureComponent(level: Level, pos: BlockPos): Component {
+        if ((level.gameTime % 20).toInt() != 0) return treasureComponent
         val maxRare = AtomicInteger(0)
         val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
@@ -158,13 +167,13 @@ object InfoComponentHandler {
             }
         }
         val detectedBlock = detectedBlockState.get()
-        if (!detectedBlock.`is`(Blocks.AIR)) {
-            return Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
+        treasureComponent = if (!detectedBlock.`is`(Blocks.AIR)) {
+            Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
+        } else {
+            noTreasureComponent
         }
-        return Component.translatable(TranslationKeys.INFO_NO_TREASURE).disabled()
+        return treasureComponent
     }
-
-    private fun defaultKillCountComponent() = Component.translatable(TranslationKeys.INFO_NO_KILL_COUNT).disabled()
 
     private fun MutableComponent.withIcon(): MutableComponent = withStyle(ICON)
     private fun MutableComponent.withGray(): MutableComponent = withStyle(ChatFormatting.GRAY)
