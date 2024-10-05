@@ -1,0 +1,106 @@
+{
+  "values": {
+    "#c:barrels": {
+      "value": 5000
+    },
+    "#c:chests": {
+      "value": 5010
+    },
+    "#c:ores/coal": {
+      "value": 200
+    },
+    "#c:ores/copper": {
+      "value": 300
+    },
+    "#c:ores/diamond": {
+      "value": 900
+    },
+    "#c:ores/emerald": {
+      "value": 800
+    },
+    "#c:ores/gold": {
+      "value": 600
+    },
+    "#c:ores/iron": {
+      "value": 500
+    },
+    "#c:ores/lapis": {
+      "value": 400
+    },
+    "#c:ores/quartz": {
+      "value": 100
+    },
+    "#c:ores/redstone": {
+      "value": 401
+    },
+    "#c:storage_blocks/coal": {
+      "value": 250
+    },
+    "#c:storage_blocks/copper": {
+      "value": 360
+    },
+    "#c:storage_blocks/diamond": {
+      "value": 950
+    },
+    "#c:storage_blocks/emerald": {
+      "value": 850
+    },
+    "#c:storage_blocks/gold": {
+      "value": 660
+    },
+    "#c:storage_blocks/iron": {
+      "value": 560
+    },
+    "#c:storage_blocks/lapis": {
+      "value": 450
+    },
+    "#c:storage_blocks/netherite": {
+      "value": 1050
+    },
+    "#c:storage_blocks/raw_copper": {
+      "value": 350
+    },
+    "#c:storage_blocks/raw_gold": {
+      "value": 650
+    },
+    "#c:storage_blocks/raw_iron": {
+      "value": 550
+    },
+    "#c:storage_blocks/redstone": {
+      "value": 451
+    },
+    "#minecraft:shulker_boxes": {
+      "value": 5020
+    },
+    "minecraft:amethyst_block": {
+      "value": 750
+    },
+    "minecraft:amethyst_cluster": {
+      "value": 760
+    },
+    "minecraft:ancient_debris": {
+      "value": 1000
+    },
+    "minecraft:budding_amethyst": {
+      "value": 755
+    },
+    "minecraft:decorated_pot": {
+      "value": 50
+    },
+    "minecraft:dragon_egg": {
+      "value": 10000
+    },
+    "minecraft:large_amethyst_bud": {
+      "value": 702
+    },
+    "minecraft:medium_amethyst_bud": {
+      "value": 701
+    },
+    "minecraft:quartz_block": {
+      "value": 150
+    },
+    "minecraft:small_amethyst_bud": {
+      "value": 700
+    }
+  }
+}
