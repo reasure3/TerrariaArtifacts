@@ -43,5 +43,9 @@ enum class InfoType(val id: String, val message: Component) {
     TREASURE(
         "treasure",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE)
+    ),
+    RARE_CREATURE(
+        "rare_creatures",
+        Component.translatable(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER)
     )
 }

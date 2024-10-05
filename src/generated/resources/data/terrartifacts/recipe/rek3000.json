@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "terrartifacts:radar"
+    },
+    {
+      "item": "terrartifacts:tally_counter"
+    },
+    {
+      "item": "terrartifacts:lifeform_analyzer"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "terrartifacts:rek3000"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.21	2024-10-05T16:35:52.5326766	Item Models: terrartifacts
+// 1.21	2024-10-05T21:59:14.9700104	Item Models: terrartifacts
 6803226104ddaa7a3b5fb11511469be261992268 assets/terrartifacts/models/item/clock/copper_clock_01.json
 79fe59ed87f1916812335ad48a0cbb94445dbb8d assets/terrartifacts/models/item/clock/copper_clock_02.json
 630d1020261c184c3c89df772a3bda23d9fb786e assets/terrartifacts/models/item/clock/copper_clock_03.json
@@ -323,10 +323,12 @@ bb52ee1ffd62fc471096022b5f9441f301a19875 assets/terrartifacts/models/item/copper
 8cd4145991cbbcfec7fcd0a7312d816bf143d598 assets/terrartifacts/models/item/fish_finder.json
 1750e8052ceb27bd85d86a870fdae9eb3a379b65 assets/terrartifacts/models/item/gold_watch.json
 1908b20db94b48af5ee0f18ecb2b9484611a09a4 assets/terrartifacts/models/item/gps.json
+bb88e5f173dace7235f1195ffa7c643ab9586fa8 assets/terrartifacts/models/item/lifeform_analyzer.json
 32617e774a67e716647fa52da19579485e87cf53 assets/terrartifacts/models/item/metal_detector.json
 58ceeb7fabd23464cc39a4840d6851eecf14eaf3 assets/terrartifacts/models/item/platinum_clock.json
 c8fe7ec8d661e5284171a389a9a8f79c1a11092f assets/terrartifacts/models/item/platinum_watch.json
 ade253923d298f9fffc28f06abe0bec5cf364269 assets/terrartifacts/models/item/radar.json
+d32f1d36864602df2d3748067793dab02813198b assets/terrartifacts/models/item/rek3000.json
 f38afe912bcb13668d16a5a74ea77fd084f9d4e4 assets/terrartifacts/models/item/sextant.json
 169ce88d286e648411bebf0ca81bb36e06f34abe assets/terrartifacts/models/item/silver_clock.json
 1de22a155e114a47d9d6dbb72041f2a016cd27c0 assets/terrartifacts/models/item/silver_watch.json

@@ -32,7 +32,8 @@ object ClientShowInfoData {
                     showKillCount = ClientShowInfoData[InfoType.KILL_COUNT],
                     showMoonPhase = ClientShowInfoData[InfoType.MOON_PHASE],
                     showMovementSpeed = ClientShowInfoData[InfoType.MOVEMENT_SPEED],
-                    showTreasure = ClientShowInfoData[InfoType.TREASURE]
+                    showTreasure = ClientShowInfoData[InfoType.TREASURE],
+                    showRareCreature = ClientShowInfoData[InfoType.RARE_CREATURE]
                 )
             )
         )

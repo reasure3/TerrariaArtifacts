@@ -22,4 +22,7 @@ class Server(builder: ModConfigSpec.Builder) : BaseConfig(builder) {
 
     val treasureDetectDistance: Double by builder
         .defineInRange("treasureDetectDistance", 30.0, 0.1, 512.0)
+
+    val rareCreatureDetectDistance: Double by builder
+        .defineInRange("rareCreatureDetectDistance", 30.0, 0.1, 512.0)
 }

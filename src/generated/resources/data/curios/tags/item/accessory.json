@@ -15,7 +15,9 @@
     "terrartifacts:sextant",
     "terrartifacts:stopwatch",
     "terrartifacts:metal_detector",
+    "terrartifacts:lifeform_analyzer",
     "terrartifacts:gps",
-    "terrartifacts:fish_finder"
+    "terrartifacts:fish_finder",
+    "terrartifacts:rek3000"
   ]
 }

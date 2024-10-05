@@ -18,6 +18,7 @@ object TranslationKeys {
     const val TOOLTIP_SEXTANT = "${Terrartifacts.ID}.tooltip.sextant"
     const val TOOLTIP_STOPWATCH = "${Terrartifacts.ID}.tooltip.stopwatch"
     const val TOOLTIP_METAL_DETECTOR = "${Terrartifacts.ID}.tooltip.metal_detector"
+    const val TOOLTIP_LIFEFORM_ANALYZER = "${Terrartifacts.ID}.tooltip.lifeform_analyzer"
 
     const val INFO_TIME = "${Terrartifacts.ID}.info.time"
     const val INFO_WEATHER = "${Terrartifacts.ID}.info.weather"
@@ -42,6 +43,8 @@ object TranslationKeys {
     const val INFO_MOVEMENT_SPEED = "${Terrartifacts.ID}.info.movement_speed"
     const val INFO_TREASURE = "${Terrartifacts.ID}.info.treasure"
     const val INFO_NO_TREASURE = "${Terrartifacts.ID}.info.no_treasure"
+    const val INFO_RARE_CREATURE = "${Terrartifacts.ID}.info.rare_creature"
+    const val INFO_NO_RARE_CREATURE = "${Terrartifacts.ID}.info.no_rare_creature"
 
     const val TIME_MORNING = "${Terrartifacts.ID}.time_morning"
     const val TIME_AFTERNOON = "${Terrartifacts.ID}.time_afternoon"
@@ -62,4 +65,5 @@ object TranslationKeys {
     const val BUTTON_MESSAGE_TOGGLE_MOON_PHASE = "${Terrartifacts.ID}.message.button.info.toggle_moon_phase"
     const val BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED = "${Terrartifacts.ID}.message.button.info.toggle_movement_speed"
     const val BUTTON_MESSAGE_TOGGLE_TREASURE = "${Terrartifacts.ID}.message.button.info.toggle_treasure"
+    const val BUTTON_MESSAGE_TOGGLE_RARE_CREATURES = "${Terrartifacts.ID}.message.button.info.toggle_rare_creatures"
 }

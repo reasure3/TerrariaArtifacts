@@ -43,8 +43,10 @@ object ModCreativeTabs {
                     accept(ModItems.SEXTANT)
                     accept(ModItems.STOPWATCH)
                     accept(ModItems.METAL_DETECTOR)
+                    accept(ModItems.LIFEFORM_ANALYZER)
                     accept(ModItems.GPS)
                     accept(ModItems.FISH_FINDER)
+                    accept(ModItems.REK3000)
                 }
             }
             .build()

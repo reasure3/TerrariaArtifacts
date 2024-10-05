@@ -1,0 +1,54 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lifeform_analyzer": {
+      "conditions": {
+        "items": [
+          {
+            "items": "terrartifacts:lifeform_analyzer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_radar": {
+      "conditions": {
+        "items": [
+          {
+            "items": "terrartifacts:radar"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_tally_counter": {
+      "conditions": {
+        "items": [
+          {
+            "items": "terrartifacts:tally_counter"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrartifacts:rek3000"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_radar",
+      "has_tally_counter",
+      "has_lifeform_analyzer"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "terrartifacts:rek3000"
+    ]
+  }
+}

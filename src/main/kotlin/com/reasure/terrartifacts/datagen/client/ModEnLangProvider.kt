@@ -29,8 +29,10 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.SEXTANT, "Sextant")
         add(ModItems.STOPWATCH, "Stopwatch")
         add(ModItems.METAL_DETECTOR, "Metal Detector")
+        add(ModItems.LIFEFORM_ANALYZER, "Lifeform Analyzer")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "Fish Finder")
+        add(ModItems.REK3000, "R.E.K. 3000")
     }
 
     override fun addBlocks() {
@@ -38,18 +40,19 @@ class ModEnLangProvider(output: PackOutput) :
     }
 
     override fun addTooltips() {
-        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "Displays the time down to the hour")
-        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "Displays the time down to the half-hour")
-        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "Displays the time down to the minute")
-        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "Displays the weather")
-        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "Displays fishing power")
-        add(TranslationKeys.TOOLTIP_COMPASS, "Displays the player's horizontal position")
-        add(TranslationKeys.TOOLTIP_DEPTH_METER, "Displays the player's vertical position")
-        add(TranslationKeys.TOOLTIP_RADAR, "Displays number of nearby enemies")
-        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "Displays number of kills per enemy type")
-        add(TranslationKeys.TOOLTIP_SEXTANT, "Displays the current moon phase")
-        add(TranslationKeys.TOOLTIP_STOPWATCH, "Displays movement speed")
-        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "Displays nearby valuable objects")
+        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "⑴ Displays the time down to the hour")
+        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "⑴ Displays the time down to the half-hour")
+        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "⑴ Displays the time down to the minute")
+        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "⑵ Displays the weather")
+        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "⑶ Displays fishing power")
+        add(TranslationKeys.TOOLTIP_COMPASS, "⑷ Displays the player's horizontal position")
+        add(TranslationKeys.TOOLTIP_DEPTH_METER, "⑸ Displays the player's vertical position")
+        add(TranslationKeys.TOOLTIP_RADAR, "⑹ Displays number of nearby enemies")
+        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "⑺ Displays number of kills per enemy type")
+        add(TranslationKeys.TOOLTIP_SEXTANT, "⑻ Displays the current moon phase")
+        add(TranslationKeys.TOOLTIP_STOPWATCH, "⑽ Displays movement speed")
+        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "⑾ Displays nearby valuable objects")
+        add(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER, "⑿ Displays the name of nearby rare enemies and critters")
     }
 
     override fun addGui() {
@@ -96,6 +99,9 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_TREASURE, "⑾ %s detected nearby!")
         add(TranslationKeys.INFO_NO_TREASURE, "⑾ No treasure nearby")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "Treasure")
+        add(TranslationKeys.INFO_RARE_CREATURE, "⑿ %s")
+        add(TranslationKeys.INFO_NO_RARE_CREATURE, "⑿ No rare creatures nearby")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES, "Rare Creatures")
     }
 
     override fun addConfigs() {
@@ -121,6 +127,9 @@ class ModEnLangProvider(output: PackOutput) :
 
         addConfigDesc("treasureDetectDistance", "Treasure Detection Range")
         addConfigDesc("treasureDetectDistance.tooltip", "Define Treasure Detection Range")
+
+        addConfigDesc("rareCreatureDetectDistance", "Rare Creature Detection Range")
+        addConfigDesc("rareCreatureDetectDistance.tooltip", "Define Rare Creature Detection Range")
     }
 
     override fun addTags() {

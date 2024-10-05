@@ -74,7 +74,6 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
             .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
             .save(output, Terrartifacts.modLoc("gps_from_platinum_watch"))
 
-
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.FISH_FINDER)
             .requires(ModItems.WEATHER_RADIO)
             .requires(ModItems.FISHERMAN_POCKET_GUIDE)
@@ -82,6 +81,15 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
             .unlockedBy("has_weather_radio", has(ModItems.WEATHER_RADIO))
             .unlockedBy("has_fisherman_pocket_guide", has(ModItems.FISHERMAN_POCKET_GUIDE))
             .unlockedBy("has_sextant", has(ModItems.SEXTANT))
+            .save(output)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.REK3000)
+            .requires(ModItems.RADAR)
+            .requires(ModItems.TALLY_COUNTER)
+            .requires(ModItems.LIFEFORM_ANALYZER)
+            .unlockedBy("has_radar", has(ModItems.RADAR))
+            .unlockedBy("has_tally_counter", has(ModItems.TALLY_COUNTER))
+            .unlockedBy("has_lifeform_analyzer", has(ModItems.LIFEFORM_ANALYZER))
             .save(output)
     }
 }

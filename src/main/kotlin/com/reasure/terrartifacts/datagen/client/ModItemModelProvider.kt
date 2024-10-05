@@ -40,8 +40,10 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.SEXTANT)
         basicItem(ModItems.STOPWATCH)
         basicItem(ModItems.METAL_DETECTOR)
+        basicItem(ModItems.LIFEFORM_ANALYZER)
         basicItem(ModItems.GPS)
         basicItem(ModItems.FISH_FINDER)
+        basicItem(ModItems.REK3000)
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {

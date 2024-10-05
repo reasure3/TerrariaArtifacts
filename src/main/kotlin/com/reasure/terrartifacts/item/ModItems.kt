@@ -103,6 +103,13 @@ object ModItems {
         )
     }
 
+    val LIFEFORM_ANALYZER: Item by ITEMS.register("lifeform_analyzer") { ->
+        AccessoryItem(
+            rarity = ModRarity.BLUE,
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER)
+        )
+    }
+
     val GPS: Item by ITEMS.register("gps") { ->
         AccessoryItem(
             rarity = ModRarity.ORANGE,
@@ -121,6 +128,17 @@ object ModItems {
                 TranslationKeys.TOOLTIP_WEATHER_RADIO,
                 TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE,
                 TranslationKeys.TOOLTIP_SEXTANT
+            )
+        )
+    }
+
+    val REK3000: Item by ITEMS.register("rek3000") { ->
+        AccessoryItem(
+            rarity = ModRarity.ORANGE,
+            tooltipKeys = listOf(
+                TranslationKeys.TOOLTIP_RADAR,
+                TranslationKeys.TOOLTIP_TALLY_COUNTER,
+                TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER
             )
         )
     }

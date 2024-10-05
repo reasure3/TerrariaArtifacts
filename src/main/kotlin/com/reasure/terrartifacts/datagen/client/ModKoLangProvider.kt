@@ -29,8 +29,10 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.SEXTANT, "육분의")
         add(ModItems.STOPWATCH, "스톱워치")
         add(ModItems.METAL_DETECTOR, "금속 감지기")
+        add(ModItems.LIFEFORM_ANALYZER, "생물 형태 분석기")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "어류 탐지기")
+        add(ModItems.REK3000, "R.E.K. 3000")
     }
 
 
@@ -39,18 +41,19 @@ class ModKoLangProvider(output: PackOutput) :
     }
 
     override fun addTooltips() {
-        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "1시간 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "30분 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "1분 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "현재 날씨를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "낚시 힘을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_COMPASS, "수평 방향 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_DEPTH_METER, "수직 방향 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_RADAR, "근처 몬스터의 수를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "각 엔티티 마다 죽인 횟수를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_SEXTANT, "달의 위상 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_STOPWATCH, "이동 속도를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "주변의 보물을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "⑴ 1시간 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "⑴ 30분 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "⑴ 1분 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "⑵ 현재 날씨를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "⑶ 낚시 힘을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_COMPASS, "⑷ 수평 방향 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_DEPTH_METER, "⑸ 수직 방향 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_RADAR, "⑹ 근처 몬스터의 수를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "⑺ 각 엔티티 마다 죽인 횟수를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_SEXTANT, "⑻ 달의 위상 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_STOPWATCH, "⑽ 이동 속도를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "⑾ 주변의 보물을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER, "⑿ 주변의 희귀한 생물을 표시합니다.")
     }
 
     override fun addGui() {
@@ -97,6 +100,9 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_TREASURE, "⑾ 근처에 %s 탐지됨!")
         add(TranslationKeys.INFO_NO_TREASURE, "⑾ 탐지된 보물 없음")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "보물")
+        add(TranslationKeys.INFO_RARE_CREATURE, "⑿ %s")
+        add(TranslationKeys.INFO_NO_RARE_CREATURE, "⑿ 감지된 희귀 생물 없음")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES, "희귀 생물")
     }
 
     override fun addConfigs() {
@@ -122,6 +128,9 @@ class ModKoLangProvider(output: PackOutput) :
 
         addConfigDesc("treasureDetectDistance", "보물 탐지 거리")
         addConfigDesc("treasureDetectDistance.tooltip", "보물 탐지 거리 설정")
+
+        addConfigDesc("rareCreatureDetectDistance", "Rare Creature Detection Range")
+        addConfigDesc("rareCreatureDetectDistance.tooltip", "Define Rare Creature Detection Range")
     }
 
     override fun addTags() {

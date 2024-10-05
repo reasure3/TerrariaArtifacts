@@ -1,22 +1,23 @@
 package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.ServerModConfig
-import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
+import com.reasure.terrartifacts.util.ComponentUtil.disabled
+import com.reasure.terrartifacts.util.ComponentUtil.withGray
+import com.reasure.terrartifacts.util.ComponentUtil.withIcon
 import com.reasure.terrartifacts.util.LevelUtil.getNearbyEntityCount
 import com.reasure.terrartifacts.util.LevelUtil.getPrecipitationAt
 import com.reasure.terrartifacts.util.TimeUtil
 import com.reasure.terrartifacts.util.TranslationKeys
-import net.minecraft.ChatFormatting
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
-import net.minecraft.network.chat.MutableComponent
-import net.minecraft.network.chat.Style
 import net.minecraft.util.Mth
+import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.monster.Enemy
 import net.minecraft.world.level.Level
@@ -28,8 +29,6 @@ import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
 
 object InfoComponentHandler {
-    val ICON = Style.EMPTY.withFont(Terrartifacts.modLoc("terraria"))
-
     private val defaultKillCountComponent: Component =
         Component.translatable(TranslationKeys.INFO_NO_KILL_COUNT).disabled()
 
@@ -151,7 +150,7 @@ object InfoComponentHandler {
 
     fun getTreasureComponent(level: Level, pos: BlockPos): Component {
         if ((level.gameTime % 20).toInt() != 0) return treasureComponent
-        val maxRare = AtomicInteger(0)
+        val maxRare = AtomicInteger(-1)
         val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
         level.getBlockStates(
@@ -167,17 +166,39 @@ object InfoComponentHandler {
             }
         }
         val detectedBlock = detectedBlockState.get()
-        treasureComponent = if (!detectedBlock.`is`(Blocks.AIR)) {
-            Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
-        } else {
+        treasureComponent = if (maxRare.get() == -1) {
             noTreasureComponent
+        } else {
+            Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
         }
         return treasureComponent
     }
 
-    private fun MutableComponent.withIcon(): MutableComponent = withStyle(ICON)
-    private fun MutableComponent.withGray(): MutableComponent = withStyle(ChatFormatting.GRAY)
-    private fun MutableComponent.disabled(): MutableComponent = withIcon().withGray()
+    fun getRareCreatureComponent(player: LocalPlayer, pos: BlockPos): Component {
+        val maxRare = AtomicInteger(-1)
+        val detectedCreature = AtomicReference<Entity>()
+        val distance = ServerModConfig.SERVER.rareCreatureDetectDistance
+        player.level().getEntities(
+            player, AABB(
+                pos.x - distance, pos.y - distance, pos.z - distance,
+                pos.x + distance, pos.y + distance, pos.z + distance
+            )
+        ) { entity ->
+            entity is LivingEntity
+        }.forEach { entity ->
+            @Suppress("DEPRECATION")
+            val data = entity.type.builtInRegistryHolder().getData(ModDataMaps.RARE_ENTITY_DATA) ?: return@forEach
+            if (data.rarity > maxRare.get()) {
+                maxRare.set(data.rarity)
+                detectedCreature.set(entity)
+            }
+        }
+        return if (maxRare.get() == -1) {
+            Component.translatable(TranslationKeys.INFO_NO_RARE_CREATURE).disabled()
+        } else {
+            Component.translatable(TranslationKeys.INFO_RARE_CREATURE, detectedCreature.get().name).withIcon()
+        }
+    }
 
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {
         InfoType.TIME -> getTimeComponent(player.level(), ClientHasInfoItemData.displayTimeType())
@@ -190,5 +211,6 @@ object InfoComponentHandler {
         InfoType.MOON_PHASE -> getMoonPhaseComponent(player.level())
         InfoType.MOVEMENT_SPEED -> getMovementSpeedComponent(player)
         InfoType.TREASURE -> getTreasureComponent(player.level(), player.onPos)
+        InfoType.RARE_CREATURE -> getRareCreatureComponent(player, player.onPos)
     }
 }

@@ -10,18 +10,19 @@ import com.reasure.terrartifacts.item.accessories.informational.WatchType
  * @see ModDataMaps
  */
 data class DisplayInfoData(
-    val timeHour: Boolean = false,
-    val timeHalfHour: Boolean = false,
-    val timeMinute: Boolean = false,
-    val weather: Boolean = false,
-    val fishingPower: Boolean = false,
-    val position: Boolean = false,
-    val depth: Boolean = false,
-    val enemyCount: Boolean = false,
-    val killCount: Boolean = false,
-    val moonPhase: Boolean = false,
-    val movementSpeed: Boolean = false,
-    val treasure: Boolean = false
+    val timeHour: Boolean,
+    val timeHalfHour: Boolean,
+    val timeMinute: Boolean,
+    val weather: Boolean,
+    val fishingPower: Boolean,
+    val position: Boolean,
+    val depth: Boolean,
+    val enemyCount: Boolean,
+    val killCount: Boolean,
+    val moonPhase: Boolean,
+    val movementSpeed: Boolean,
+    val treasure: Boolean,
+    val rareCreature: Boolean
 ) {
     operator fun get(type: InfoType) = when (type) {
         InfoType.TIME -> timeHour or timeHalfHour or timeMinute
@@ -34,6 +35,7 @@ data class DisplayInfoData(
         InfoType.MOON_PHASE -> moonPhase
         InfoType.MOVEMENT_SPEED -> movementSpeed
         InfoType.TREASURE -> treasure
+        InfoType.RARE_CREATURE -> rareCreature
     }
 
     operator fun get(type: WatchType) = when (type) {
@@ -56,7 +58,8 @@ data class DisplayInfoData(
                 Codec.BOOL.fieldOf("killCount").forGetter(DisplayInfoData::killCount),
                 Codec.BOOL.fieldOf("moonPhase").forGetter(DisplayInfoData::moonPhase),
                 Codec.BOOL.fieldOf("movementSpeed").forGetter(DisplayInfoData::movementSpeed),
-                Codec.BOOL.fieldOf("treasure").forGetter(DisplayInfoData::treasure)
+                Codec.BOOL.fieldOf("treasure").forGetter(DisplayInfoData::treasure),
+                Codec.BOOL.fieldOf("rareCreature").forGetter(DisplayInfoData::rareCreature)
             ).apply(instance, ::DisplayInfoData)
         }
     }

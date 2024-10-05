@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.item.accessories
 
 import com.reasure.terrartifacts.item.ModRarity
+import com.reasure.terrartifacts.util.ComponentUtil.withIcon
 import net.minecraft.network.chat.Component
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
@@ -13,7 +14,7 @@ open class AccessoryItem(
     maxStack: Int = 1,
     tooltipKeys: List<String> = listOf()
 ) : Item(properties.stacksTo(maxStack).rarity(rarity)) {
-    internal val tooltips: List<Component> = tooltipKeys.map { Component.translatable(it) }.toList()
+    internal val tooltips: List<Component> = tooltipKeys.map { Component.translatable(it).withIcon() }.toList()
 
     override fun appendHoverText(
         stack: ItemStack,
