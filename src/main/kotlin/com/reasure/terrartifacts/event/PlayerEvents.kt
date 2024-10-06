@@ -3,6 +3,7 @@ package com.reasure.terrartifacts.event
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.data.ModDataAttachments
 import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
+import com.reasure.terrartifacts.network.SendAttackDamageS2CPacket
 import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendShowInfoDataPacket
@@ -69,6 +70,16 @@ object PlayerEvents {
                     BuiltInRegistries.ENTITY_TYPE.getKey(target.type),
                     player.stats.getValue(Stats.ENTITY_KILLED.get(target.type))
                 )
+            )
+        }
+    }
+
+    @SubscribeEvent
+    fun onPlayerAttackAfter(event: LivingDamageEvent.Post) {
+        val player = event.source.entity as? ServerPlayer ?: return
+        if (event.newDamage > 0.0f) {
+            PacketDistributor.sendToPlayer(
+                player, SendAttackDamageS2CPacket(player.level().gameTime, event.newDamage)
             )
         }
     }

@@ -1,7 +1,9 @@
 package com.reasure.terrartifacts.client.handler
 
+import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
+import com.reasure.terrartifacts.network.SendAttackDamageS2CPacket
 import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendShowInfoDataPacket
@@ -49,6 +51,17 @@ class ModClientPayloadHandler {
         fun handle(serverPacket: SendEntityKillCountS2CPacket, context: IPayloadContext) {
             context.enqueueWork {
                 InfoItemHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
+            }.exceptionally { error ->
+                context.disconnect(Component.literal(error.message.toString()))
+                return@exceptionally null
+            }
+        }
+    }
+
+    object ReceiveAttackDamage {
+        fun handle(serverPacket: SendAttackDamageS2CPacket, context: IPayloadContext) {
+            context.enqueueWork {
+                ClientDamageTracker.addDamageEntry(serverPacket.attackTime, serverPacket.attackDamage)
             }.exceptionally { error ->
                 context.disconnect(Component.literal(error.message.toString()))
                 return@exceptionally null

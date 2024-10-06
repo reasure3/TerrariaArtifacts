@@ -5,6 +5,7 @@ import com.reasure.terrartifacts.client.handler.ModClientPayloadHandler
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.network.ModServerPayloadHandler
 import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
+import com.reasure.terrartifacts.network.SendAttackDamageS2CPacket
 import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
 import com.reasure.terrartifacts.network.SendShowInfoDataPacket
@@ -46,6 +47,12 @@ object RegisterEvents {
             SendEntityKillCountS2CPacket.TYPE,
             SendEntityKillCountS2CPacket.STREAM_CODEC,
             ModClientPayloadHandler.ReceiveEntityKillCount::handle
+        )
+
+        registrar.playToClient(
+            SendAttackDamageS2CPacket.TYPE,
+            SendAttackDamageS2CPacket.STREAM_CODEC,
+            ModClientPayloadHandler.ReceiveAttackDamage::handle
         )
     }
 

@@ -30,6 +30,7 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.STOPWATCH, "Stopwatch")
         add(ModItems.METAL_DETECTOR, "Metal Detector")
         add(ModItems.LIFEFORM_ANALYZER, "Lifeform Analyzer")
+        add(ModItems.DPS_METER, "DPS Meter")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "Fish Finder")
         add(ModItems.REK3000, "R.E.K. 3000")
@@ -40,48 +41,55 @@ class ModEnLangProvider(output: PackOutput) :
     }
 
     override fun addTooltips() {
-        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "⑴ Displays the time down to the hour")
-        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "⑴ Displays the time down to the half-hour")
-        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "⑴ Displays the time down to the minute")
-        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "⑵ Displays the weather")
-        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "⑶ Displays fishing power")
-        add(TranslationKeys.TOOLTIP_COMPASS, "⑷ Displays the player's horizontal position")
-        add(TranslationKeys.TOOLTIP_DEPTH_METER, "⑸ Displays the player's vertical position")
-        add(TranslationKeys.TOOLTIP_RADAR, "⑹ Displays number of nearby enemies")
-        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "⑺ Displays number of kills per enemy type")
-        add(TranslationKeys.TOOLTIP_SEXTANT, "⑻ Displays the current moon phase")
-        add(TranslationKeys.TOOLTIP_STOPWATCH, "⑽ Displays movement speed")
-        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "⑾ Displays nearby valuable objects")
-        add(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER, "⑿ Displays the name of nearby rare enemies and critters")
+        add(TranslationKeys.TOOLTIP_TIME_HOUR_ITEM, "⑴ Displays the time down to the hour")
+        add(TranslationKeys.TOOLTIP_TIME_HALF_HOUR_ITEM, "⑴ Displays the time down to the half-hour")
+        add(TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM, "⑴ Displays the time down to the minute")
+        add(TranslationKeys.TOOLTIP_WEATHER_ITEM, "⑵ Displays the weather")
+        add(TranslationKeys.TOOLTIP_FISHING_POWER_ITEM, "⑶ Displays fishing power")
+        add(TranslationKeys.TOOLTIP_POSITION_ITEM, "⑷ Displays the player's horizontal position")
+        add(TranslationKeys.TOOLTIP_DEPTH_ITEM, "⑸ Displays the player's vertical position")
+        add(TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM, "⑹ Displays number of nearby enemies")
+        add(TranslationKeys.TOOLTIP_KILL_COUNT_ITEM, "⑺ Displays number of kills per enemy type")
+        add(TranslationKeys.TOOLTIP_MOON_PHASE_ITEM, "⑻ Displays the current moon phase")
+        add(TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM, "⑽ Displays movement speed")
+        add(TranslationKeys.TOOLTIP_TREASURE_ITEM, "⑾ Displays nearby valuable objects")
+        add(TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM, "⑿ Displays the name of nearby rare enemies and critters")
+        add(TranslationKeys.TOOLTIP_DPS_ITEM, "⒀ Displays damage per second")
     }
 
     override fun addGui() {
         add(TranslationKeys.GROUP_TERRARTIFACTS_KEY, "Terraria Artifacts")
         add(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY, "Terraria Artifacts Develop Tab")
         addCuriosSlot("accessory", "Accessory")
+        addInfoOverlays()
+        addInfoToggleButtons()
+    }
+
+    private fun addInfoOverlays() {
+        // TIME
         add(TranslationKeys.INFO_TIME, "⑴ %2\$s %1\$s")
         add(TranslationKeys.TIME_MORNING, "AM")
         add(TranslationKeys.TIME_AFTERNOON, "PM")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME, "Time")
+        // WEATHER
         add(TranslationKeys.INFO_WEATHER, "⑵ %1\$s (💧 %2\$s%%, ⚡ %3\$s%%)")
         add(TranslationKeys.WEATHER_CLEAR, "Clear")
         add(TranslationKeys.WEATHER_CLOUDY, "Cloudy")
         add(TranslationKeys.WEATHER_RAIN, "Rain")
         add(TranslationKeys.WEATHER_SNOW, "Snow")
         add(TranslationKeys.WEATHER_THUNDER, "Thunder")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER, "Weather")
+        // FISHING POWER
         add(TranslationKeys.INFO_FISHING_POWER, "⑶ Luck: %s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER, "Fishing Power")
+        // POSITION
         add(TranslationKeys.INFO_POSITION, "⑷ X: %1\$s, Z: %1\$s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "Position")
+        // DEPTH
         add(TranslationKeys.INFO_DEPTH, "⑸ Y: %s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "Depth")
+        // ENEMY COUNT
         add(TranslationKeys.INFO_ENEMY_COUNT, "⑹ %s enemies nearby!")
         add(TranslationKeys.INFO_NO_ENEMY_COUNT, "⑹ No enemies nearby")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "Enemy Count")
+        // KILL COUNT
         add(TranslationKeys.INFO_KILL_COUNT, "⑺ %1\$s: %2\$s")
         add(TranslationKeys.INFO_NO_KILL_COUNT, "⑺ Kill count unavailable")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "Kill Count")
+        // MOON PHASE
         add(TranslationKeys.INFO_MOON_PHASE_FULL_MOON, "⑻ Full moon")
         add(TranslationKeys.INFO_MOON_PHASE_WANING_GIBBOUS, "⑻ Waning gibbous")
         add(TranslationKeys.INFO_MOON_PHASE_LAST_QUARTER, "⑻ Last quarter")
@@ -93,15 +101,32 @@ class ModEnLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_NO_MOON_PHASE, "⑼ No moon")
         add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ Nether moon")
         add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ End moon")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "Moon Phase")
+        // MOVEMENT SPEED
         add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "Movement Speed")
+        // TREASURE
         add(TranslationKeys.INFO_TREASURE, "⑾ %s detected nearby!")
         add(TranslationKeys.INFO_NO_TREASURE, "⑾ No treasure nearby")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "Treasure")
+        // RARE CREATURE
         add(TranslationKeys.INFO_RARE_CREATURE, "⑿ %s")
         add(TranslationKeys.INFO_NO_RARE_CREATURE, "⑿ No rare creatures nearby")
+        // DPS
+        add(TranslationKeys.INFO_DPS, "⒀ %s damage per second")
+        add(TranslationKeys.INFO_NO_DPS, "⒀ N/A")
+    }
+
+    private fun addInfoToggleButtons() {
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME, "Time")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER, "Weather")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER, "Fishing Power")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "Position")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "Depth")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "Enemy Count")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "Kill Count")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "Moon Phase")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "Movement Speed")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "Treasure")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES, "Rare Creatures")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DPS, "DPS")
     }
 
     override fun addConfigs() {

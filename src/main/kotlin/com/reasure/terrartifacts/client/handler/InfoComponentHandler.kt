@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.ServerModConfig
+import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
@@ -149,7 +150,7 @@ object InfoComponentHandler {
     }
 
     fun getTreasureComponent(level: Level, pos: BlockPos): Component {
-        if ((level.gameTime % 20).toInt() != 0) return treasureComponent
+        if ((level.gameTime % ServerModConfig.SERVER.checkTreasureTickRate) != 0L) return treasureComponent
         val maxRare = AtomicInteger(-1)
         val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
@@ -200,6 +201,12 @@ object InfoComponentHandler {
         }
     }
 
+    fun getDpsComponent(): Component {
+        val dps = ClientDamageTracker.dps
+        return if (dps < 0.0001f) Component.translatable(TranslationKeys.INFO_NO_DPS).disabled()
+        else Component.translatable(TranslationKeys.INFO_DPS, String.format("%.1f", dps)).withIcon()
+    }
+
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {
         InfoType.TIME -> getTimeComponent(player.level(), ClientHasInfoItemData.displayTimeType())
         InfoType.WEATHER -> getWeatherComponent(player.level(), player.onPos)
@@ -212,5 +219,6 @@ object InfoComponentHandler {
         InfoType.MOVEMENT_SPEED -> getMovementSpeedComponent(player)
         InfoType.TREASURE -> getTreasureComponent(player.level(), player.onPos)
         InfoType.RARE_CREATURE -> getRareCreatureComponent(player, player.onPos)
+        InfoType.DPS -> getDpsComponent()
     }
 }

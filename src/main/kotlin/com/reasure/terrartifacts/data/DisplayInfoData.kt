@@ -22,7 +22,8 @@ data class DisplayInfoData(
     val moonPhase: Boolean,
     val movementSpeed: Boolean,
     val treasure: Boolean,
-    val rareCreature: Boolean
+    val rareCreature: Boolean,
+    val dps: Boolean
 ) {
     operator fun get(type: InfoType) = when (type) {
         InfoType.TIME -> timeHour or timeHalfHour or timeMinute
@@ -36,6 +37,7 @@ data class DisplayInfoData(
         InfoType.MOVEMENT_SPEED -> movementSpeed
         InfoType.TREASURE -> treasure
         InfoType.RARE_CREATURE -> rareCreature
+        InfoType.DPS -> dps
     }
 
     operator fun get(type: WatchType) = when (type) {
@@ -59,7 +61,8 @@ data class DisplayInfoData(
                 Codec.BOOL.fieldOf("moonPhase").forGetter(DisplayInfoData::moonPhase),
                 Codec.BOOL.fieldOf("movementSpeed").forGetter(DisplayInfoData::movementSpeed),
                 Codec.BOOL.fieldOf("treasure").forGetter(DisplayInfoData::treasure),
-                Codec.BOOL.fieldOf("rareCreature").forGetter(DisplayInfoData::rareCreature)
+                Codec.BOOL.fieldOf("rareCreature").forGetter(DisplayInfoData::rareCreature),
+                Codec.BOOL.fieldOf("dps").forGetter(DisplayInfoData::dps)
             ).apply(instance, ::DisplayInfoData)
         }
     }

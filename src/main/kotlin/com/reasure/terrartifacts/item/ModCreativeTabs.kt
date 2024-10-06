@@ -44,6 +44,7 @@ object ModCreativeTabs {
                     accept(ModItems.STOPWATCH)
                     accept(ModItems.METAL_DETECTOR)
                     accept(ModItems.LIFEFORM_ANALYZER)
+                    accept(ModItems.DPS_METER)
                     accept(ModItems.GPS)
                     accept(ModItems.FISH_FINDER)
                     accept(ModItems.REK3000)

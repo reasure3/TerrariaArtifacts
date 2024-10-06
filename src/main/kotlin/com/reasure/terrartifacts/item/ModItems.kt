@@ -17,96 +17,103 @@ object ModItems {
     val PLATINUM_CLOCK: Item by ITEMS.register("platinum_clock") { -> Item(Item.Properties()) }
 
     val COPPER_WATCH: Item by ITEMS.register("copper_watch") { ->
-        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_HOUR))
+        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_HOUR_ITEM))
     }
 
     val TIN_WATCH: Item by ITEMS.register("tin_watch") { ->
-        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_HOUR))
+        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_HOUR_ITEM))
     }
 
     val SILVER_WATCH: Item by ITEMS.register("silver_watch") { ->
-        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR))
+        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_HALF_HOUR_ITEM))
     }
 
     val TUNGSTEN_WATCH: Item by ITEMS.register("tungsten_watch") { ->
-        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR))
+        AccessoryItem(tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_HALF_HOUR_ITEM))
     }
 
     val GOLD_WATCH: Item by ITEMS.register("gold_watch") { ->
-        AccessoryItem(rarity = ModRarity.BLUE, tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_MINUTE))
+        AccessoryItem(rarity = ModRarity.BLUE, tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM))
     }
 
     val PLATINUM_WATCH: Item by ITEMS.register("platinum_watch") { ->
-        AccessoryItem(rarity = ModRarity.BLUE, tooltipKeys = listOf(TranslationKeys.TOOLTIP_WATCH_MINUTE))
+        AccessoryItem(rarity = ModRarity.BLUE, tooltipKeys = listOf(TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM))
     }
 
     val WEATHER_RADIO: Item by ITEMS.register("weather_radio") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_WEATHER_RADIO)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_WEATHER_ITEM)
         )
     }
 
     val FISHERMAN_POCKET_GUIDE: Item by ITEMS.register("fisherman_pocket_guide") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_FISHING_POWER_ITEM)
         )
     }
 
     val COMPASS: Item by ITEMS.register("compass") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_COMPASS)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_POSITION_ITEM)
         )
     }
 
     val DEPTH_METER: Item by ITEMS.register("depth_meter") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_DEPTH_METER)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_DEPTH_ITEM)
         )
     }
 
     val RADAR: Item by ITEMS.register("radar") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_RADAR)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM)
         )
     }
 
     val TALLY_COUNTER: Item by ITEMS.register("tally_counter") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_TALLY_COUNTER)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_KILL_COUNT_ITEM)
         )
     }
 
     val SEXTANT: Item by ITEMS.register("sextant") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_SEXTANT)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_MOON_PHASE_ITEM)
         )
     }
 
     val STOPWATCH: Item by ITEMS.register("stopwatch") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_STOPWATCH)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM)
         )
     }
 
     val METAL_DETECTOR: Item by ITEMS.register("metal_detector") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_METAL_DETECTOR)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_TREASURE_ITEM)
         )
     }
 
     val LIFEFORM_ANALYZER: Item by ITEMS.register("lifeform_analyzer") { ->
         AccessoryItem(
             rarity = ModRarity.BLUE,
-            tooltipKeys = listOf(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER)
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM)
+        )
+    }
+
+    val DPS_METER: Item by ITEMS.register("dps_meter") { ->
+        AccessoryItem(
+            rarity = ModRarity.BLUE,
+            tooltipKeys = listOf(TranslationKeys.TOOLTIP_DPS_ITEM)
         )
     }
 
@@ -114,9 +121,9 @@ object ModItems {
         AccessoryItem(
             rarity = ModRarity.ORANGE,
             tooltipKeys = listOf(
-                TranslationKeys.TOOLTIP_WATCH_MINUTE,
-                TranslationKeys.TOOLTIP_COMPASS,
-                TranslationKeys.TOOLTIP_DEPTH_METER
+                TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM,
+                TranslationKeys.TOOLTIP_POSITION_ITEM,
+                TranslationKeys.TOOLTIP_DEPTH_ITEM
             )
         )
     }
@@ -125,9 +132,9 @@ object ModItems {
         AccessoryItem(
             rarity = ModRarity.ORANGE,
             tooltipKeys = listOf(
-                TranslationKeys.TOOLTIP_WEATHER_RADIO,
-                TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE,
-                TranslationKeys.TOOLTIP_SEXTANT
+                TranslationKeys.TOOLTIP_WEATHER_ITEM,
+                TranslationKeys.TOOLTIP_FISHING_POWER_ITEM,
+                TranslationKeys.TOOLTIP_MOON_PHASE_ITEM
             )
         )
     }
@@ -136,9 +143,9 @@ object ModItems {
         AccessoryItem(
             rarity = ModRarity.ORANGE,
             tooltipKeys = listOf(
-                TranslationKeys.TOOLTIP_RADAR,
-                TranslationKeys.TOOLTIP_TALLY_COUNTER,
-                TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER
+                TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM,
+                TranslationKeys.TOOLTIP_KILL_COUNT_ITEM,
+                TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM
             )
         )
     }

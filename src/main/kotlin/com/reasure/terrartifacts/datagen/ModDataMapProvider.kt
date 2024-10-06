@@ -37,6 +37,7 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             .displayInfo(ModItems.STOPWATCH, movementSpeed = true)
             .displayInfo(ModItems.METAL_DETECTOR, treasure = true)
             .displayInfo(ModItems.LIFEFORM_ANALYZER, rareCreature = true)
+            .displayInfo(ModItems.DPS_METER, dps = true)
             .displayInfo(ModItems.GPS, timeMinute = true, position = true, depth = true)
             .displayInfo(ModItems.FISH_FINDER, weather = true, fishingPower = true, moonPhase = true)
             .displayInfo(ModItems.REK3000, enemyCount = true, killCount = true, rareCreature = true)
@@ -120,7 +121,8 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
         moonPhase: Boolean = false,
         movementSpeed: Boolean = false,
         treasure: Boolean = false,
-        rareCreature: Boolean = false
+        rareCreature: Boolean = false,
+        dps: Boolean = false
     ): Builder<DisplayInfoData, Item> =
         add(
             item.builtInRegistryHolder(),
@@ -137,7 +139,8 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
                 moonPhase,
                 movementSpeed,
                 treasure,
-                rareCreature
+                rareCreature,
+                dps
             ),
             false
         )

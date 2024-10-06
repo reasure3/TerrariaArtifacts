@@ -1,5 +1,7 @@
 package com.reasure.terrartifacts.client.handler
 
+import com.reasure.terrartifacts.ServerModConfig
+import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.data.ModDataMaps
@@ -16,14 +18,17 @@ import net.neoforged.api.distmarker.OnlyIn
 @OnlyIn(Dist.CLIENT)
 object InfoItemHandler {
     private val infoComponent: MutableList<Component> = mutableListOf()
+
     fun reset() {
         infoComponent.clear()
         InfoComponentHandler.reset()
         ClientHasInfoItemData.reset()
+        ClientDamageTracker.reset()
     }
 
     fun updateInfo(player: LocalPlayer) {
-        if ((player.level().gameTime % 10).toInt() == 0)
+        val gameTime = player.level().gameTime
+        if ((gameTime % ServerModConfig.SERVER.checkInventoryTickRate) == 0L)
             checkInventory(player)
         infoComponent.clear()
         InfoType.entries.forEach {
@@ -63,5 +68,5 @@ object InfoItemHandler {
         }
     }
 
-    fun infoComponent(): MutableList<Component> = infoComponent
+    fun infoComponent(): List<Component> = infoComponent
 }

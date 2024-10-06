@@ -30,6 +30,7 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.STOPWATCH, "스톱워치")
         add(ModItems.METAL_DETECTOR, "금속 감지기")
         add(ModItems.LIFEFORM_ANALYZER, "생물 형태 분석기")
+        add(ModItems.DPS_METER, "DPS 측정기")
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "어류 탐지기")
         add(ModItems.REK3000, "R.E.K. 3000")
@@ -41,48 +42,55 @@ class ModKoLangProvider(output: PackOutput) :
     }
 
     override fun addTooltips() {
-        add(TranslationKeys.TOOLTIP_WATCH_HOUR, "⑴ 1시간 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WATCH_HALF_HOUR, "⑴ 30분 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WATCH_MINUTE, "⑴ 1분 단위로 시간을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_WEATHER_RADIO, "⑵ 현재 날씨를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_FISHERMAN_POCKET_GUIDE, "⑶ 낚시 힘을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_COMPASS, "⑷ 수평 방향 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_DEPTH_METER, "⑸ 수직 방향 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_RADAR, "⑹ 근처 몬스터의 수를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_TALLY_COUNTER, "⑺ 각 엔티티 마다 죽인 횟수를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_SEXTANT, "⑻ 달의 위상 정보를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_STOPWATCH, "⑽ 이동 속도를 표시합니다.")
-        add(TranslationKeys.TOOLTIP_METAL_DETECTOR, "⑾ 주변의 보물을 표시합니다.")
-        add(TranslationKeys.TOOLTIP_LIFEFORM_ANALYZER, "⑿ 주변의 희귀한 생물을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_TIME_HOUR_ITEM, "⑴ 1시간 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_TIME_HALF_HOUR_ITEM, "⑴ 30분 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM, "⑴ 1분 단위로 시간을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_WEATHER_ITEM, "⑵ 현재 날씨를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_FISHING_POWER_ITEM, "⑶ 낚시 힘을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_POSITION_ITEM, "⑷ 수평 방향 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_DEPTH_ITEM, "⑸ 수직 방향 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM, "⑹ 근처 몬스터의 수를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_KILL_COUNT_ITEM, "⑺ 각 엔티티 마다 죽인 횟수를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_MOON_PHASE_ITEM, "⑻ 달의 위상 정보를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM, "⑽ 이동 속도를 표시합니다.")
+        add(TranslationKeys.TOOLTIP_TREASURE_ITEM, "⑾ 주변의 보물을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM, "⑿ 주변의 희귀한 생물을 표시합니다.")
+        add(TranslationKeys.TOOLTIP_DPS_ITEM, "⒀ 초당 데미지를 표시합니다.")
     }
 
     override fun addGui() {
         add(TranslationKeys.GROUP_TERRARTIFACTS_KEY, "테라리아 유물들")
         add(TranslationKeys.GROUP_TERRARTIFACTS_DEVELOP_KEY, "테라리아 유물들 개발자 탭")
         addCuriosSlot("accessory", "악세서리")
+        addInfoOverlays()
+        addInfoToggleButtons()
+    }
+
+    private fun addInfoOverlays() {
+        // TIME
         add(TranslationKeys.INFO_TIME, "⑴ %1\$s %2\$s")
         add(TranslationKeys.TIME_MORNING, "오전")
         add(TranslationKeys.TIME_AFTERNOON, "오후")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME, "시간")
+        // WEATHER
         add(TranslationKeys.INFO_WEATHER, "⑵ %1\$s (💧 %2\$s%%, ⚡ %3\$s%%)")
         add(TranslationKeys.WEATHER_CLEAR, "맑음")
         add(TranslationKeys.WEATHER_CLOUDY, "흐림")
         add(TranslationKeys.WEATHER_RAIN, "비")
         add(TranslationKeys.WEATHER_SNOW, "눈")
         add(TranslationKeys.WEATHER_THUNDER, "천둥번개")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER, "날씨")
+        // FISHING POWER
         add(TranslationKeys.INFO_FISHING_POWER, "⑶ 운: %s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER, "낚시 힘")
+        // POSITION
         add(TranslationKeys.INFO_POSITION, "⑷ X: %1\$s, Z: %1\$s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "위치")
+        // DEPTH
         add(TranslationKeys.INFO_DEPTH, "⑸ Y: %s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "깊이")
+        // ENEMY COUNT
         add(TranslationKeys.INFO_ENEMY_COUNT, "⑹ 근처에 적 %s마리!")
         add(TranslationKeys.INFO_NO_ENEMY_COUNT, "⑹ 근처에 적 없음")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "몬스터 수")
+        // KILL COUNT
         add(TranslationKeys.INFO_KILL_COUNT, "⑺ %1\$s: %2\$s")
         add(TranslationKeys.INFO_NO_KILL_COUNT, "⑺ 죽인 횟수 없음")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "죽인 횟수")
+        // MOON PHASE
         add(TranslationKeys.INFO_MOON_PHASE_FULL_MOON, "⑻ 보름달")
         add(TranslationKeys.INFO_MOON_PHASE_WANING_GIBBOUS, "⑻ 볼록 하현달")
         add(TranslationKeys.INFO_MOON_PHASE_LAST_QUARTER, "⑻ 하현달")
@@ -94,15 +102,32 @@ class ModKoLangProvider(output: PackOutput) :
         add(TranslationKeys.INFO_NO_MOON_PHASE, "⑼ 달 없음")
         add(TranslationKeys.INFO_NETHER_MOON_PHASE, "⑼ 네더 달")
         add(TranslationKeys.INFO_END_MOON_PHASE, "⑼ 엔더 달")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "달의 위상")
+        // MOVEMENT SPEED
         add(TranslationKeys.INFO_MOVEMENT_SPEED, "⑽ %s m/s")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "이동 속도")
+        // TREASURE
         add(TranslationKeys.INFO_TREASURE, "⑾ 근처에 %s 탐지됨!")
         add(TranslationKeys.INFO_NO_TREASURE, "⑾ 탐지된 보물 없음")
-        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "보물")
+        // RARE CREATURE
         add(TranslationKeys.INFO_RARE_CREATURE, "⑿ %s")
         add(TranslationKeys.INFO_NO_RARE_CREATURE, "⑿ 감지된 희귀 생물 없음")
+        // DPS
+        add(TranslationKeys.INFO_DPS, "⒀ 초 당 %s 데미지")
+        add(TranslationKeys.INFO_NO_DPS, "⒀ N/A")
+    }
+
+    private fun addInfoToggleButtons() {
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME, "시간")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER, "날씨")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER, "낚시 힘")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION, "위치")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH, "깊이")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT, "몬스터 수")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT, "죽인 횟수")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE, "달의 위상")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED, "이동 속도")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE, "보물")
         add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES, "희귀 생물")
+        add(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DPS, "DPS")
     }
 
     override fun addConfigs() {
