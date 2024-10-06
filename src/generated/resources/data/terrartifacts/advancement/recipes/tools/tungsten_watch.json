@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_clock": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "terrartifacts:tungsten_watch"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tungsten_clock": {
       "conditions": {
         "items": [
           {
@@ -10,18 +16,12 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "terrartifacts:tungsten_watch"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_clock"
+      "has_tungsten_clock"
     ]
   ],
   "rewards": {

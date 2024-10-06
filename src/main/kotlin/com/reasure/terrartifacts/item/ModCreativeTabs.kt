@@ -48,6 +48,8 @@ object ModCreativeTabs {
                     accept(ModItems.GPS)
                     accept(ModItems.FISH_FINDER)
                     accept(ModItems.REK3000)
+                    accept(ModItems.GOBLIN_TECH)
+                    accept(ModItems.PDA)
                 }
             }
             .build()

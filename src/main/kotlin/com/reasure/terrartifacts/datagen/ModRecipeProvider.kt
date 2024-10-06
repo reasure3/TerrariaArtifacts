@@ -4,6 +4,7 @@ import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.ModItems
 import com.reasure.terrartifacts.util.ModTags
 import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
@@ -38,58 +39,63 @@ class ModRecipeProvider(output: PackOutput, registries: CompletableFuture<Holder
     private fun clockRecipe(clock: Item, mainIngredient: TagKey<Item>, recipeOutput: RecipeOutput) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, clock)
             .define('#', mainIngredient)
-            .define('X', Items.REDSTONE)
+            .defineBy('X', Items.REDSTONE)
             .pattern(" # ")
             .pattern("#X#")
             .pattern(" # ")
-            .unlockedBy("has_redstone", has(Items.REDSTONE))
             .save(recipeOutput)
     }
 
     private fun watchRecipe(watch: Item, clock: Item, recipeOutput: RecipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, watch)
-            .requires(clock)
+            .requiresBy(clock)
             .requires(Tags.Items.CHAINS)
-            .unlockedBy("has_clock", has(clock))
             .save(recipeOutput)
     }
 
 
     private fun addTinkersRecipe(output: RecipeOutput) {
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GPS)
-            .requires(ModItems.GOLD_WATCH)
-            .requires(ModItems.COMPASS)
-            .requires(ModItems.DEPTH_METER)
-            .unlockedBy("has_gold_watch", has(ModItems.GOLD_WATCH))
-            .unlockedBy("has_compass", has(ModItems.COMPASS))
-            .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
+            .requiresBy(ModItems.GOLD_WATCH)
+            .requiresBy(ModItems.COMPASS)
+            .requiresBy(ModItems.DEPTH_METER)
             .save(output, Terrartifacts.modLoc("gps_from_gold_watch"))
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GPS)
-            .requires(ModItems.PLATINUM_WATCH)
-            .requires(ModItems.COMPASS)
-            .requires(ModItems.DEPTH_METER)
-            .unlockedBy("has_platinum_watch", has(ModItems.PLATINUM_WATCH))
-            .unlockedBy("has_compass", has(ModItems.COMPASS))
-            .unlockedBy("has_depth_meter", has(ModItems.DEPTH_METER))
+            .requiresBy(ModItems.PLATINUM_WATCH)
+            .requiresBy(ModItems.COMPASS)
+            .requiresBy(ModItems.DEPTH_METER)
             .save(output, Terrartifacts.modLoc("gps_from_platinum_watch"))
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.FISH_FINDER)
-            .requires(ModItems.WEATHER_RADIO)
-            .requires(ModItems.FISHERMAN_POCKET_GUIDE)
-            .requires(ModItems.SEXTANT)
-            .unlockedBy("has_weather_radio", has(ModItems.WEATHER_RADIO))
-            .unlockedBy("has_fisherman_pocket_guide", has(ModItems.FISHERMAN_POCKET_GUIDE))
-            .unlockedBy("has_sextant", has(ModItems.SEXTANT))
+            .requiresBy(ModItems.WEATHER_RADIO)
+            .requiresBy(ModItems.FISHERMAN_POCKET_GUIDE)
+            .requiresBy(ModItems.SEXTANT)
             .save(output)
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.REK3000)
-            .requires(ModItems.RADAR)
-            .requires(ModItems.TALLY_COUNTER)
-            .requires(ModItems.LIFEFORM_ANALYZER)
-            .unlockedBy("has_radar", has(ModItems.RADAR))
-            .unlockedBy("has_tally_counter", has(ModItems.TALLY_COUNTER))
-            .unlockedBy("has_lifeform_analyzer", has(ModItems.LIFEFORM_ANALYZER))
+            .requiresBy(ModItems.RADAR)
+            .requiresBy(ModItems.TALLY_COUNTER)
+            .requiresBy(ModItems.LIFEFORM_ANALYZER)
+            .save(output)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.GOBLIN_TECH)
+            .requiresBy(ModItems.STOPWATCH)
+            .requiresBy(ModItems.METAL_DETECTOR)
+            .requiresBy(ModItems.DPS_METER)
+            .save(output)
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, ModItems.PDA)
+            .requiresBy(ModItems.GPS)
+            .requiresBy(ModItems.FISH_FINDER)
+            .requiresBy(ModItems.REK3000)
+            .requiresBy(ModItems.GOBLIN_TECH)
             .save(output)
     }
+
+    private fun ShapedRecipeBuilder.defineBy(symbol: Char, item: Item) =
+        define(symbol, item).unlockedBy("has_${BuiltInRegistries.ITEM.getKey(item).path.replace('/', '_')}", has(item))
+
+    private fun ShapelessRecipeBuilder.requiresBy(item: Item) =
+        requires(item).unlockedBy("has_${BuiltInRegistries.ITEM.getKey(item).path.replace('/', '_')}", has(item))
 }

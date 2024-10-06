@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_clock": {
+    "has_platinum_clock": {
       "conditions": {
         "items": [
           {
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_clock"
+      "has_platinum_clock"
     ]
   ],
   "rewards": {

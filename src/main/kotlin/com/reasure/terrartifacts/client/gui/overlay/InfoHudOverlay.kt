@@ -20,9 +20,10 @@ class InfoHudOverlay : LayeredDraw.Layer {
         val font = minecraft.font
         val screenWidth = gui.guiWidth()
         val screenHeight = gui.guiHeight()
-        val width = (infoList.maxOfOrNull { font.width(it) } ?: 0) + 1
-        val height = font.lineHeight + 1
-        val top = (screenHeight - height * infoList.size + 1) / 2
+        val width = (infoList.maxOfOrNull { font.width(it) } ?: 0) + 5
+        val heightSpace = 3
+        val height = font.lineHeight + heightSpace
+        val top = (screenHeight - height * infoList.size + heightSpace) / 2
         for (i in 0..<infoList.size) {
             gui.drawString(font, infoList[i], screenWidth - width, top + i * height, 0xffffff, true)
         }

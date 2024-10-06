@@ -45,6 +45,8 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.GPS)
         basicItem(ModItems.FISH_FINDER)
         basicItem(ModItems.REK3000)
+        basicItem(ModItems.GOBLIN_TECH)
+        basicItem(ModItems.PDA)
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {

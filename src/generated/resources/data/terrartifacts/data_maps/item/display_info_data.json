@@ -90,6 +90,21 @@
       "treasure": false,
       "weather": false
     },
+    "terrartifacts:goblin_tech": {
+      "depth": false,
+      "dps": true,
+      "enemyCount": false,
+      "fishingPower": false,
+      "killCount": false,
+      "moonPhase": false,
+      "movementSpeed": true,
+      "position": false,
+      "rareCreature": false,
+      "time_half_hour": false,
+      "time_hour": false,
+      "treasure": true,
+      "weather": false
+    },
     "terrartifacts:gold_watch": {
       "depth": false,
       "dps": false,
@@ -149,6 +164,21 @@
       "time_hour": false,
       "treasure": true,
       "weather": false
+    },
+    "terrartifacts:pda": {
+      "depth": true,
+      "dps": true,
+      "enemyCount": true,
+      "fishingPower": true,
+      "killCount": true,
+      "moonPhase": true,
+      "movementSpeed": true,
+      "position": true,
+      "rareCreature": true,
+      "time_half_hour": false,
+      "time_hour": true,
+      "treasure": true,
+      "weather": true
     },
     "terrartifacts:platinum_watch": {
       "depth": false,

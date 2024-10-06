@@ -30,11 +30,14 @@ class Server(builder: ModConfigSpec.Builder) : BaseConfig(builder) {
         .defineInRange("rareCreatureDetectDistance", 30.0, 0.1, 512.0)
 
     val dpsTrackingTick: Int by builder
+        .comment("DPS is calculated only from the damage accumulated during this tick.")
         .defineInRange("dpsTrackingTick", 60, 1, Int.MAX_VALUE)
 
-    val checkInventoryTickRate: Int by builder
-        .defineInRange("checkInventoryTickRate", 10, 1, 1000)
-
     val maxDpsDamageEntryCount: Int by builder
+        .comment("When damage accumulates and exceeds this number, older damage is removed first.")
         .defineInRange("maxDpsDamageEntryCount", 100, 1, Int.MAX_VALUE)
+
+    val checkInventoryTickRate: Int by builder
+        .comment("Every this tick, check if there is an information item in your inventory.")
+        .defineInRange("checkInventoryTickRate", 10, 1, 1000)
 }

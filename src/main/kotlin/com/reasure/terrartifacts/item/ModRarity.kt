@@ -21,7 +21,7 @@ object ModRarity {
     @JvmField
     val WHITE_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 0, "${Terrartifacts.ID}:white",
-        UnaryOperator { style: Style -> style.withColor(0xffffff) }
+        UnaryOperator { style: Style -> style.withColor(0xFFFFFF) }
     )
     val WHITE: Rarity
         get() = WHITE_PROXY.value
@@ -29,7 +29,7 @@ object ModRarity {
     @JvmField
     val BLUE_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 1, "${Terrartifacts.ID}:blue",
-        UnaryOperator { style: Style -> style.withColor(0x9696ff) }
+        UnaryOperator { style: Style -> style.withColor(0x9696FF) }
     )
     val BLUE: Rarity
         get() = BLUE_PROXY.value
@@ -37,7 +37,7 @@ object ModRarity {
     @JvmField
     val GREEN_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 2, "${Terrartifacts.ID}:green",
-        UnaryOperator { style: Style -> style.withColor(0x96ff96) }
+        UnaryOperator { style: Style -> style.withColor(0x96FF96) }
     )
     val GREEN: Rarity
         get() = GREEN_PROXY.value
@@ -45,7 +45,7 @@ object ModRarity {
     @JvmField
     val ORANGE_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 3, "${Terrartifacts.ID}:orange",
-        UnaryOperator { style: Style -> style.withColor(0xffc896) }
+        UnaryOperator { style: Style -> style.withColor(0xffC896) }
     )
     val ORANGE: Rarity
         get() = ORANGE_PROXY.value
@@ -53,7 +53,7 @@ object ModRarity {
     @JvmField
     val LIGHT_RED_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 4, "${Terrartifacts.ID}:light_red",
-        UnaryOperator { style: Style -> style.withColor(0xff9696) }
+        UnaryOperator { style: Style -> style.withColor(0xFF9696) }
     )
     val LIGHT_RED: Rarity
         get() = LIGHT_RED_PROXY.value
@@ -61,7 +61,7 @@ object ModRarity {
     @JvmField
     val PINK_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 5, "${Terrartifacts.ID}:pink",
-        UnaryOperator { style: Style -> style.withColor(0x96ff96) }
+        UnaryOperator { style: Style -> style.withColor(0xFF96FF) }
     )
     val PINK: Rarity
         get() = PINK_PROXY.value
@@ -69,7 +69,7 @@ object ModRarity {
     @JvmField
     val LIGHT_PURPLE_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 6, "${Terrartifacts.ID}:light_purple",
-        UnaryOperator { style: Style -> style.withColor(0xd2a0ff) }
+        UnaryOperator { style: Style -> style.withColor(0xD2A0FF) }
     )
     val LIGHT_PURPLE: Rarity
         get() = LIGHT_PURPLE_PROXY.value
@@ -77,7 +77,7 @@ object ModRarity {
     @JvmField
     val LIME_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 7, "${Terrartifacts.ID}:lime",
-        UnaryOperator { style: Style -> style.withColor(0x96ff0a) }
+        UnaryOperator { style: Style -> style.withColor(0x96FF0A) }
     )
     val LIME: Rarity
         get() = LIME_PROXY.value
@@ -85,7 +85,7 @@ object ModRarity {
     @JvmField
     val YELLOW_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 8, "${Terrartifacts.ID}:yellow",
-        UnaryOperator { style: Style -> style.withColor(0xffff0a) }
+        UnaryOperator { style: Style -> style.withColor(0xFFFF0A) }
     )
     val YELLOW: Rarity
         get() = YELLOW_PROXY.value
@@ -93,7 +93,7 @@ object ModRarity {
     @JvmField
     val CYAN_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 9, "${Terrartifacts.ID}:cyan",
-        UnaryOperator { style: Style -> style.withColor(0x05c8ff) }
+        UnaryOperator { style: Style -> style.withColor(0x05C8FF) }
     )
     val CYAN: Rarity
         get() = CYAN_PROXY.value
@@ -101,7 +101,7 @@ object ModRarity {
     @JvmField
     val RED_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 10, "${Terrartifacts.ID}:red",
-        UnaryOperator { style: Style -> style.withColor(0xff2864) }
+        UnaryOperator { style: Style -> style.withColor(0xFF2864) }
     )
     val RED: Rarity
         get() = RED_PROXY.value
@@ -109,7 +109,7 @@ object ModRarity {
     @JvmField
     val PURPLE_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, 11, "${Terrartifacts.ID}:purple",
-        UnaryOperator { style: Style -> style.withColor(0x8428ff) }
+        UnaryOperator { style: Style -> style.withColor(0x8428FF) }
     )
     val PURPLE: Rarity
         get() = PURPLE_PROXY.value
@@ -117,7 +117,7 @@ object ModRarity {
     @JvmField
     val QUEST_PROXY: EnumProxy<Rarity> = EnumProxy(
         Rarity::class.java, -11, "${Terrartifacts.ID}:quest",
-        UnaryOperator { style: Style -> style.withColor(0xffaf00) }
+        UnaryOperator { style: Style -> style.withColor(0xFFAF00) }
     )
     val QUEST: Rarity
         get() = QUEST_PROXY.value

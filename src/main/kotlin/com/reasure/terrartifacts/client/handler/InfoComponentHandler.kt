@@ -150,7 +150,12 @@ object InfoComponentHandler {
     }
 
     fun getTreasureComponent(level: Level, pos: BlockPos): Component {
-        if ((level.gameTime % ServerModConfig.SERVER.checkTreasureTickRate) != 0L) return treasureComponent
+        if ((level.gameTime % ServerModConfig.SERVER.checkTreasureTickRate) == 0L)
+            updateTreasureComponent(level, pos)
+        return treasureComponent
+    }
+
+    private fun updateTreasureComponent(level: Level, pos: BlockPos) {
         val maxRare = AtomicInteger(-1)
         val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
@@ -172,7 +177,6 @@ object InfoComponentHandler {
         } else {
             Component.translatable(TranslationKeys.INFO_TREASURE, detectedBlock.block.name).withIcon()
         }
-        return treasureComponent
     }
 
     fun getRareCreatureComponent(player: LocalPlayer, pos: BlockPos): Component {

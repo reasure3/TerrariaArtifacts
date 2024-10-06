@@ -19,6 +19,8 @@
     "terrartifacts:dps_meter",
     "terrartifacts:gps",
     "terrartifacts:fish_finder",
-    "terrartifacts:rek3000"
+    "terrartifacts:rek3000",
+    "terrartifacts:goblin_tech",
+    "terrartifacts:pda"
   ]
 }

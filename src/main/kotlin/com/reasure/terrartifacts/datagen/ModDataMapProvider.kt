@@ -41,6 +41,8 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             .displayInfo(ModItems.GPS, timeMinute = true, position = true, depth = true)
             .displayInfo(ModItems.FISH_FINDER, weather = true, fishingPower = true, moonPhase = true)
             .displayInfo(ModItems.REK3000, enemyCount = true, killCount = true, rareCreature = true)
+            .displayInfo(ModItems.GOBLIN_TECH, movementSpeed = true, treasure = true, dps = true)
+            .displayAllInfo(ModItems.PDA)
 
         builder(ModDataMaps.RARE_BLOCK_DATA)
             .rareBlock(Blocks.DECORATED_POT, 50)
@@ -144,6 +146,9 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             ),
             false
         )
+
+    private fun Builder<DisplayInfoData, Item>.displayAllInfo(item: Item): Builder<DisplayInfoData, Item> =
+        displayInfo(item, false, false, true, true, true, true, true, true, true, true, true, true, true, true)
 
     @Suppress("DEPRECATION")
     private fun Builder<RareBlockData, Block>.rareBlock(

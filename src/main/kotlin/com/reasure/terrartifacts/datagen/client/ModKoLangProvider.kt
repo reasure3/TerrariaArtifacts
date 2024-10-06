@@ -34,6 +34,8 @@ class ModKoLangProvider(output: PackOutput) :
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "어류 탐지기")
         add(ModItems.REK3000, "R.E.K. 3000")
+        add(ModItems.GOBLIN_TECH, "고블린 기술")
+        add(ModItems.PDA, "PDA")
     }
 
 
@@ -154,8 +156,29 @@ class ModKoLangProvider(output: PackOutput) :
         addConfigDesc("treasureDetectDistance", "보물 탐지 거리")
         addConfigDesc("treasureDetectDistance.tooltip", "보물 탐지 거리 설정")
 
-        addConfigDesc("rareCreatureDetectDistance", "Rare Creature Detection Range")
-        addConfigDesc("rareCreatureDetectDistance.tooltip", "Define Rare Creature Detection Range")
+        addConfigDesc("checkTreasureTickRate", "보물 탐지 틱 간격")
+        addConfigDesc("checkTreasureTickRate.tooltip", "보물 탐지 틱 간격 설정")
+
+        addConfigDesc("rareCreatureDetectDistance", "희귀 생물 감지 거리")
+        addConfigDesc("rareCreatureDetectDistance.tooltip", "희귀 생물 감지 거리 설정")
+
+        addConfigDesc("dpsTrackingTick", "Dps 추적 틱")
+        addConfigDesc(
+            "dpsTrackingTick.tooltip",
+            "Dps 추적 틱 설정\n\n이 틱 동안 쌓인 데미지로 Dps를 계산합니다."
+        )
+
+        addConfigDesc("maxDpsDamageEntryCount", "최대 Dps 추적 수")
+        addConfigDesc(
+            "maxDpsDamageEntryCount.tooltip",
+            "최대 Dps 추적 수 설정\n\n축적된 데미지가 이 수를 넘겼을 때, 오래된 데미지부터 제거됩니다."
+        )
+
+        addConfigDesc("checkInventoryTickRate", "인벤토리 검사 틱 간격")
+        addConfigDesc(
+            "checkInventoryTickRate.tooltip",
+            "인벤토리 검사 틱 간격 설정\n\n이 틱마다 인벤토리에 정보 아이템이 있는지 검사합니다."
+        )
     }
 
     override fun addTags() {

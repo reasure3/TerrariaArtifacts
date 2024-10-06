@@ -34,6 +34,8 @@ class ModEnLangProvider(output: PackOutput) :
         add(ModItems.GPS, "GPS")
         add(ModItems.FISH_FINDER, "Fish Finder")
         add(ModItems.REK3000, "R.E.K. 3000")
+        add(ModItems.GOBLIN_TECH, "Goblin Tech")
+        add(ModItems.PDA, "PDA")
     }
 
     override fun addBlocks() {
@@ -153,8 +155,29 @@ class ModEnLangProvider(output: PackOutput) :
         addConfigDesc("treasureDetectDistance", "Treasure Detection Range")
         addConfigDesc("treasureDetectDistance.tooltip", "Define Treasure Detection Range")
 
+        addConfigDesc("checkTreasureTickRate", "Treasure Check Tick Rate")
+        addConfigDesc("checkTreasureTickRate.tooltip", "Define Treasure Check Tick Rate")
+
         addConfigDesc("rareCreatureDetectDistance", "Rare Creature Detection Range")
         addConfigDesc("rareCreatureDetectDistance.tooltip", "Define Rare Creature Detection Range")
+
+        addConfigDesc("dpsTrackingTick", "Dps Tracking Tick")
+        addConfigDesc(
+            "dpsTrackingTick.tooltip",
+            "Define Dps Tracking Tick\n\nDPS is calculated only from the damage accumulated during this tick."
+        )
+
+        addConfigDesc("maxDpsDamageEntryCount", "Max Dps Track Count")
+        addConfigDesc(
+            "maxDpsDamageEntryCount.tooltip",
+            "Define Max Dps Track Count\n\nWhen damage accumulates and exceeds this number, older damage is removed first."
+        )
+
+        addConfigDesc("checkInventoryTickRate", "Inventory Check Tick Rate")
+        addConfigDesc(
+            "checkInventoryTickRate.tooltip",
+            "Define Inventory Check Tick Rate\n\nEvery this tick, check if there is an information item in your inventory."
+        )
     }
 
     override fun addTags() {

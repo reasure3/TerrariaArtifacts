@@ -150,6 +150,37 @@ object ModItems {
         )
     }
 
+    val GOBLIN_TECH: Item by ITEMS.register("goblin_tech") { ->
+        AccessoryItem(
+            rarity = ModRarity.ORANGE,
+            tooltipKeys = listOf(
+                TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM,
+                TranslationKeys.TOOLTIP_TREASURE_ITEM,
+                TranslationKeys.TOOLTIP_DPS_ITEM
+            )
+        )
+    }
+
+    val PDA: Item by ITEMS.register("pda") { ->
+        AccessoryItem(
+            rarity = ModRarity.PINK,
+            tooltipKeys = listOf(
+                TranslationKeys.TOOLTIP_TIME_MINUTE_ITEM,
+                TranslationKeys.TOOLTIP_WEATHER_ITEM,
+                TranslationKeys.TOOLTIP_FISHING_POWER_ITEM,
+                TranslationKeys.TOOLTIP_POSITION_ITEM,
+                TranslationKeys.TOOLTIP_DEPTH_ITEM,
+                TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM,
+                TranslationKeys.TOOLTIP_KILL_COUNT_ITEM,
+                TranslationKeys.TOOLTIP_MOON_PHASE_ITEM,
+                TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM,
+                TranslationKeys.TOOLTIP_TREASURE_ITEM,
+                TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM,
+                TranslationKeys.TOOLTIP_DPS_ITEM
+            )
+        )
+    }
+
     // Below line is for test
 
     @Suppress("unused")

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "terrartifacts:gps"
+    },
+    {
+      "item": "terrartifacts:fish_finder"
+    },
+    {
+      "item": "terrartifacts:rek3000"
+    },
+    {
+      "item": "terrartifacts:goblin_tech"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "terrartifacts:pda"
+  }
+}
