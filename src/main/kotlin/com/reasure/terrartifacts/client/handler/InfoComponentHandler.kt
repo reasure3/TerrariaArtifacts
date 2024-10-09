@@ -3,6 +3,7 @@ package com.reasure.terrartifacts.client.handler
 import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
+import com.reasure.terrartifacts.client.data.ClientShowInfoData
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
@@ -24,27 +25,40 @@ import net.minecraft.world.entity.monster.Enemy
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.biome.Biome
 import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.AABB
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
 
 object InfoComponentHandler {
+    private val noEnemyCountComponent: Component =
+        Component.translatable(TranslationKeys.INFO_NO_ENEMY_COUNT).disabled()
+
     private val defaultKillCountComponent: Component =
         Component.translatable(TranslationKeys.INFO_NO_KILL_COUNT).disabled()
 
     private val noTreasureComponent: Component =
         Component.translatable(TranslationKeys.INFO_NO_TREASURE).disabled()
 
+    private val noRareCreatureComponent: Component =
+        Component.translatable(TranslationKeys.INFO_NO_RARE_CREATURE).disabled()
+
     private var killCountComponent: Component = defaultKillCountComponent
+
+    private var enemyCountComponent: Component = noEnemyCountComponent
 
     private var treasureComponent: Component = noTreasureComponent
 
+    private var rareCreatureComponent: Component = noRareCreatureComponent
+
+
     fun reset() {
         killCountComponent = defaultKillCountComponent
+        enemyCountComponent = noEnemyCountComponent
+        treasureComponent = noTreasureComponent
+        rareCreatureComponent = noRareCreatureComponent
     }
 
-    fun getTimeComponent(level: Level, type: WatchType): Component {
+    private fun getTimeComponent(level: Level, type: WatchType): Component {
         val formattedTime = TimeUtil.formatTime(level.dayTime, type)
         val amPmComponent =
             if (TimeUtil.isMorning(level.dayTime))
@@ -54,7 +68,7 @@ object InfoComponentHandler {
         return Component.translatable(TranslationKeys.INFO_TIME, amPmComponent, formattedTime).withIcon()
     }
 
-    fun getWeatherComponent(level: Level, pos: BlockPos): Component {
+    private fun getWeatherComponent(level: Level, pos: BlockPos): Component {
         val weather = if (level.isThundering) {
             when (level.getPrecipitationAt(pos)) {
                 Biome.Precipitation.NONE -> Component.translatable(TranslationKeys.WEATHER_CLEAR)
@@ -78,7 +92,7 @@ object InfoComponentHandler {
         ).withIcon()
     }
 
-    fun getFishingPowerComponent(player: LocalPlayer): Component {
+    private fun getFishingPowerComponent(player: LocalPlayer): Component {
         val luck = player.attributes.getValue(Attributes.LUCK)
         return Component.translatable(
             TranslationKeys.INFO_FISHING_POWER,
@@ -86,7 +100,7 @@ object InfoComponentHandler {
         ).withIcon()
     }
 
-    fun getPositionComponent(player: LocalPlayer): Component {
+    private fun getPositionComponent(player: LocalPlayer): Component {
         return Component.translatable(
             TranslationKeys.INFO_POSITION,
             player.blockX,
@@ -94,27 +108,27 @@ object InfoComponentHandler {
         ).withIcon()
     }
 
-    fun getDepthComponent(player: LocalPlayer): Component {
+    private fun getDepthComponent(player: LocalPlayer): Component {
         return Component.translatable(
             TranslationKeys.INFO_DEPTH,
             player.blockY
         ).withIcon()
     }
 
-    fun getEnemyCountComponent(player: LocalPlayer): Component {
+    private fun updateEnemyCountComponent(player: LocalPlayer) {
         val distance = ServerModConfig.SERVER.radarDetectDistance
         val count = player.getNearbyEntityCount(distance) { entity ->
             entity is Enemy
         }
-        if (count == 0) return Component.translatable(TranslationKeys.INFO_NO_ENEMY_COUNT).disabled()
-        return Component.translatable(TranslationKeys.INFO_ENEMY_COUNT, count).withIcon()
+        enemyCountComponent = if (count == 0) noEnemyCountComponent
+        else Component.translatable(TranslationKeys.INFO_ENEMY_COUNT, count).withIcon()
     }
 
     fun updateKillCountComponent(targetName: Component, kill: Int) {
         killCountComponent = Component.translatable(TranslationKeys.INFO_KILL_COUNT, targetName, kill).withIcon()
     }
 
-    fun getMoonPhaseComponent(level: Level): Component {
+    private fun getMoonPhaseComponent(level: Level): Component {
         if (level.dimensionType().natural) {
             val phase = ((level.dayTime / 24000) % 8).toInt()
             return when (phase) {
@@ -137,7 +151,7 @@ object InfoComponentHandler {
         }.disabled()
     }
 
-    fun getMovementSpeedComponent(player: LocalPlayer): Component {
+    private fun getMovementSpeedComponent(player: LocalPlayer): Component {
         val speed = (Mth.length(
             player.x - player.xOld,
             player.y - player.yOld,
@@ -149,15 +163,9 @@ object InfoComponentHandler {
         }
     }
 
-    fun getTreasureComponent(level: Level, pos: BlockPos): Component {
-        if ((level.gameTime % ServerModConfig.SERVER.checkTreasureTickRate) == 0L)
-            updateTreasureComponent(level, pos)
-        return treasureComponent
-    }
-
     private fun updateTreasureComponent(level: Level, pos: BlockPos) {
         val maxRare = AtomicInteger(-1)
-        val detectedBlockState = AtomicReference<BlockState>(Blocks.AIR.defaultBlockState())
+        val detectedBlockState = AtomicReference(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
         level.getBlockStates(
             AABB(
@@ -179,7 +187,7 @@ object InfoComponentHandler {
         }
     }
 
-    fun getRareCreatureComponent(player: LocalPlayer, pos: BlockPos): Component {
+    private fun updateRareCreatureComponent(player: LocalPlayer, pos: BlockPos) {
         val maxRare = AtomicInteger(-1)
         val detectedCreature = AtomicReference<Entity>()
         val distance = ServerModConfig.SERVER.rareCreatureDetectDistance
@@ -198,18 +206,31 @@ object InfoComponentHandler {
                 detectedCreature.set(entity)
             }
         }
-        return if (maxRare.get() == -1) {
-            Component.translatable(TranslationKeys.INFO_NO_RARE_CREATURE).disabled()
-        } else {
-            Component.translatable(TranslationKeys.INFO_RARE_CREATURE, detectedCreature.get().name).withIcon()
-        }
+        rareCreatureComponent = if (maxRare.get() == -1) noRareCreatureComponent
+        else Component.translatable(TranslationKeys.INFO_RARE_CREATURE, detectedCreature.get().name).withIcon()
     }
 
-    fun getDpsComponent(): Component {
+    private fun getDpsComponent(): Component {
         val dps = ClientDamageTracker.dps
         return if (dps < 0.0001f) Component.translatable(TranslationKeys.INFO_NO_DPS).disabled()
         else Component.translatable(TranslationKeys.INFO_DPS, String.format("%.1f", dps)).withIcon()
     }
+
+    fun updateHugeInfoComponent(player: LocalPlayer) {
+        CoroutineHandler.launchFindInfo {
+            if (canDisplay(InfoType.ENEMY_COUNT)) {
+                updateEnemyCountComponent(player)
+            }
+            if (canDisplay(InfoType.TREASURE)) {
+                updateTreasureComponent(player.level(), player.onPos)
+            }
+            if (canDisplay(InfoType.RARE_CREATURE)) {
+                updateRareCreatureComponent(player, player.onPos)
+            }
+        }
+    }
+
+    private fun canDisplay(type: InfoType) = ClientShowInfoData[type] && ClientHasInfoItemData[type]
 
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {
         InfoType.TIME -> getTimeComponent(player.level(), ClientHasInfoItemData.displayTimeType())
@@ -217,12 +238,12 @@ object InfoComponentHandler {
         InfoType.FISHING_POWER -> getFishingPowerComponent(player)
         InfoType.POSITION -> getPositionComponent(player)
         InfoType.DEPTH -> getDepthComponent(player)
-        InfoType.ENEMY_COUNT -> getEnemyCountComponent(player)
+        InfoType.ENEMY_COUNT -> enemyCountComponent
         InfoType.KILL_COUNT -> killCountComponent
         InfoType.MOON_PHASE -> getMoonPhaseComponent(player.level())
         InfoType.MOVEMENT_SPEED -> getMovementSpeedComponent(player)
-        InfoType.TREASURE -> getTreasureComponent(player.level(), player.onPos)
-        InfoType.RARE_CREATURE -> getRareCreatureComponent(player, player.onPos)
+        InfoType.TREASURE -> treasureComponent
+        InfoType.RARE_CREATURE -> rareCreatureComponent
         InfoType.DPS -> getDpsComponent()
     }
 }

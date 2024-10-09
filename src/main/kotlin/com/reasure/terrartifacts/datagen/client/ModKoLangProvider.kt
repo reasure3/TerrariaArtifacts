@@ -156,9 +156,6 @@ class ModKoLangProvider(output: PackOutput) :
         addConfigDesc("treasureDetectDistance", "보물 탐지 거리")
         addConfigDesc("treasureDetectDistance.tooltip", "보물 탐지 거리 설정")
 
-        addConfigDesc("checkTreasureTickRate", "보물 탐지 틱 간격")
-        addConfigDesc("checkTreasureTickRate.tooltip", "보물 탐지 틱 간격 설정")
-
         addConfigDesc("rareCreatureDetectDistance", "희귀 생물 감지 거리")
         addConfigDesc("rareCreatureDetectDistance.tooltip", "희귀 생물 감지 거리 설정")
 

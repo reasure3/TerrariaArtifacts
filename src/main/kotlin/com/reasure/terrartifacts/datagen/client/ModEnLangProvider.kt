@@ -155,9 +155,6 @@ class ModEnLangProvider(output: PackOutput) :
         addConfigDesc("treasureDetectDistance", "Treasure Detection Range")
         addConfigDesc("treasureDetectDistance.tooltip", "Define Treasure Detection Range")
 
-        addConfigDesc("checkTreasureTickRate", "Treasure Check Tick Rate")
-        addConfigDesc("checkTreasureTickRate.tooltip", "Define Treasure Check Tick Rate")
-
         addConfigDesc("rareCreatureDetectDistance", "Rare Creature Detection Range")
         addConfigDesc("rareCreatureDetectDistance.tooltip", "Define Rare Creature Detection Range")
 

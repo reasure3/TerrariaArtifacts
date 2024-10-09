@@ -37,8 +37,6 @@
   "tag.item.curios.accessory": "악세서리",
   "terrartifacts.configuration.checkInventoryTickRate": "인벤토리 검사 틱 간격",
   "terrartifacts.configuration.checkInventoryTickRate.tooltip": "인벤토리 검사 틱 간격 설정\n\n이 틱마다 인벤토리에 정보 아이템이 있는지 검사합니다.",
-  "terrartifacts.configuration.checkTreasureTickRate": "보물 탐지 틱 간격",
-  "terrartifacts.configuration.checkTreasureTickRate.tooltip": "보물 탐지 틱 간격 설정",
   "terrartifacts.configuration.dpsTrackingTick": "Dps 추적 틱",
   "terrartifacts.configuration.dpsTrackingTick.tooltip": "Dps 추적 틱 설정\n\n이 틱 동안 쌓인 데미지로 Dps를 계산합니다.",
   "terrartifacts.configuration.infoButtonLayoutPos": "정보 버튼 배치",

@@ -31,6 +31,7 @@ object InfoItemHandler {
         if ((gameTime % ServerModConfig.SERVER.checkInventoryTickRate) == 0L)
             checkInventory(player)
         infoComponent.clear()
+        InfoComponentHandler.updateHugeInfoComponent(player)
         InfoType.entries.forEach {
             if (ClientShowInfoData[it] && ClientHasInfoItemData[it]) {
                 infoComponent.add(InfoComponentHandler[it, player])

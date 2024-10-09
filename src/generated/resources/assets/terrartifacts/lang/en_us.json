@@ -37,8 +37,6 @@
   "tag.item.curios.accessory": "Accessories",
   "terrartifacts.configuration.checkInventoryTickRate": "Inventory Check Tick Rate",
   "terrartifacts.configuration.checkInventoryTickRate.tooltip": "Define Inventory Check Tick Rate\n\nEvery this tick, check if there is an information item in your inventory.",
-  "terrartifacts.configuration.checkTreasureTickRate": "Treasure Check Tick Rate",
-  "terrartifacts.configuration.checkTreasureTickRate.tooltip": "Define Treasure Check Tick Rate",
   "terrartifacts.configuration.dpsTrackingTick": "Dps Tracking Tick",
   "terrartifacts.configuration.dpsTrackingTick.tooltip": "Define Dps Tracking Tick\n\nDPS is calculated only from the damage accumulated during this tick.",
   "terrartifacts.configuration.infoButtonLayoutPos": "Info Toggle Button Layout",
