@@ -49,20 +49,20 @@ data class DisplayInfoData(
     companion object {
         val CODEC: Codec<DisplayInfoData> = RecordCodecBuilder.create { instance ->
             instance.group(
-                Codec.BOOL.fieldOf("time_hour").forGetter(DisplayInfoData::timeHour),
-                Codec.BOOL.fieldOf("time_half_hour").forGetter(DisplayInfoData::timeHalfHour),
-                Codec.BOOL.fieldOf("time_hour").forGetter(DisplayInfoData::timeMinute),
-                Codec.BOOL.fieldOf("weather").forGetter(DisplayInfoData::weather),
-                Codec.BOOL.fieldOf("fishingPower").forGetter(DisplayInfoData::fishingPower),
-                Codec.BOOL.fieldOf("position").forGetter(DisplayInfoData::position),
-                Codec.BOOL.fieldOf("depth").forGetter(DisplayInfoData::depth),
-                Codec.BOOL.fieldOf("enemyCount").forGetter(DisplayInfoData::enemyCount),
-                Codec.BOOL.fieldOf("killCount").forGetter(DisplayInfoData::killCount),
-                Codec.BOOL.fieldOf("moonPhase").forGetter(DisplayInfoData::moonPhase),
-                Codec.BOOL.fieldOf("movementSpeed").forGetter(DisplayInfoData::movementSpeed),
-                Codec.BOOL.fieldOf("treasure").forGetter(DisplayInfoData::treasure),
-                Codec.BOOL.fieldOf("rareCreature").forGetter(DisplayInfoData::rareCreature),
-                Codec.BOOL.fieldOf("dps").forGetter(DisplayInfoData::dps)
+                Codec.BOOL.optionalFieldOf("time_hour", false).forGetter(DisplayInfoData::timeHour),
+                Codec.BOOL.optionalFieldOf("time_halfHour", false).forGetter(DisplayInfoData::timeHalfHour),
+                Codec.BOOL.optionalFieldOf("time_minute", false).forGetter(DisplayInfoData::timeMinute),
+                Codec.BOOL.optionalFieldOf("weather", false).forGetter(DisplayInfoData::weather),
+                Codec.BOOL.optionalFieldOf("fishingPower", false).forGetter(DisplayInfoData::fishingPower),
+                Codec.BOOL.optionalFieldOf("position", false).forGetter(DisplayInfoData::position),
+                Codec.BOOL.optionalFieldOf("depth", false).forGetter(DisplayInfoData::depth),
+                Codec.BOOL.optionalFieldOf("enemyCount", false).forGetter(DisplayInfoData::enemyCount),
+                Codec.BOOL.optionalFieldOf("killCount", false).forGetter(DisplayInfoData::killCount),
+                Codec.BOOL.optionalFieldOf("moonPhase", false).forGetter(DisplayInfoData::moonPhase),
+                Codec.BOOL.optionalFieldOf("movementSpeed", false).forGetter(DisplayInfoData::movementSpeed),
+                Codec.BOOL.optionalFieldOf("treasure", false).forGetter(DisplayInfoData::treasure),
+                Codec.BOOL.optionalFieldOf("rareCreature", false).forGetter(DisplayInfoData::rareCreature),
+                Codec.BOOL.optionalFieldOf("dps", false).forGetter(DisplayInfoData::dps)
             ).apply(instance, ::DisplayInfoData)
         }
     }
