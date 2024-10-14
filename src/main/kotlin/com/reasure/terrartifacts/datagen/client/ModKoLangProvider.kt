@@ -41,6 +41,7 @@ class ModKoLangProvider(output: PackOutput) :
 
     override fun addBlocks() {
         add(ModBlocks.EXAMPLE_BLOCK, "예제 블록")
+        add(ModBlocks.TINKERERS_WORKSHOP, "땜장이 작업대")
     }
 
     override fun addTooltips() {

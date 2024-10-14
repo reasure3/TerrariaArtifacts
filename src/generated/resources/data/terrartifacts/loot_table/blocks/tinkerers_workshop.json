@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "terrartifacts:tinkerers_workshop",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "horizontal_part": "left"
+              }
+            }
+          ],
+          "name": "terrartifacts:tinkerers_workshop"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "terrartifacts:blocks/tinkerers_workshop"
+}

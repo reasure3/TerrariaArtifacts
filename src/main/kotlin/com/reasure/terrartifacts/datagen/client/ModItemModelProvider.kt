@@ -47,6 +47,8 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.REK3000)
         basicItem(ModItems.GOBLIN_TECH)
         basicItem(ModItems.PDA)
+
+        basicItem(ModBlocks.TINKERERS_WORKSHOP.asItem())
     }
 
     private fun blockItem(block: Block): ItemModelBuilder {

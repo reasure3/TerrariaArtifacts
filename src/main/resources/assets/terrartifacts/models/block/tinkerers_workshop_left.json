@@ -1,0 +1,66 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block",
+	"texture_size": [64, 64],
+	"textures": {
+		"main": "terrartifacts:block/tinkerers_workshop",
+		"particle": "terrartifacts:item/tinkerers_workshop"
+	},
+	"elements": [
+		{
+			"name": "table",
+			"from": [0, 14, 1],
+			"to": [11, 17, 15],
+			"faces": {
+				"north": {"uv": [0, 0, 2.75, 0.75], "texture": "#main"},
+				"east": {"uv": [0, 4.25, 3.5, 5], "texture": "#main"},
+				"south": {"uv": [8.25, 0, 11, 0.75], "texture": "#main"},
+				"up": {"uv": [2.75, 12, 0, 8.5], "texture": "#main"},
+				"down": {"uv": [2.75, 15.5, 0, 12], "texture": "#main"}
+			}
+		},
+		{
+			"name": "body",
+			"from": [0, 1, 2],
+			"to": [7, 14, 14],
+			"faces": {
+				"north": {"uv": [1, 0.75, 2.75, 4], "texture": "#main"},
+				"east": {"uv": [0.25, 5, 3.25, 8.25], "texture": "#main"},
+				"south": {"uv": [8.25, 0.75, 10, 4], "texture": "#main"},
+				"down": {"uv": [7.5, 15, 5.75, 12], "texture": "#main"}
+			}
+		},
+
+		{
+			"name": "hinger",
+			"from": [7, 11, 1],
+			"to": [9, 14, 15],
+			"faces": {
+				"north": {"uv": [0.5, 0.75, 1, 1.5], "texture": "#main"},
+				"east": {"uv": [0, 5, 3.5, 5.75], "texture": "#main"},
+				"south": {"uv": [10, 0.75, 10.5, 1.5], "texture": "#main"},
+				"west": {"uv": [7, 5, 10.5, 5.75], "texture": "#main"},
+				"down": {"uv": [1, 15.5, 0.5, 12], "texture": "#main"}
+			}
+		},
+		{
+			"name": "leg",
+			"from": [5, 0, 2],
+			"to": [8, 1, 14],
+			"faces": {
+				"north": {"uv": [0.75, 4, 1.5, 4.25], "texture": "#main"},
+				"east": {"uv": [0.25, 8.25, 3.25, 8.5], "texture": "#main"},
+				"south": {"uv": [9.5, 4, 10.25, 4.25], "texture": "#main"},
+				"west": {"uv": [7, 6, 10, 6.25], "texture": "#main"},
+				"up": {"uv": [6.25, 11.5, 5.5, 8.5], "texture": "#main"},
+				"down": {"uv": [6.25, 15, 5.5, 12], "texture": "#main"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "left",
+			"children": [0, 1, 2, 3]
+		}
+	]
+}

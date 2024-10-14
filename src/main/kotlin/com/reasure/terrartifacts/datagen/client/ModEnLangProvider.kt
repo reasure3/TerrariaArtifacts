@@ -40,6 +40,7 @@ class ModEnLangProvider(output: PackOutput) :
 
     override fun addBlocks() {
         add(ModBlocks.EXAMPLE_BLOCK, "Example Block")
+        add(ModBlocks.TINKERERS_WORKSHOP, "Tinkerer's Workshop")
     }
 
     override fun addTooltips() {
