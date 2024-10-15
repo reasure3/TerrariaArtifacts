@@ -1,24 +1,20 @@
 package com.reasure.terrartifacts.datagen.client
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.block.ModBlocks
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.data.PackOutput
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
-import net.minecraft.world.level.block.Block
 import net.neoforged.neoforge.client.model.generators.ItemModelBuilder
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.client.model.generators.ModelFile
 import net.neoforged.neoforge.common.data.ExistingFileHelper
-import java.util.Locale
+import java.util.*
 
 class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper) :
     ItemModelProvider(output, Terrartifacts.ID, exFileHelper) {
     override fun registerModels() {
-        blockItem(ModBlocks.EXAMPLE_BLOCK)
-
         clockItem(ModItems.COPPER_CLOCK)
         clockItem(ModItems.TIN_CLOCK)
         clockItem(ModItems.SILVER_CLOCK)
@@ -47,13 +43,6 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
         basicItem(ModItems.REK3000)
         basicItem(ModItems.GOBLIN_TECH)
         basicItem(ModItems.PDA)
-
-        basicItem(ModBlocks.TINKERERS_WORKSHOP.asItem())
-    }
-
-    private fun blockItem(block: Block): ItemModelBuilder {
-        val name = BuiltInRegistries.BLOCK.getKey(block).path
-        return withExistingParent(name, modLoc("block/${name}"))
     }
 
     private fun clockItem(item: Item): ItemModelBuilder {

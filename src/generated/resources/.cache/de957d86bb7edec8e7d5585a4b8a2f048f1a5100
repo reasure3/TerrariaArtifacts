@@ -1,4 +1,4 @@
-// 1.21	2024-10-14T17:39:00.4124597	Item Models: terrartifacts
+// 1.21	2024-10-15T18:53:15.7206928	Item Models: terrartifacts
 6803226104ddaa7a3b5fb11511469be261992268 assets/terrartifacts/models/item/clock/copper_clock_01.json
 79fe59ed87f1916812335ad48a0cbb94445dbb8d assets/terrartifacts/models/item/clock/copper_clock_02.json
 630d1020261c184c3c89df772a3bda23d9fb786e assets/terrartifacts/models/item/clock/copper_clock_03.json
@@ -319,7 +319,6 @@ bb52ee1ffd62fc471096022b5f9441f301a19875 assets/terrartifacts/models/item/copper
 7b83893407cd9ddcd8e973e024f76c4dae42e170 assets/terrartifacts/models/item/copper_watch.json
 3593de747d3f20d354abb8edec8a3c53523f98ae assets/terrartifacts/models/item/depth_meter.json
 4d72cae18f5caca3b40ce578dccb2d44de805545 assets/terrartifacts/models/item/dps_meter.json
-152352aa38c348907f8838a796c16a53634a40e4 assets/terrartifacts/models/item/example_block.json
 19c794aa4f5063ed19541a321eedeefb59640778 assets/terrartifacts/models/item/fisherman_pocket_guide.json
 8cd4145991cbbcfec7fcd0a7312d816bf143d598 assets/terrartifacts/models/item/fish_finder.json
 af9aff3addc11db09def8d5c72cbfe4802711794 assets/terrartifacts/models/item/goblin_tech.json
@@ -337,7 +336,6 @@ f38afe912bcb13668d16a5a74ea77fd084f9d4e4 assets/terrartifacts/models/item/sextan
 1de22a155e114a47d9d6dbb72041f2a016cd27c0 assets/terrartifacts/models/item/silver_watch.json
 fc43be4ffced6a774281c927c70e29e054e8d1b2 assets/terrartifacts/models/item/stopwatch.json
 9265f6e5fe20f44422096682d1ce48a3d3335039 assets/terrartifacts/models/item/tally_counter.json
-617e38f4518ba842cb374e52e977423a991b8a8a assets/terrartifacts/models/item/tinkerers_workshop.json
 8fcd3fefbf8e8ea187632ba92c89e5795e67c0e4 assets/terrartifacts/models/item/tin_clock.json
 b4f71b55ecdc1e6e98beb6c09199b67cec34f703 assets/terrartifacts/models/item/tin_watch.json
 02651f55d27c61d6a30d2aabf39cbcb332a5783f assets/terrartifacts/models/item/tungsten_clock.json

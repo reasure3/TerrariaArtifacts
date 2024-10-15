@@ -16,7 +16,7 @@ class ModBlockStateProvider(output: PackOutput, exFileHelper: ExistingFileHelper
     BlockStateProvider(output, Terrartifacts.ID, exFileHelper) {
 
     override fun registerStatesAndModels() {
-        simpleBlock(ModBlocks.EXAMPLE_BLOCK)
+        simpleBlockWithItem(ModBlocks.EXAMPLE_BLOCK)
 
         horizontalBlockWithProperty(ModBlocks.TINKERERS_WORKSHOP, TinkerersWorkshopBlock.PART)
     }
@@ -30,6 +30,7 @@ class ModBlockStateProvider(output: PackOutput, exFileHelper: ExistingFileHelper
         horizontalBlock(block) { state: BlockState ->
             models().getExistingFile(Terrartifacts.modLoc("$name${postfix(state.getValue(property))}"))
         }
+        generateItem(block)
     }
 
     private fun <T> horizontalBlockWithProperty(
@@ -37,4 +38,8 @@ class ModBlockStateProvider(output: PackOutput, exFileHelper: ExistingFileHelper
         property: Property<T>
     ) where T : Comparable<T>, T : StringRepresentable =
         horizontalBlockWithProperty(block, property) { "_${it.serializedName}" }
+
+    private fun simpleBlockWithItem(block: Block) = simpleBlockWithItem(block, cubeAll(block))
+    private fun generateItem(block: Block) =
+        itemModels().basicItem(Terrartifacts.modLoc(BuiltInRegistries.BLOCK.getKey(block).path))
 }
