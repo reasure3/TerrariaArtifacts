@@ -15,7 +15,7 @@
 				"north": {"uv": [0, 0, 2.75, 0.75], "texture": "#main"},
 				"east": {"uv": [0, 4.25, 3.5, 5], "texture": "#main"},
 				"south": {"uv": [8.25, 0, 11, 0.75], "texture": "#main"},
-				"up": {"uv": [2.75, 12, 0, 8.5], "texture": "#main"},
+				"up": {"uv": [2.75, 12, 0, 8.5], "texture": "#main", "cullface": "up"},
 				"down": {"uv": [2.75, 15.5, 0, 12], "texture": "#main"}
 			}
 		},
@@ -30,7 +30,6 @@
 				"down": {"uv": [7.5, 15, 5.75, 12], "texture": "#main"}
 			}
 		},
-
 		{
 			"name": "hinger",
 			"from": [7, 11, 1],
@@ -53,13 +52,15 @@
 				"south": {"uv": [9.5, 4, 10.25, 4.25], "texture": "#main"},
 				"west": {"uv": [7, 6, 10, 6.25], "texture": "#main"},
 				"up": {"uv": [6.25, 11.5, 5.5, 8.5], "texture": "#main"},
-				"down": {"uv": [6.25, 15, 5.5, 12], "texture": "#main"}
+				"down": {"uv": [6.25, 15, 5.5, 12], "texture": "#main", "cullface": "down"}
 			}
 		}
 	],
 	"groups": [
 		{
 			"name": "left",
+			"origin": [8, 8, 8],
+			"color": 0,
 			"children": [0, 1, 2, 3]
 		}
 	]
