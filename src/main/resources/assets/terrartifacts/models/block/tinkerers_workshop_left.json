@@ -1,10 +1,10 @@
 {
 	"credit": "Made with Blockbench",
-	"parent": "minecraft:block",
+	"parent": "minecraft:block/block",
 	"texture_size": [64, 64],
 	"textures": {
 		"main": "terrartifacts:block/tinkerers_workshop",
-		"particle": "terrartifacts:item/tinkerers_workshop"
+		"particle": "terrartifacts:block/tinkerers_workshop_particle"
 	},
 	"elements": [
 		{

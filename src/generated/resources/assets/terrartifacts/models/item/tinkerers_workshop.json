@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "terrartifacts:item/tinkerers_workshop"
-  }
+  "parent": "terrartifacts:block/tinkerers_workshop_inventory"
 }

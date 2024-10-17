@@ -14,6 +14,8 @@ import java.util.*
 
 class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper) :
     ItemModelProvider(output, Terrartifacts.ID, exFileHelper) {
+    val generatedItem: ModelFile = ModelFile.UncheckedModelFile("item/generated")
+
     override fun registerModels() {
         clockItem(ModItems.COPPER_CLOCK)
         clockItem(ModItems.TIN_CLOCK)
@@ -52,13 +54,13 @@ class ModItemModelProvider(output: PackOutput, exFileHelper: ExistingFileHelper)
             val clock = loc.withSuffix(String.format(Locale.ROOT, "_%02d", i))
             subClocks.add(
                 getBuilder(clock.toString())
-                    .parent(ModelFile.UncheckedModelFile("item/generated"))
+                    .parent(generatedItem)
                     .texture("layer0", clock)
             )
         }
 
         var model = getBuilder(BuiltInRegistries.ITEM.getKey(item).path)
-            .parent(ModelFile.UncheckedModelFile("item/generated"))
+            .parent(generatedItem)
             .texture("layer0", loc.withSuffix("_00"))
 
         model = model.override()
