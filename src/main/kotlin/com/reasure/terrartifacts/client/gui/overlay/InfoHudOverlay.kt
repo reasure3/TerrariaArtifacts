@@ -13,7 +13,9 @@ import net.neoforged.api.distmarker.OnlyIn
 class InfoHudOverlay : LayeredDraw.Layer {
     override fun render(gui: GuiGraphics, tracker: DeltaTracker) {
         val minecraft = Minecraft.getInstance()
+        if (minecraft.noRender) return
         if (minecraft.options.hideGui) return
+        if (minecraft.debugOverlay.showDebugScreen()) return
         val infoList = InfoItemHandler.infoComponent()
         if (infoList.isEmpty()) return
 
@@ -24,7 +26,7 @@ class InfoHudOverlay : LayeredDraw.Layer {
         val heightSpace = 3
         val height = font.lineHeight + heightSpace
         val top = (screenHeight - height * infoList.size + heightSpace) / 2
-        for (i in 0..<infoList.size) {
+        for (i in infoList.indices) {
             gui.drawString(font, infoList[i], screenWidth - width, top + i * height, 0xffffff, true)
         }
     }

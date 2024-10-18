@@ -15,7 +15,7 @@ object ClientTickEvents {
     fun clientTick(event: ClientTickEvent.Post) {
         val mc = Minecraft.getInstance()
         val player = mc.player ?: return
-        if (mc.isRunning) {
+        if (!mc.isPaused) {
             InfoItemHandler.updateInfo(player)
         }
     }

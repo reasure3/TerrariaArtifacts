@@ -20,7 +20,7 @@ import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 object ModClient {
     @SubscribeEvent
     fun registerOverlay(event: RegisterGuiLayersEvent) {
-        event.registerAbove(VanillaGuiLayers.SCOREBOARD_SIDEBAR, InfoHudOverlay.OVERLAY_ID, InfoHudOverlay())
+        event.registerBelow(VanillaGuiLayers.DEBUG_OVERLAY, InfoHudOverlay.OVERLAY_ID, InfoHudOverlay())
     }
 
     /**

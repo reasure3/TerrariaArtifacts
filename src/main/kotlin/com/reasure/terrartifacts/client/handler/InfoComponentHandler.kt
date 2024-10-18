@@ -14,6 +14,7 @@ import com.reasure.terrartifacts.util.LevelUtil.getNearbyEntityCount
 import com.reasure.terrartifacts.util.LevelUtil.getPrecipitationAt
 import com.reasure.terrartifacts.util.TimeUtil
 import com.reasure.terrartifacts.util.TranslationKeys
+import kotlinx.coroutines.CoroutineScope
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
@@ -217,20 +218,21 @@ object InfoComponentHandler {
     }
 
     fun updateHugeInfoComponent(player: LocalPlayer) {
-        CoroutineHandler.launchFindInfo {
-            if (canDisplay(InfoType.ENEMY_COUNT)) {
-                updateEnemyCountComponent(player)
-            }
-            if (canDisplay(InfoType.TREASURE)) {
-                updateTreasureComponent(player.level(), player.onPos)
-            }
-            if (canDisplay(InfoType.RARE_CREATURE)) {
-                updateRareCreatureComponent(player, player.onPos)
-            }
+        launchFindInfo(InfoType.ENEMY_COUNT) {
+            updateEnemyCountComponent(player)
+        }
+        launchFindInfo(InfoType.TREASURE) {
+            updateTreasureComponent(player.level(), player.onPos)
+        }
+        launchFindInfo(InfoType.RARE_CREATURE) {
+            updateRareCreatureComponent(player, player.onPos)
         }
     }
 
     private fun canDisplay(type: InfoType) = ClientShowInfoData[type] && ClientHasInfoItemData[type]
+    private fun launchFindInfo(type: InfoType, block: suspend CoroutineScope.() -> Unit) {
+        if (canDisplay(type)) CoroutineHandler.launchWithPool(type.id, block)
+    }
 
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {
         InfoType.TIME -> getTimeComponent(player.level(), ClientHasInfoItemData.displayTimeType())

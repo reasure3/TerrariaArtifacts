@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.client.handler
 
+import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import kotlinx.coroutines.*
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
@@ -8,12 +9,16 @@ import net.neoforged.api.distmarker.OnlyIn
 object CoroutineHandler {
     private val scope = CoroutineScope(Dispatchers.Default)
 
-    private var infoJob: Job? = null
+    private val jobPool: MutableMap<String, Job?> = mutableMapOf(
+        InfoType.ENEMY_COUNT.id to null,
+        InfoType.TREASURE.id to null,
+        InfoType.RARE_CREATURE.id to null
+    )
 
-    fun launchFindInfo(block: suspend CoroutineScope.() -> Unit) {
-        if (infoJob == null || infoJob?.isCompleted == true) {
-            infoJob = scope.launch(
-                context = CoroutineName("Find Huge Info"),
+    fun launchWithPool(key: String, block: suspend CoroutineScope.() -> Unit) {
+        if (jobPool[key] == null || jobPool[key]?.isCompleted == true) {
+            jobPool[key] = scope.launch(
+                CoroutineName("Coroutine - $key"),
                 block = block
             )
         }
