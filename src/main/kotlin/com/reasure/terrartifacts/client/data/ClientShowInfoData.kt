@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.client.data
 
 import com.reasure.terrartifacts.data.ShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
-import com.reasure.terrartifacts.network.SendShowInfoDataPacket
+import com.reasure.terrartifacts.network.packet.SendShowInfoDataPacket
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.neoforge.network.PacketDistributor

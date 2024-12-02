@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.network
 
 import com.reasure.terrartifacts.data.ModDataAttachments
+import com.reasure.terrartifacts.network.packet.SendShowInfoDataPacket
 import net.minecraft.network.chat.Component
 import net.neoforged.neoforge.network.handling.IPayloadContext
 

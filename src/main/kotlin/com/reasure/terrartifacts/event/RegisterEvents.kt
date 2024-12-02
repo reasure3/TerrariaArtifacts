@@ -4,11 +4,7 @@ import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.handler.ModClientPayloadHandler
 import com.reasure.terrartifacts.data.ModDataMaps
 import com.reasure.terrartifacts.network.ModServerPayloadHandler
-import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
-import com.reasure.terrartifacts.network.SendAttackDamageS2CPacket
-import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
-import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
-import com.reasure.terrartifacts.network.SendShowInfoDataPacket
+import com.reasure.terrartifacts.network.packet.*
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent

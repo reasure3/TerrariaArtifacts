@@ -2,11 +2,7 @@ package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.network.PlayerLoggedInS2CPacket
-import com.reasure.terrartifacts.network.SendAttackDamageS2CPacket
-import com.reasure.terrartifacts.network.SendEntityKillCountS2CPacket
-import com.reasure.terrartifacts.network.SendPlayerKillCountS2CPacket
-import com.reasure.terrartifacts.network.SendShowInfoDataPacket
+import com.reasure.terrartifacts.network.packet.*
 import net.minecraft.network.chat.Component
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
@@ -26,7 +22,7 @@ class ModClientPayloadHandler {
     }
 
     object OnLoggedIn {
-        fun handle(@Suppress("unused") serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) {
+        fun handle(serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) {
             context.enqueueWork {
                 InfoItemHandler.reset()
             }.exceptionally { error ->
