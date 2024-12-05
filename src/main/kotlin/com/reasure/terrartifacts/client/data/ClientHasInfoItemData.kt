@@ -4,7 +4,7 @@ import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
-import java.util.EnumMap
+import java.util.*
 import kotlin.collections.set
 
 /**
@@ -14,8 +14,8 @@ import kotlin.collections.set
 object ClientHasInfoItemData {
     private const val DEFAULT_VALUE = false
 
-    val hasInfo: EnumMap<InfoType, Boolean> = EnumMap(InfoType.entries.associateWith { DEFAULT_VALUE })
-    val hasTime: EnumMap<WatchType, Boolean> = EnumMap(WatchType.entries.associateWith { DEFAULT_VALUE })
+    private val hasInfo: EnumMap<InfoType, Boolean> = EnumMap(InfoType.entries.associateWith { DEFAULT_VALUE })
+    private val hasTime: EnumMap<WatchType, Boolean> = EnumMap(WatchType.entries.associateWith { DEFAULT_VALUE })
 
     fun displayTimeType(): WatchType =
         if (get(WatchType.MINUTE)) WatchType.MINUTE

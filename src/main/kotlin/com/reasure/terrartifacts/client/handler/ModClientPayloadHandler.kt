@@ -9,59 +9,47 @@ import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.neoforge.network.handling.IPayloadContext
 
 @OnlyIn(Dist.CLIENT)
-class ModClientPayloadHandler {
+object ModClientPayloadHandler {
+    private fun handlePacket(context: IPayloadContext, handler: () -> Unit) {
+        context.enqueueWork {
+            handler()
+        }.exceptionally { error ->
+            context.disconnect(Component.literal(error.message.toString()))
+            return@exceptionally null
+        }
+    }
+
     object ReceiveShowInfoData {
-        fun handle(serverPacket: SendShowInfoDataPacket, context: IPayloadContext) {
-            context.enqueueWork {
-                ClientShowInfoData.copyFrom(serverPacket.data)
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
+        fun handle(serverPacket: SendShowInfoDataPacket, context: IPayloadContext) = handlePacket(context) {
+            ClientShowInfoData.copyFrom(serverPacket.data)
+        }
+
+        fun handle(serverPacket: SendShowInfoDataOnlyOnePacket, context: IPayloadContext) = handlePacket(context) {
+            ClientShowInfoData[serverPacket.type] = serverPacket.value
         }
     }
 
     object OnLoggedIn {
-        fun handle(serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) {
-            context.enqueueWork {
-                InfoItemHandler.reset()
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
+        fun handle(serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) = handlePacket(context) {
+            InfoItemHandler.reset()
         }
     }
 
     object ReceivePlayerKillCount {
-        fun handle(serverPacket: SendPlayerKillCountS2CPacket, context: IPayloadContext) {
-            context.enqueueWork {
-                InfoItemHandler.receiveKillCount(serverPacket.targetPlayerName, serverPacket.killCount)
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
+        fun handle(serverPacket: SendPlayerKillCountS2CPacket, context: IPayloadContext) = handlePacket(context) {
+            InfoItemHandler.receiveKillCount(serverPacket.targetPlayerName, serverPacket.killCount)
         }
     }
 
     object ReceiveEntityKillCount {
-        fun handle(serverPacket: SendEntityKillCountS2CPacket, context: IPayloadContext) {
-            context.enqueueWork {
-                InfoItemHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
+        fun handle(serverPacket: SendEntityKillCountS2CPacket, context: IPayloadContext) = handlePacket(context) {
+            InfoItemHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
         }
     }
 
     object ReceiveAttackDamage {
-        fun handle(serverPacket: SendAttackDamageS2CPacket, context: IPayloadContext) {
-            context.enqueueWork {
-                ClientDamageTracker.addDamageEntry(serverPacket.attackTime, serverPacket.attackDamage)
-            }.exceptionally { error ->
-                context.disconnect(Component.literal(error.message.toString()))
-                return@exceptionally null
-            }
+        fun handle(serverPacket: SendAttackDamageS2CPacket, context: IPayloadContext) = handlePacket(context) {
+            ClientDamageTracker.addDamageEntry(serverPacket.attackTime, serverPacket.attackDamage)
         }
     }
 }

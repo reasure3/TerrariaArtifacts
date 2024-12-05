@@ -18,7 +18,7 @@ object ClientDamageTracker {
         dps = calculateDps()
     }
 
-    fun updateDamageEntry(curGameTime: Long) {
+    private fun updateDamageEntry(curGameTime: Long) {
         damageEntryList.removeAll { entry ->
             curGameTime - entry.gameTime > ServerModConfig.SERVER.dpsTrackingTick
                     || entry.gameTime > curGameTime // Prevent bug

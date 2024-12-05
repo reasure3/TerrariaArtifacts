@@ -25,7 +25,7 @@ object ModDataMaps {
         Registries.BLOCK,
         RareBlockData.CODEC
     ).synced(
-        RareBlockData.CODEC,
+        RareBlockData.VALUE_CODEC,
         false
     ).build()
 
@@ -34,7 +34,7 @@ object ModDataMaps {
         Registries.ENTITY_TYPE,
         RareEntityData.CODEC
     ).synced(
-        RareEntityData.CODEC,
+        RareEntityData.RARITY_CODEC,
         false
     ).build()
 }

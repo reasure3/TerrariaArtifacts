@@ -51,5 +51,5 @@ enum class InfoType(val id: String, val message: Component) {
     DPS(
         "dps",
         Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DPS)
-    )
+    );
 }

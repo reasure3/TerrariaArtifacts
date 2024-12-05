@@ -1,8 +1,9 @@
 package com.reasure.terrartifacts.client.data
 
+import com.reasure.terrartifacts.client.DataSenderC2S
 import com.reasure.terrartifacts.data.ShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
-import com.reasure.terrartifacts.network.packet.SendShowInfoDataPacket
+import com.reasure.terrartifacts.network.packet.SendShowInfoDataOnlyOnePacket
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
 import net.neoforged.neoforge.network.PacketDistributor
@@ -19,35 +20,14 @@ object ClientShowInfoData {
 
     fun copyFrom(serverData: ShowInfoData) = InfoType.entries.forEach { data[it] = serverData[it] }
 
-    private fun sendDataToServer() {
-        PacketDistributor.sendToServer(
-            SendShowInfoDataPacket(
-                ShowInfoData(
-                    showTime = ClientShowInfoData[InfoType.TIME],
-                    showWeather = ClientShowInfoData[InfoType.WEATHER],
-                    showFishingPower = ClientShowInfoData[InfoType.FISHING_POWER],
-                    showPosition = ClientShowInfoData[InfoType.POSITION],
-                    showDepth = ClientShowInfoData[InfoType.DEPTH],
-                    showEnemyCount = ClientShowInfoData[InfoType.ENEMY_COUNT],
-                    showKillCount = ClientShowInfoData[InfoType.KILL_COUNT],
-                    showMoonPhase = ClientShowInfoData[InfoType.MOON_PHASE],
-                    showMovementSpeed = ClientShowInfoData[InfoType.MOVEMENT_SPEED],
-                    showTreasure = ClientShowInfoData[InfoType.TREASURE],
-                    showRareCreature = ClientShowInfoData[InfoType.RARE_CREATURE],
-                    showDps = ClientShowInfoData[InfoType.DPS]
-                )
-            )
-        )
-    }
-
     fun toggleData(type: InfoType) {
         data[type] = !ClientShowInfoData[type]
-        sendDataToServer()
+        DataSenderC2S.sendShowInfo(type, ClientShowInfoData[type])
     }
 
     operator fun get(type: InfoType) = data[type] ?: DEFAULT_VALUE
     operator fun set(type: InfoType, value: Boolean) {
         data[type] = value
-        sendDataToServer()
+        DataSenderC2S.sendShowInfo(type, value)
     }
 }

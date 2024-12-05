@@ -33,6 +33,15 @@ object RegisterEvents {
             )
         )
 
+        registrar.playBidirectional(
+            SendShowInfoDataOnlyOnePacket.TYPE,
+            SendShowInfoDataOnlyOnePacket.STREAM_CODEC,
+            DirectionalPayloadHandler(
+                ModClientPayloadHandler.ReceiveShowInfoData::handle,
+                ModServerPayloadHandler.ReceiveShowInfoData::handle
+            )
+        )
+
         registrar.playToClient(
             SendPlayerKillCountS2CPacket.TYPE,
             SendPlayerKillCountS2CPacket.STREAM_CODEC,
