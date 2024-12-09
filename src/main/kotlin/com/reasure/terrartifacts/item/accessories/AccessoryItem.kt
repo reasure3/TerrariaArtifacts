@@ -1,12 +1,22 @@
 package com.reasure.terrartifacts.item.accessories
 
-import com.reasure.terrartifacts.item.BaseItem
-import com.reasure.terrartifacts.item.ModRarity
-import net.minecraft.world.item.Rarity
+import com.reasure.terrartifacts.util.ComponentUtil.withIcon
+import net.minecraft.network.chat.Component
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.TooltipFlag
 
 open class AccessoryItem(
-    properties: Properties = Properties(),
-    rarity: Rarity = ModRarity.WHITE,
-    maxStack: Int = 1,
-    tooltipKeys: List<String> = listOf()
-) : BaseItem(properties.stacksTo(maxStack), rarity, tooltipKeys)
+    properties: Properties,
+    val tooltipKeys: List<String> = listOf()
+) : Item(properties) {
+    override fun appendHoverText(
+        stack: ItemStack,
+        context: TooltipContext,
+        tooltipComponents: MutableList<Component>,
+        tooltipFlag: TooltipFlag
+    ) {
+        tooltipComponents.addAll(tooltipKeys.map { Component.translatable(it).withIcon() })
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag)
+    }
+}

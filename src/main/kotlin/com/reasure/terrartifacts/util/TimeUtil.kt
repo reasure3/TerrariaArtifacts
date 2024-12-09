@@ -15,6 +15,7 @@ object TimeUtil {
             WatchType.HOUR -> "$hour:00"
             WatchType.HALF_HOUR -> String.format("%d:%02d", hour, (minute / 30) * 30)
             WatchType.MINUTE -> String.format("%d:%02d", hour, minute)
+            WatchType.NONE -> ""
         }
     }
 

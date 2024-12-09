@@ -4,9 +4,9 @@ import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.data.datamap.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
+import com.reasure.terrartifacts.item.component.ModDataComponents
 import com.reasure.terrartifacts.util.CuriosUtil
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.core.registries.BuiltInRegistries
@@ -59,12 +59,12 @@ object InfoItemHandler {
         inventory.addAll(player.inventory.items)
 
         for (item in inventory) {
-            val displayInfoData = item.itemHolder.getData(ModDataMaps.DISPLAY_INFO_DATA) ?: continue
+            val hasInfo = item.get(ModDataComponents.HAS_INFO) ?: continue
             InfoType.entries.forEach {
-                if (displayInfoData[it]) ClientHasInfoItemData[it] = true
+                if (hasInfo[it]) ClientHasInfoItemData[it] = true
             }
             WatchType.entries.forEach {
-                if (displayInfoData[it]) ClientHasInfoItemData[it] = true
+                if (hasInfo[it]) ClientHasInfoItemData[it] = true
             }
         }
     }

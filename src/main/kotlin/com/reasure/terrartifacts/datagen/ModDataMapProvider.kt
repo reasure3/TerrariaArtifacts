@@ -1,16 +1,13 @@
 package com.reasure.terrartifacts.datagen
 
-import com.reasure.terrartifacts.data.component.HasInfo
 import com.reasure.terrartifacts.data.datamap.ModDataMaps
 import com.reasure.terrartifacts.data.datamap.RareBlockData
 import com.reasure.terrartifacts.data.datamap.RareEntityData
-import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
 import net.minecraft.world.entity.EntityType
-import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.neoforged.neoforge.common.Tags
@@ -20,30 +17,6 @@ import java.util.concurrent.CompletableFuture
 class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<HolderLookup.Provider>) :
     DataMapProvider(output, registries) {
     override fun gather() {
-        builder(ModDataMaps.DISPLAY_INFO_DATA)
-            .displayInfo(ModItems.COPPER_WATCH, timeHour = true)
-            .displayInfo(ModItems.TIN_WATCH, timeHour = true)
-            .displayInfo(ModItems.SILVER_WATCH, timeHour = true)
-            .displayInfo(ModItems.TUNGSTEN_WATCH, timeHour = true)
-            .displayInfo(ModItems.GOLD_WATCH, timeMinute = true)
-            .displayInfo(ModItems.PLATINUM_WATCH, timeMinute = true)
-            .displayInfo(ModItems.WEATHER_RADIO, weather = true)
-            .displayInfo(ModItems.FISHERMAN_POCKET_GUIDE, fishingPower = true)
-            .displayInfo(ModItems.COMPASS, position = true)
-            .displayInfo(ModItems.DEPTH_METER, depth = true)
-            .displayInfo(ModItems.RADAR, enemyCount = true)
-            .displayInfo(ModItems.TALLY_COUNTER, killCount = true)
-            .displayInfo(ModItems.SEXTANT, moonPhase = true)
-            .displayInfo(ModItems.STOPWATCH, movementSpeed = true)
-            .displayInfo(ModItems.METAL_DETECTOR, treasure = true)
-            .displayInfo(ModItems.LIFEFORM_ANALYZER, rareCreature = true)
-            .displayInfo(ModItems.DPS_METER, dps = true)
-            .displayInfo(ModItems.GPS, timeMinute = true, position = true, depth = true)
-            .displayInfo(ModItems.FISH_FINDER, weather = true, fishingPower = true, moonPhase = true)
-            .displayInfo(ModItems.REK3000, enemyCount = true, killCount = true, rareCreature = true)
-            .displayInfo(ModItems.GOBLIN_TECH, movementSpeed = true, treasure = true, dps = true)
-            .displayAllInfo(ModItems.PDA)
-
         builder(ModDataMaps.RARE_BLOCK_DATA)
             .rareBlock(Blocks.DECORATED_POT, 50)
             .rareBlock(Tags.Blocks.ORES_QUARTZ, 100)
@@ -107,48 +80,6 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             .rareEntity(EntityType.EVOKER, 2)
             .rareEntity(EntityType.PHANTOM, 1)
     }
-
-    @Suppress("DEPRECATION")
-    private fun Builder<HasInfo, Item>.displayInfo(
-        item: Item,
-        timeHour: Boolean = false,
-        timeHalfHour: Boolean = false,
-        timeMinute: Boolean = false,
-        weather: Boolean = false,
-        fishingPower: Boolean = false,
-        position: Boolean = false,
-        depth: Boolean = false,
-        enemyCount: Boolean = false,
-        killCount: Boolean = false,
-        moonPhase: Boolean = false,
-        movementSpeed: Boolean = false,
-        treasure: Boolean = false,
-        rareCreature: Boolean = false,
-        dps: Boolean = false
-    ): Builder<HasInfo, Item> =
-        add(
-            item.builtInRegistryHolder(),
-            HasInfo(
-                timeHour,
-                timeHalfHour,
-                timeMinute,
-                weather,
-                fishingPower,
-                position,
-                depth,
-                enemyCount,
-                killCount,
-                moonPhase,
-                movementSpeed,
-                treasure,
-                rareCreature,
-                dps
-            ),
-            false
-        )
-
-    private fun Builder<HasInfo, Item>.displayAllInfo(item: Item): Builder<HasInfo, Item> =
-        displayInfo(item, false, false, true, true, true, true, true, true, true, true, true, true, true, true)
 
     @Suppress("DEPRECATION")
     private fun Builder<RareBlockData, Block>.rareBlock(

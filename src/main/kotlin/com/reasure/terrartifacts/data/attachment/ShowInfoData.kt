@@ -16,16 +16,18 @@ import java.util.*
  * @see ModDataAttachments
  */
 data class ShowInfoData(val infoMap: EnumMap<InfoType, Boolean>) {
-    operator fun get(type: InfoType) = infoMap[type] ?: true
+    operator fun get(type: InfoType) = infoMap[type] ?: DEFAULT_VALUE
 
     operator fun set(type: InfoType, value: Boolean) {
         infoMap[type] = value
     }
 
     companion object {
+        private const val DEFAULT_VALUE = true
+
         fun create() = ShowInfoData(createMap())
 
-        private fun createMap() = EnumMap(InfoType.entries.associateWith { true })
+        private fun createMap() = EnumMap(InfoType.entries.associateWith { DEFAULT_VALUE })
 
         val CODEC: Codec<ShowInfoData> = Codec.unboundedMap(
             InfoType.CODEC, // Key of Map

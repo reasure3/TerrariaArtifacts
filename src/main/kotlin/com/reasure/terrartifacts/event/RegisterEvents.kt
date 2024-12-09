@@ -63,7 +63,6 @@ object RegisterEvents {
 
     @SubscribeEvent
     fun registerDataMapTypes(event: RegisterDataMapTypesEvent) {
-        event.register(ModDataMaps.DISPLAY_INFO_DATA)
         event.register(ModDataMaps.RARE_BLOCK_DATA)
         event.register(ModDataMaps.RARE_ENTITY_DATA)
     }

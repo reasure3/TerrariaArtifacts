@@ -4,6 +4,7 @@ import com.reasure.terrartifacts.block.ModBlocks
 import com.reasure.terrartifacts.data.attachment.ModDataAttachments
 import com.reasure.terrartifacts.item.ModCreativeTabs
 import com.reasure.terrartifacts.item.ModItems
+import com.reasure.terrartifacts.item.component.ModDataComponents
 import net.minecraft.resources.ResourceLocation
 import net.neoforged.fml.ModContainer
 import net.neoforged.fml.common.Mod
@@ -28,10 +29,11 @@ class Terrartifacts(container: ModContainer) {
     init {
         LOGGER.log(Level.INFO, "Hello world!")
         // Register the KDeferredRegister to the mod-specific event bus
-        ModItems.ITEMS.register(MOD_BUS)
+        ModDataComponents.DATA_COMPONENTS.register(MOD_BUS)
         ModBlocks.BLOCKS.register(MOD_BUS)
-        ModCreativeTabs.CREATIVE_TABS.register(MOD_BUS)
+        ModItems.ITEMS.register(MOD_BUS)
         ModDataAttachments.ATTACHMENT_TYPES.register(MOD_BUS)
+        ModCreativeTabs.CREATIVE_TABS.register(MOD_BUS)
 
         container.registerConfig(ModConfig.Type.SERVER, ServerModConfig.SPEC)
     }
