@@ -4,7 +4,7 @@ import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.data.ModDataMaps
+import com.reasure.terrartifacts.data.datamap.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.util.ComponentUtil.disabled
@@ -231,7 +231,7 @@ object InfoComponentHandler {
 
     private fun canDisplay(type: InfoType) = ClientShowInfoData[type] && ClientHasInfoItemData[type]
     private fun launchFindInfo(type: InfoType, block: suspend CoroutineScope.() -> Unit) {
-        if (canDisplay(type)) CoroutineHandler.launchWithPool(type.id, block)
+        if (canDisplay(type)) CoroutineHandler.launchWithPool(type.serializedName, block)
     }
 
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {

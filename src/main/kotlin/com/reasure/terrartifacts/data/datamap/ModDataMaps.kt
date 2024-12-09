@@ -1,6 +1,7 @@
-package com.reasure.terrartifacts.data
+package com.reasure.terrartifacts.data.datamap
 
 import com.reasure.terrartifacts.Terrartifacts
+import com.reasure.terrartifacts.data.component.HasInfo
 import net.minecraft.core.registries.Registries
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.item.Item
@@ -11,12 +12,12 @@ import net.neoforged.neoforge.registries.datamaps.DataMapType
  * @see com.reasure.terrartifacts.event.RegisterEvents.registerDataMapTypes
  */
 object ModDataMaps {
-    val DISPLAY_INFO_DATA: DataMapType<Item, DisplayInfoData> = DataMapType.builder(
+    val DISPLAY_INFO_DATA: DataMapType<Item, HasInfo> = DataMapType.builder(
         Terrartifacts.modLoc("display_info_data"),
         Registries.ITEM,
-        DisplayInfoData.CODEC
+        HasInfo.CODEC
     ).synced(
-        DisplayInfoData.CODEC,
+        HasInfo.CODEC,
         false
     ).build()
 

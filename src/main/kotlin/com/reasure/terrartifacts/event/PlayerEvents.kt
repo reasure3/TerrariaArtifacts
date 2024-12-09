@@ -2,8 +2,8 @@ package com.reasure.terrartifacts.event
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.data.DataHandler
-import com.reasure.terrartifacts.data.ModDataAttachments
-import com.reasure.terrartifacts.data.ShowInfoData
+import com.reasure.terrartifacts.data.attachment.ModDataAttachments
+import com.reasure.terrartifacts.data.attachment.ShowInfoData
 import com.reasure.terrartifacts.network.DataSenderS2C
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity

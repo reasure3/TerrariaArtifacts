@@ -1,9 +1,9 @@
 package com.reasure.terrartifacts.datagen
 
-import com.reasure.terrartifacts.data.DisplayInfoData
-import com.reasure.terrartifacts.data.ModDataMaps
-import com.reasure.terrartifacts.data.RareBlockData
-import com.reasure.terrartifacts.data.RareEntityData
+import com.reasure.terrartifacts.data.component.HasInfo
+import com.reasure.terrartifacts.data.datamap.ModDataMaps
+import com.reasure.terrartifacts.data.datamap.RareBlockData
+import com.reasure.terrartifacts.data.datamap.RareEntityData
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
@@ -109,7 +109,7 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
     }
 
     @Suppress("DEPRECATION")
-    private fun Builder<DisplayInfoData, Item>.displayInfo(
+    private fun Builder<HasInfo, Item>.displayInfo(
         item: Item,
         timeHour: Boolean = false,
         timeHalfHour: Boolean = false,
@@ -125,10 +125,10 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
         treasure: Boolean = false,
         rareCreature: Boolean = false,
         dps: Boolean = false
-    ): Builder<DisplayInfoData, Item> =
+    ): Builder<HasInfo, Item> =
         add(
             item.builtInRegistryHolder(),
-            DisplayInfoData(
+            HasInfo(
                 timeHour,
                 timeHalfHour,
                 timeMinute,
@@ -147,7 +147,7 @@ class ModDataMapProvider(output: PackOutput, registries: CompletableFuture<Holde
             false
         )
 
-    private fun Builder<DisplayInfoData, Item>.displayAllInfo(item: Item): Builder<DisplayInfoData, Item> =
+    private fun Builder<HasInfo, Item>.displayAllInfo(item: Item): Builder<HasInfo, Item> =
         displayInfo(item, false, false, true, true, true, true, true, true, true, true, true, true, true, true)
 
     @Suppress("DEPRECATION")

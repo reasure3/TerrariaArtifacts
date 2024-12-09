@@ -4,7 +4,7 @@ import com.reasure.terrartifacts.ServerModConfig
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
-import com.reasure.terrartifacts.data.ModDataMaps
+import com.reasure.terrartifacts.data.datamap.ModDataMaps
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import com.reasure.terrartifacts.util.CuriosUtil

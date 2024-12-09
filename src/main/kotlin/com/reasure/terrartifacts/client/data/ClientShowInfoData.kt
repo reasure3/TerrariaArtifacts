@@ -1,12 +1,10 @@
 package com.reasure.terrartifacts.client.data
 
 import com.reasure.terrartifacts.client.DataSenderC2S
-import com.reasure.terrartifacts.data.ShowInfoData
+import com.reasure.terrartifacts.data.attachment.ShowInfoData
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
-import com.reasure.terrartifacts.network.packet.SendShowInfoDataOnlyOnePacket
 import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
-import net.neoforged.neoforge.network.PacketDistributor
 import java.util.*
 
 /**

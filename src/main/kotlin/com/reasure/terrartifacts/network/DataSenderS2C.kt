@@ -1,6 +1,6 @@
 package com.reasure.terrartifacts.network
 
-import com.reasure.terrartifacts.data.ModDataAttachments
+import com.reasure.terrartifacts.data.attachment.ModDataAttachments
 import com.reasure.terrartifacts.network.packet.*
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.server.level.ServerPlayer

@@ -1,4 +1,4 @@
-package com.reasure.terrartifacts.data
+package com.reasure.terrartifacts.data.attachment
 
 import com.mojang.serialization.Codec
 import com.reasure.terrartifacts.Terrartifacts
@@ -14,7 +14,7 @@ object ModDataAttachments {
         DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, Terrartifacts.ID)
 
     val SHOW_INFO: AttachmentType<ShowInfoData> by ATTACHMENT_TYPES.register("show_info") { ->
-        AttachmentType.builder(ShowInfoData::create).serialize(ShowInfoData.CODEC).build()
+        AttachmentType.builder(ShowInfoData.Companion::create).serialize(ShowInfoData.CODEC).build()
     }
 
     val PLAYER_KILL_COUNT: AttachmentType<Map<UUID, Int>>

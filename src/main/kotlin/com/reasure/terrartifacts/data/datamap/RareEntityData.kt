@@ -1,4 +1,4 @@
-package com.reasure.terrartifacts.data
+package com.reasure.terrartifacts.data.datamap
 
 import com.mojang.serialization.Codec
 import com.mojang.serialization.codecs.RecordCodecBuilder

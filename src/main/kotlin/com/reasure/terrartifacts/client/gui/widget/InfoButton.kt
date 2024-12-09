@@ -43,10 +43,10 @@ class InfoButton(
             }
 
             return WidgetSprites(
-                Terrartifacts.modLoc("icon/${infoType.id}"),
-                Terrartifacts.modLoc("icon/${infoType.id}_disabled"),
-                Terrartifacts.modLoc("icon/${infoType.id}_focused"),
-                Terrartifacts.modLoc("icon/${infoType.id}_disabled_focused")
+                Terrartifacts.modLoc("icon/${infoType.serializedName}"),
+                Terrartifacts.modLoc("icon/${infoType.serializedName}_disabled"),
+                Terrartifacts.modLoc("icon/${infoType.serializedName}_focused"),
+                Terrartifacts.modLoc("icon/${infoType.serializedName}_disabled_focused")
             )
         }
     }

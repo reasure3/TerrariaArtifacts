@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts
 
 import com.reasure.terrartifacts.block.ModBlocks
-import com.reasure.terrartifacts.data.ModDataAttachments
+import com.reasure.terrartifacts.data.attachment.ModDataAttachments
 import com.reasure.terrartifacts.item.ModCreativeTabs
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.resources.ResourceLocation

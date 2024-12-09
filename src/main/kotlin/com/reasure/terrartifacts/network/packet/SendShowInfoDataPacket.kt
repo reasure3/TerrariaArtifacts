@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.network.packet
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.data.ShowInfoData
+import com.reasure.terrartifacts.data.attachment.ShowInfoData
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.codec.StreamCodec
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload

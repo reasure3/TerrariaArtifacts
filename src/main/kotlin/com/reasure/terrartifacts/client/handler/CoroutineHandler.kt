@@ -10,9 +10,9 @@ object CoroutineHandler {
     private val scope = CoroutineScope(Dispatchers.Default)
 
     private val jobPool: MutableMap<String, Job?> = mutableMapOf(
-        InfoType.ENEMY_COUNT.id to null,
-        InfoType.TREASURE.id to null,
-        InfoType.RARE_CREATURE.id to null
+        InfoType.ENEMY_COUNT.serializedName to null,
+        InfoType.TREASURE.serializedName to null,
+        InfoType.RARE_CREATURE.serializedName to null
     )
 
     fun launchWithPool(key: String, block: suspend CoroutineScope.() -> Unit) {

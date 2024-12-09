@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.event
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.client.handler.ModClientPayloadHandler
-import com.reasure.terrartifacts.data.ModDataMaps
+import com.reasure.terrartifacts.data.datamap.ModDataMaps
 import com.reasure.terrartifacts.network.ModServerPayloadHandler
 import com.reasure.terrartifacts.network.packet.*
 import net.neoforged.bus.api.SubscribeEvent

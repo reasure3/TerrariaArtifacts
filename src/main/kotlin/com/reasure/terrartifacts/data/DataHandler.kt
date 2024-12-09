@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.data
 
+import com.reasure.terrartifacts.data.attachment.ModDataAttachments
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.player.Player
 
