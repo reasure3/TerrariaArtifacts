@@ -14,19 +14,10 @@ class SendShowInfoDataOnlyOnePacket(val type: InfoType, val value: Boolean) : Cu
         val TYPE =
             CustomPacketPayload.Type<SendShowInfoDataOnlyOnePacket>(Terrartifacts.modLoc("send_show_info_only_one_data"))
 
-        val STREAM_CODEC: StreamCodec<ByteBuf, SendShowInfoDataOnlyOnePacket> =
-            object : StreamCodec<ByteBuf, SendShowInfoDataOnlyOnePacket> {
-                override fun decode(buf: ByteBuf): SendShowInfoDataOnlyOnePacket {
-                    val infoType = InfoType.entries.getOrNull(ByteBufCodecs.VAR_INT.decode(buf))
-                        ?: throw IllegalArgumentException("Invalid InfoType Index")
-                    val show = ByteBufCodecs.BOOL.decode(buf)
-                    return SendShowInfoDataOnlyOnePacket(infoType, show)
-                }
-
-                override fun encode(buf: ByteBuf, data: SendShowInfoDataOnlyOnePacket) {
-                    ByteBufCodecs.VAR_INT.encode(buf, data.type.ordinal)
-                    ByteBufCodecs.BOOL.encode(buf, data.value)
-                }
-            }
+        val STREAM_CODEC: StreamCodec<ByteBuf, SendShowInfoDataOnlyOnePacket> = StreamCodec.composite(
+            InfoType.STREAM_CODEC, SendShowInfoDataOnlyOnePacket::type,
+            ByteBufCodecs.BOOL, SendShowInfoDataOnlyOnePacket::value,
+            ::SendShowInfoDataOnlyOnePacket
+        )
     }
 }
