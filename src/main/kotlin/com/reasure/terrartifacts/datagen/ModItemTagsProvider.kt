@@ -2,7 +2,7 @@ package com.reasure.terrartifacts.datagen
 
 import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.ModItems
-import com.reasure.terrartifacts.item.accessories.AccessoryItem
+import com.reasure.terrartifacts.item.component.ModDataComponents
 import com.reasure.terrartifacts.util.ModTags
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.PackOutput
@@ -21,7 +21,7 @@ class ModItemTagsProvider(
         with(tag(ModTags.Items.CURIOS_ACCESSORIES)) {
             ModItems.ITEMS.entries
                 .map { it.get() }
-                .filter { it is AccessoryItem }
+                .filter { it.components().has(ModDataComponents.HAS_INFO) }
                 .forEach { add(it) }
         }
     }

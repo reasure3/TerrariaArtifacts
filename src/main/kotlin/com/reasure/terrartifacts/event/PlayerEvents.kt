@@ -4,20 +4,25 @@ import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.data.DataHandler
 import com.reasure.terrartifacts.data.attachment.ModDataAttachments
 import com.reasure.terrartifacts.data.attachment.ShowInfoData
+import com.reasure.terrartifacts.item.component.ModDataComponents
 import com.reasure.terrartifacts.network.DataSenderS2C
+import net.minecraft.network.chat.Component
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.LivingEntity
 import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.TooltipFlag
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.attachment.AttachmentType
 import net.neoforged.neoforge.common.util.FakePlayer
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent
+import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent
 import net.neoforged.neoforge.event.entity.player.PlayerEvent
 import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent
 import java.util.*
+import kotlin.math.max
 
 @Suppress("unused")
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.GAME)
@@ -86,6 +91,23 @@ object PlayerEvents {
             }
 
             is LivingEntity -> DataSenderS2C.sendEntityKillCount(target, player, true)
+        }
+    }
+
+    // TODO: Convert it to AttributeItemTooltipEvent (in 1.21.+)
+    @SubscribeEvent
+    fun addItemTooltip(event: ItemTooltipEvent) {
+        event.itemStack.get(ModDataComponents.HAS_INFO)?.run {
+            addToTooltip(event.context, { tooltip -> addTooltip(event.toolTip, tooltip, event.flags) }, event.flags)
+        }
+    }
+
+    private fun addTooltip(tooltips: MutableList<Component>, tooltip: Component, flags: TooltipFlag) {
+        if (flags.isAdvanced) {
+            val index = max(0, tooltips.lastIndex - 1)
+            tooltips.add(index, tooltip)
+        } else {
+            tooltips.add(tooltip)
         }
     }
 }

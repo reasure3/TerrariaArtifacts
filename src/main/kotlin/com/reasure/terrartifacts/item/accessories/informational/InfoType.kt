@@ -1,5 +1,6 @@
 package com.reasure.terrartifacts.item.accessories.informational
 
+import com.reasure.terrartifacts.util.ComponentUtil.withIcon
 import com.reasure.terrartifacts.util.TranslationKeys
 import io.netty.buffer.ByteBuf
 import net.minecraft.network.chat.Component
@@ -10,55 +11,67 @@ import net.minecraft.util.StringRepresentable
 import net.minecraft.util.StringRepresentable.StringRepresentableCodec
 import java.util.function.IntFunction
 
-enum class InfoType(private val id: Int, private val _name: String, val message: Component) :
+enum class InfoType(private val id: Int, private val _name: String, val messageKey: String, val tooltip: Component) :
     StringRepresentable {
     TIME(
         0, "time",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_TIME,
+        Component.empty()
     ),
     WEATHER(
         1, "weather",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_WEATHER,
+        Component.translatable(TranslationKeys.TOOLTIP_WEATHER_ITEM).withIcon()
     ),
     FISHING_POWER(
         2, "fishing_power",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_FISHING_POWER,
+        Component.translatable(TranslationKeys.TOOLTIP_FISHING_POWER_ITEM).withIcon()
     ),
     POSITION(
         3, "position",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_POSITION,
+        Component.translatable(TranslationKeys.TOOLTIP_POSITION_ITEM).withIcon()
     ),
     DEPTH(
         4, "depth",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_DEPTH,
+        Component.translatable(TranslationKeys.TOOLTIP_DEPTH_ITEM).withIcon()
     ),
     ENEMY_COUNT(
         5, "enemy_count",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_ENEMY_COUNT,
+        Component.translatable(TranslationKeys.TOOLTIP_ENEMY_COUNT_ITEM).withIcon()
     ),
     KILL_COUNT(
         6, "kill_count",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_KILL_COUNT,
+        Component.translatable(TranslationKeys.TOOLTIP_KILL_COUNT_ITEM).withIcon()
     ),
     MOON_PHASE(
         7, "moon_phase",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOON_PHASE,
+        Component.translatable(TranslationKeys.TOOLTIP_MOON_PHASE_ITEM).withIcon()
     ),
     MOVEMENT_SPEED(
         8, "movement_speed",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_MOVEMENT_SPEED,
+        Component.translatable(TranslationKeys.TOOLTIP_MOVEMENT_SPEED_ITEM).withIcon()
     ),
     TREASURE(
         9, "treasure",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_TREASURE,
+        Component.translatable(TranslationKeys.TOOLTIP_TREASURE_ITEM).withIcon()
     ),
     RARE_CREATURE(
         10, "rare_creatures",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_RARE_CREATURES,
+        Component.translatable(TranslationKeys.TOOLTIP_RARE_CREATURES_ITEM).withIcon()
     ),
     DPS(
         11, "dps",
-        Component.translatable(TranslationKeys.BUTTON_MESSAGE_TOGGLE_DPS)
+        TranslationKeys.BUTTON_MESSAGE_TOGGLE_DPS,
+        Component.translatable(TranslationKeys.TOOLTIP_DPS_ITEM).withIcon()
     );
 
     override fun getSerializedName(): String = _name

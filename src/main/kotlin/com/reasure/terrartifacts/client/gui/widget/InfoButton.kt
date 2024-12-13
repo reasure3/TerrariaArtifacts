@@ -8,6 +8,7 @@ import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.Button.OnPress
 import net.minecraft.client.gui.components.ImageButton
 import net.minecraft.client.gui.components.WidgetSprites
+import net.minecraft.network.chat.Component
 
 class InfoButton(
     x: Int, y: Int, val type: InfoType
@@ -15,7 +16,7 @@ class InfoButton(
     x, y, 9, 9,
     makeWidgetSprites(type),
     OnPress { ClientShowInfoData.toggleData(type) },
-    type.message
+    Component.translatable(type.messageKey)
 ) {
     override fun renderWidget(guiGraphics: GuiGraphics, mouseX: Int, mouseY: Int, partialTick: Float) {
         guiGraphics.blitSprite(sprites[isToggled(), isHoveredOrFocused], x, y, width, height)

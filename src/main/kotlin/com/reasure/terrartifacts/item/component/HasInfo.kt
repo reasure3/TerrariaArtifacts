@@ -5,14 +5,24 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import com.reasure.terrartifacts.item.accessories.informational.WatchType
 import io.netty.buffer.ByteBuf
+import net.minecraft.network.chat.Component
 import net.minecraft.network.codec.ByteBufCodecs
 import net.minecraft.network.codec.StreamCodec
+import net.minecraft.world.item.Item
+import net.minecraft.world.item.TooltipFlag
+import net.minecraft.world.item.component.TooltipProvider
 import java.util.*
+import java.util.function.Consumer
 
 /**
  * Target: Item
  */
-data class HasInfo(val infoMap: EnumMap<InfoType, Boolean>, val watchType: WatchType = WatchType.NONE) {
+data class HasInfo(
+    val infoMap: EnumMap<InfoType, Boolean>,
+    val watchType: WatchType = WatchType.NONE,
+    val showTooltip: Boolean = true
+) :
+    TooltipProvider {
     operator fun get(type: InfoType): Boolean {
         val hasInfoData = infoMap[type] ?: DEFAULT_VALUE
         if (hasInfoData && type == InfoType.TIME) {
@@ -53,7 +63,8 @@ data class HasInfo(val infoMap: EnumMap<InfoType, Boolean>, val watchType: Watch
         val CODEC: Codec<HasInfo> = RecordCodecBuilder.create { instance ->
             instance.group(
                 INFO_CODEC.fieldOf("info_types_to_display").forGetter(HasInfo::infoMap),
-                WatchType.CODEC.optionalFieldOf("watch_type", WatchType.NONE).forGetter(HasInfo::watchType)
+                WatchType.CODEC.optionalFieldOf("watch_type", WatchType.NONE).forGetter(HasInfo::watchType),
+                Codec.BOOL.optionalFieldOf("show_tooltip", true).forGetter(HasInfo::showTooltip)
             ).apply(instance, ::HasInfo)
         }
 
@@ -66,7 +77,26 @@ data class HasInfo(val infoMap: EnumMap<InfoType, Boolean>, val watchType: Watch
         val STREAM_CODEC: StreamCodec<ByteBuf, HasInfo> = StreamCodec.composite(
             MAP_CODEC, HasInfo::infoMap,
             WatchType.STREAM_CODEC, HasInfo::watchType,
+            ByteBufCodecs.BOOL, HasInfo::showTooltip,
             ::HasInfo,
         )
+    }
+
+    override fun addToTooltip(
+        context: Item.TooltipContext,
+        tooltipAdder: Consumer<Component>,
+        tooltipFlag: TooltipFlag
+    ) {
+        if (showTooltip) {
+            InfoType.entries.forEach {
+                if (this[it]) {
+                    if (it == InfoType.TIME && watchType != WatchType.NONE) {
+                        tooltipAdder.accept(watchType.tooltip)
+                    } else {
+                        tooltipAdder.accept(it.tooltip)
+                    }
+                }
+            }
+        }
     }
 }
