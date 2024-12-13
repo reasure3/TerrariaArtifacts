@@ -1,7 +1,10 @@
 package com.reasure.terrartifacts.network
 
 import com.reasure.terrartifacts.data.attachment.ModDataAttachments
-import com.reasure.terrartifacts.network.packet.*
+import com.reasure.terrartifacts.network.packet.SendAttackDamageS2CPacket
+import com.reasure.terrartifacts.network.packet.SendEntityKillCountS2CPacket
+import com.reasure.terrartifacts.network.packet.SendPlayerKillCountS2CPacket
+import com.reasure.terrartifacts.network.packet.SendShowInfoDataPacket
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.stats.Stats
@@ -10,10 +13,6 @@ import net.minecraft.world.entity.player.Player
 import net.neoforged.neoforge.network.PacketDistributor
 
 object DataSenderS2C {
-    fun sendPlayerLoggedIn(player: ServerPlayer) {
-        PacketDistributor.sendToPlayer(player, PlayerLoggedInS2CPacket.INSTANCE)
-    }
-
     fun sendShowInfo(player: ServerPlayer) {
         PacketDistributor.sendToPlayer(
             player,

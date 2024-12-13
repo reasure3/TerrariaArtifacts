@@ -25,8 +25,8 @@ object PlayerEvents {
     @SubscribeEvent
     fun onPlayerLogin(event: PlayerLoggedInEvent) {
         val player = event.entity
+        println("PlayerLoggedInEvent: $player")
         if (player is ServerPlayer && player !is FakePlayer) {
-            DataSenderS2C.sendPlayerLoggedIn(player)
             DataSenderS2C.sendShowInfo(player)
         }
     }

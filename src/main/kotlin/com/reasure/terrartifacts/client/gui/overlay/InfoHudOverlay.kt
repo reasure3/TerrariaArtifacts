@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client.gui.overlay
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.client.handler.InfoItemHandler
+import com.reasure.terrartifacts.client.handler.InfoDataHandler
 import net.minecraft.client.DeltaTracker
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.GuiGraphics
@@ -16,7 +16,7 @@ class InfoHudOverlay : LayeredDraw.Layer {
         if (minecraft.noRender) return
         if (minecraft.options.hideGui) return
         if (minecraft.debugOverlay.showDebugScreen()) return
-        val infoList = InfoItemHandler.infoComponent()
+        val infoList = InfoDataHandler.infoComponent()
         if (infoList.isEmpty()) return
 
         val font = minecraft.font

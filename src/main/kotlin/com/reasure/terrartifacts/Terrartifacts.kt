@@ -27,7 +27,8 @@ class Terrartifacts(container: ModContainer) {
     }
 
     init {
-        LOGGER.log(Level.INFO, "Hello world!")
+        LOGGER.log(Level.INFO, "Starting initialization of $ID")
+
         // Register the KDeferredRegister to the mod-specific event bus
         ModDataComponents.DATA_COMPONENTS.register(MOD_BUS)
         ModBlocks.BLOCKS.register(MOD_BUS)

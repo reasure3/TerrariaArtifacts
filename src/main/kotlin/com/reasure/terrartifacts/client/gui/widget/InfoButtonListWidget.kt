@@ -6,10 +6,11 @@ import com.reasure.terrartifacts.item.accessories.informational.InfoType
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.client.gui.components.AbstractContainerWidget
 import net.minecraft.client.gui.components.events.GuiEventListener
+import net.minecraft.client.gui.narration.NarratedElementType
 import net.minecraft.client.gui.narration.NarrationElementOutput
 import net.minecraft.network.chat.Component
 
-class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCreative: Boolean) :
+class InfoButtonListWidget(guiX: Int, guiY: Int, private val layout: LayoutPos, isCreative: Boolean) :
     AbstractContainerWidget(
         guiX + layout.offsetX(isCreative), guiY + layout.offsetY(isCreative), layout.width, layout.height,
         Component.literal("info toggle buttons")
@@ -36,7 +37,7 @@ class InfoButtonListWidget(guiX: Int, guiY: Int, val layout: LayoutPos, val isCr
     }
 
     override fun updateWidgetNarration(narration: NarrationElementOutput) {
-
+        narration.add(NarratedElementType.TITLE, message)
     }
 
     override fun children(): List<GuiEventListener?> {

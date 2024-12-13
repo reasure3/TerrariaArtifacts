@@ -17,10 +17,14 @@ out
 build
 .gradle
 
+# kitlin
+.kotlin
+
 # other
 eclipse
 run
 runs
 run-data
+.cache
 
 repo

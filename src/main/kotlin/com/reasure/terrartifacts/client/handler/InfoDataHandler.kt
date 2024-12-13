@@ -1,6 +1,7 @@
 package com.reasure.terrartifacts.client.handler
 
 import com.reasure.terrartifacts.ServerModConfig
+import com.reasure.terrartifacts.client.TerrartifactsClient
 import com.reasure.terrartifacts.client.data.ClientDamageTracker
 import com.reasure.terrartifacts.client.data.ClientHasInfoItemData
 import com.reasure.terrartifacts.client.data.ClientShowInfoData
@@ -16,10 +17,11 @@ import net.neoforged.api.distmarker.Dist
 import net.neoforged.api.distmarker.OnlyIn
 
 @OnlyIn(Dist.CLIENT)
-object InfoItemHandler {
+object InfoDataHandler {
     private val infoComponent: MutableList<Component> = mutableListOf()
 
     fun reset() {
+        TerrartifactsClient.LOGGER.info("Reset Info Data")
         infoComponent.clear()
         InfoComponentHandler.reset()
         ClientHasInfoItemData.reset()

@@ -29,21 +29,15 @@ object ModClientPayloadHandler {
         }
     }
 
-    object OnLoggedIn {
-        fun handle(serverPacket: PlayerLoggedInS2CPacket, context: IPayloadContext) = handlePacket(context) {
-            InfoItemHandler.reset()
-        }
-    }
-
     object ReceivePlayerKillCount {
         fun handle(serverPacket: SendPlayerKillCountS2CPacket, context: IPayloadContext) = handlePacket(context) {
-            InfoItemHandler.receiveKillCount(serverPacket.targetPlayerName, serverPacket.killCount)
+            InfoDataHandler.receiveKillCount(serverPacket.targetPlayerName, serverPacket.killCount)
         }
     }
 
     object ReceiveEntityKillCount {
         fun handle(serverPacket: SendEntityKillCountS2CPacket, context: IPayloadContext) = handlePacket(context) {
-            InfoItemHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
+            InfoDataHandler.receiveKillCount(serverPacket.targetEntity, serverPacket.killCount)
         }
     }
 

@@ -18,12 +18,6 @@ object RegisterEvents {
     fun registerPayload(event: RegisterPayloadHandlersEvent) {
         val registrar = event.registrar("1")
 
-        registrar.playToClient(
-            PlayerLoggedInS2CPacket.TYPE,
-            PlayerLoggedInS2CPacket.STREAM_CODEC,
-            ModClientPayloadHandler.OnLoggedIn::handle
-        )
-
         registrar.playBidirectional(
             SendShowInfoDataPacket.TYPE,
             SendShowInfoDataPacket.STREAM_CODEC,

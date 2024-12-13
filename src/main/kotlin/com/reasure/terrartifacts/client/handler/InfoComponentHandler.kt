@@ -14,7 +14,6 @@ import com.reasure.terrartifacts.util.LevelUtil.getNearbyEntityCount
 import com.reasure.terrartifacts.util.LevelUtil.getPrecipitationAt
 import com.reasure.terrartifacts.util.TimeUtil
 import com.reasure.terrartifacts.util.TranslationKeys
-import kotlinx.coroutines.CoroutineScope
 import net.minecraft.client.player.LocalPlayer
 import net.minecraft.core.BlockPos
 import net.minecraft.network.chat.Component
@@ -116,7 +115,7 @@ object InfoComponentHandler {
         ).withIcon()
     }
 
-    private fun updateEnemyCountComponent(player: LocalPlayer) {
+    fun updateEnemyCountComponent(player: LocalPlayer) {
         val distance = ServerModConfig.SERVER.radarDetectDistance
         val count = player.getNearbyEntityCount(distance) { entity ->
             entity is Enemy
@@ -164,7 +163,7 @@ object InfoComponentHandler {
         }
     }
 
-    private fun updateTreasureComponent(level: Level, pos: BlockPos) {
+    fun updateTreasureComponent(level: Level, pos: BlockPos) {
         val maxRare = AtomicInteger(-1)
         val detectedBlockState = AtomicReference(Blocks.AIR.defaultBlockState())
         val distance = ServerModConfig.SERVER.treasureDetectDistance
@@ -188,7 +187,7 @@ object InfoComponentHandler {
         }
     }
 
-    private fun updateRareCreatureComponent(player: LocalPlayer, pos: BlockPos) {
+    fun updateRareCreatureComponent(player: LocalPlayer, pos: BlockPos) {
         val maxRare = AtomicInteger(-1)
         val detectedCreature = AtomicReference<Entity>()
         val distance = ServerModConfig.SERVER.rareCreatureDetectDistance
@@ -218,21 +217,10 @@ object InfoComponentHandler {
     }
 
     fun updateHugeInfoComponent(player: LocalPlayer) {
-        launchFindInfo(InfoType.ENEMY_COUNT) {
-            updateEnemyCountComponent(player)
-        }
-        launchFindInfo(InfoType.TREASURE) {
-            updateTreasureComponent(player.level(), player.onPos)
-        }
-        launchFindInfo(InfoType.RARE_CREATURE) {
-            updateRareCreatureComponent(player, player.onPos)
-        }
+        CoroutineHandler.updateHugeInfo(player)
     }
 
-    private fun canDisplay(type: InfoType) = ClientShowInfoData[type] && ClientHasInfoItemData[type]
-    private fun launchFindInfo(type: InfoType, block: suspend CoroutineScope.() -> Unit) {
-        if (canDisplay(type)) CoroutineHandler.launchWithPool(type.serializedName, block)
-    }
+    fun canDisplay(type: InfoType) = ClientShowInfoData[type] && ClientHasInfoItemData[type]
 
     operator fun get(type: InfoType, player: LocalPlayer): Component = when (type) {
         InfoType.TIME -> getTimeComponent(player.level(), ClientHasInfoItemData.displayTimeType())

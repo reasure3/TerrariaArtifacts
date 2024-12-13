@@ -1,7 +1,7 @@
 package com.reasure.terrartifacts.client.event
 
 import com.reasure.terrartifacts.Terrartifacts
-import com.reasure.terrartifacts.Terrartifacts.Companion.LOGGER
+import com.reasure.terrartifacts.client.TerrartifactsClient
 import com.reasure.terrartifacts.client.gui.overlay.InfoHudOverlay
 import com.reasure.terrartifacts.item.ModItems
 import net.minecraft.client.renderer.item.ItemProperties
@@ -17,7 +17,7 @@ import net.neoforged.neoforge.client.gui.VanillaGuiLayers
 
 @Suppress("unused")
 @EventBusSubscriber(modid = Terrartifacts.ID, bus = EventBusSubscriber.Bus.MOD, value = [Dist.CLIENT])
-object ModClient {
+object ModClientEvents {
     @SubscribeEvent
     fun registerOverlay(event: RegisterGuiLayersEvent) {
         event.registerBelow(VanillaGuiLayers.DEBUG_OVERLAY, InfoHudOverlay.OVERLAY_ID, InfoHudOverlay())
@@ -31,7 +31,7 @@ object ModClient {
      */
     @SubscribeEvent
     fun onClientSetup(event: FMLClientSetupEvent) {
-        LOGGER.info("Setting up Terraria Artifacts Client")
+        TerrartifactsClient.LOGGER.info("Setting up Terraria Artifacts Client")
         val timeLoc = ResourceLocation.withDefaultNamespace("time")
         val clockProperty = ItemProperties.getProperty(ItemStack(Items.CLOCK), timeLoc)
         if (clockProperty != null) {
