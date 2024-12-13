@@ -1,8 +1,8 @@
 package com.reasure.terrartifacts.client.handler
 
-import com.reasure.terrartifacts.client.TerrartifactsClient
-import com.reasure.terrartifacts.client.coroutine.CoroutineManager
+import com.reasure.terrartifacts.Terrartifacts
 import com.reasure.terrartifacts.item.accessories.informational.InfoType
+import com.reasure.terrartifacts.util.CoroutineManager
 import net.minecraft.client.player.LocalPlayer
 
 object CoroutineHandler {
@@ -29,9 +29,8 @@ object CoroutineHandler {
     }
 
     private fun startHugeInfo() {
-        TerrartifactsClient.LOGGER.info("Start Huge Info")
         hasHugeInfoItem = true
-        infoManager = object : CoroutineManager<LocalPlayer>("HugeInfo") {
+        infoManager = object : CoroutineManager<LocalPlayer>("HugeInfo", loggerName = Terrartifacts.ID + "_client") {
             override suspend fun runner(data: LocalPlayer) {
                 if (InfoComponentHandler.canDisplay(InfoType.TREASURE)) {
                     InfoComponentHandler.updateTreasureComponent(data.level(), data.onPos)
@@ -47,7 +46,6 @@ object CoroutineHandler {
     }
 
     fun stopHugeInfo() {
-        TerrartifactsClient.LOGGER.info("Stop Huge Info")
         hasHugeInfoItem = false
         infoManager?.close()
         infoManager = null

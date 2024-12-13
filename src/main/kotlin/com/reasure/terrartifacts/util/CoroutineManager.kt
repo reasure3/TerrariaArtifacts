@@ -1,35 +1,42 @@
-package com.reasure.terrartifacts.client.coroutine
+package com.reasure.terrartifacts.util
 
-import com.reasure.terrartifacts.client.TerrartifactsClient
+import com.reasure.terrartifacts.Terrartifacts
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
-import net.neoforged.api.distmarker.Dist
-import net.neoforged.api.distmarker.OnlyIn
+import org.apache.logging.log4j.LogManager
+import org.apache.logging.log4j.Logger
 import java.io.Closeable
 
-@OnlyIn(Dist.CLIENT)
-abstract class CoroutineManager<T>(private val name: String) : Closeable {
+abstract class CoroutineManager<T>(name: String, loggerName: String = Terrartifacts.ID) : Closeable {
     private var scope: CoroutineScope? = null
     private val taskChannel = Channel<T>(Channel.CONFLATED)
+    private val name = "CoroutineManager[$name]"
+    private val logger: Logger = LogManager.getLogger(loggerName)
 
     fun start() {
-        if (scope != null) return
+        if (scope != null) {
+            logger.warn("$name already started")
+            return
+        }
+
+        logger.info("Starting $name")
 
         scope = CoroutineScope(
             SupervisorJob() +
                     Dispatchers.Default +
-                    CoroutineName("CoroutineManager[$name]")
+                    CoroutineName(name)
         ).also { coroutineScope ->
             coroutineScope.launch {
+                logger.info("Coroutine for $name started")
                 for (data in taskChannel) {
                     try {
                         if (!isActive) break
                         runner(data)
                     } catch (e: CancellationException) {
-                        TerrartifactsClient.LOGGER.info("CoroutineManager[$name] cancelled")
+                        logger.info("Coroutine for $name cancelled")
                         break
                     } catch (e: Exception) {
-                        TerrartifactsClient.LOGGER.error("CoroutineManager[$name] error: $e", e)
+                        logger.error("Coroutine for $name error: $e", e)
                     }
                 }
             }
@@ -37,6 +44,7 @@ abstract class CoroutineManager<T>(private val name: String) : Closeable {
     }
 
     private fun stop() {
+        logger.info("Stopping $name")
         scope?.cancel()
         scope = null
     }
